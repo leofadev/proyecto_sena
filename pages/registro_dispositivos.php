@@ -13,6 +13,7 @@
         include("../componentes/navbar_celador.php");
     ?>  
     <!-- Formulario para registrar objetos -->
+    <!-- Darle estilos a lpos formularios y  las tablas -->
 <div class="container">
         <div class="row mt-5">
             <div class="col-3 p-4">
