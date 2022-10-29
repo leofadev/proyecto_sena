@@ -1,8 +1,8 @@
 <!-- Menú del Administrador -->
-<nav class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-light mb-5">
+<nav class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-sena mb-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="./homepage.php">
-            <img class="" src="../bootstrap-5.0.2-dist/img/logo-sena-verde.png" width="50">
+            <img class="" src="../bootstrap-5.0.2-dist/img/Logo-sena-blanco.png" width="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/listado.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link text-white" href="../pages/listado.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Listado
                     </a>
                 </li>
