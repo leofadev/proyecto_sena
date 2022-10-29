@@ -39,7 +39,7 @@ $pass=$_POST["pass"];
         break;
     }
   }else{
-    echo "usuario no existe en el sistema";
+    echo'<div class="alert alert-warning"> Usuario No Existente En El Sitema</div>';
   }
 
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administraci&oacute;n</title>
     <!-- Estilos css -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
 <!-- Registro de personas -->
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3 p-4">
+            <div class="col-3 p-7 mt-5">
             <form class="form p-3 rounded border" method="POST">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
@@ -75,7 +76,7 @@
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-9 p-4">
+            <div class="col-9 p-4 mt-4">
             <?php
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");

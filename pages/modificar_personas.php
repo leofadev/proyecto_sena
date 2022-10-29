@@ -14,7 +14,9 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Registro</title>
     <!-- Estilos css -->
-    <link rel="stylesheet" href="../bootstrap-5.0.2-dist\css\bootstrap.min.css">
+    
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
 <body>
     <?php
@@ -23,8 +25,8 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">
     <div class="row mt-5">
-        <div class="col-12 p-4 d-flex justify-content-center">
-            <form class="form p-3 rounded border" method="POST">
+        <div class="col-12 p-7 d-flex justify-content-center mt-5">
+            <form class="form p-5 rounded border" method="POST">
                 <h3 class="text-center" >Modificar Registro</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
