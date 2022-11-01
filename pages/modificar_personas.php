@@ -20,7 +20,17 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
 </head>
 <body>
     <?php
-    include("../componentes/navbar.php");
+    /*  include("../controller/controlador.php");
+
+    switch ($rol) {
+        case $rol==1:
+            include("../componentes/navbar.php");
+        break;
+        case $rol==2:
+            include("../componentes/navbar_celador.php");
+            break; 
+        }
+ */
     ?>
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">

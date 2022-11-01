@@ -25,10 +25,6 @@
                 include("../crud/model/connection.php");
                 include("../crud-celador/registro_objetos.php");
                 ?>
-                <!-- <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Fecha</label>
-                    <input type="text" class="form-control mb-1" name="fecha">
-                </div> -->
                 <div class="form form-group">
                     <label for="inputPassword2" class=" mb-1">Nombre</label>
                     <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
@@ -41,14 +37,6 @@
                     <label for="inputPassword2" class=" mb-1">Dispositivo</label>
                     <input type="text" class="form-control mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
                 </div>
-                <!-- <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Hora de ingreso</label>
-                    <input type="text" class="form-control mb-1"  name="h_ingreso">
-                </div> -->
-                <!-- <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Hora de salida</label>
-                    <input type="text" class="form-control mb-1"  name="h_salida">
-                </div> -->
                 <div class="form form-group">
                     <label for="inputPassword2" class=" mb-1">Observaciones</label>
                     <input type="text" class="form-control mb-1" placeholder="Ingrese una observación" name="observacion">

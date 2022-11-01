@@ -3,7 +3,7 @@ include("../crud/model/connection.php");
 
 $id=$_GET["id"];
 
-$sql=$con->query(" SELECT * FROM objetos WHERE id=$id")
+$sql=$con->query(" SELECT * FROM objetos WHERE id=$id");
 ?>
 <!-- Pagina para modificar los registros de objetos existentes de la tabla objetos en la base de datos -->
 <!DOCTYPE html>
