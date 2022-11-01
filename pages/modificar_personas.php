@@ -18,19 +18,9 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
-<body>
+<body class="nav">
     <?php
-    /*  include("../controller/controlador.php");
-
-    switch ($rol) {
-        case $rol==1:
-            include("../componentes/navbar.php");
-        break;
-        case $rol==2:
-            include("../componentes/navbar_celador.php");
-            break; 
-        }
- */
+    include("../componentes/navbar.php");
     ?>
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">

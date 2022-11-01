@@ -18,7 +18,7 @@ $sql=$con->query(" SELECT * FROM objetos WHERE id=$id");
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
-<body>
+<body class="nav">
     <?php
         include("../componentes/navbar_celador.php");
     ?>

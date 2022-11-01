@@ -8,11 +8,11 @@
             <div class="row">
             <div class="col-6 text-right">
                     <!-- GITHUB de Pinto-->
-                    <a class="navbar-brand" href=""> &copy;Leonardo Pinto</a>
+                    <a class="navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
             </div>
             <div class="col-6 text-right">
                     <!-- GITHUB de Camargo -->
-                    <a class="navbar-brand" href="#">&copy;Geovanny Camargo</a>
+                    <a class="navbar-brand" href="https://github.com/geovanny-star">&copy;Geovanny Camargo</a>
             </div>
             </div>
     </nav>
