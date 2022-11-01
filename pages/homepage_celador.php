@@ -36,7 +36,7 @@
                 </div>
                 <div class="form form-group">
                     <label for="inputPassword2" class=" mb-1">Documento</label>
-                    <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Numero De Documento" name="documento">
+                    <input type="text" class="form-control mb-1"  placeholder=" Numero De Documento" name="documento">
                 </div>
                 <div class="form form-group">
                     <label for="inputPassword2" class=" mb-1">Correo</label>
