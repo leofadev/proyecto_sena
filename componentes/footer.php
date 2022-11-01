@@ -1,4 +1,4 @@
-
+<div class="container-fluid bg-light">
 <footer>
     <nav class=" nav fixed-button navbar navbar-expand-lg navbar-light bg-light p-5">
             <div class="col-4 text-center">
@@ -17,6 +17,7 @@
             </div>
     </nav>
 </footer>
+</div>
 
 <!-- Codigo JavaScript -->
 <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
