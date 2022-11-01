@@ -13,7 +13,7 @@ if (!empty($_POST["btnModificar"])) {
 
         $sql=$con->query(" UPDATE personas SET tipo_documento=$tipo_documento, documento=$documento, correo='$correo', nombre='$nombre', apellido='$apellido', pass='$pass', rol=$rol WHERE id=$id");
         if ($sql==1) {
-            header("Location:./pages/homepage.php");
+            header("Location:./homepage.php");
         } else {
             echo'<div class="alert alert-danger">Error al modificar la persona</div>';
         }
