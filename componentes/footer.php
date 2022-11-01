@@ -6,6 +6,9 @@
                 <img src="../bootstrap-5.0.2-dist/img/logo-sena-verde.png" alt="Logo" width="50" >
             </div>
             <div class="row">
+                <div class="col-12">
+                    <h4 class="text-center">&copy;Developers</h4>
+                </div>
             <div class="col-6 text-right">
                     <!-- GITHUB de Pinto-->
                     <a class="navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
