@@ -62,7 +62,6 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
                     <label for="inputPassword2" class=" mb-1">Apellido</label>
                     <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Apellido" name="apellido" value="<?= $datos->apellido ?>">
                 </div>
-               
                 <?php }
                 ?>
                 <div class="col-auto">

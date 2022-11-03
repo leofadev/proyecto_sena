@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="nav">
     <?php    
@@ -54,7 +55,7 @@
             include("../crud/model/connection.php");
             include("../crud-celador/modificar_objetos.php");
             ?>
-                <table class="table table-striped text-center text-white">
+                <table class="table table-striped text-center text-white" id="myTable">
                     <thead>
                         <tr>
                             <th scope="col" class="bg-success">Fecha ingreso</th>

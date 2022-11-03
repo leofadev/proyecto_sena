@@ -8,8 +8,6 @@ if (!empty($_POST["btnModificar"])) {
         $correo=$_POST["correo"];
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
-        // $pass=$_POST["pass"];
-        // $rol=$_POST["rol"];
 
         $sql=$con->query("UPDATE `personas` SET `tipo_documento`=' $tipo_documento',`documento`='$documento',`correo`='$correo',`nombre`='$nombre',`apellido`='$apellido' WHERE 1");
         if ($sql==1) {

@@ -1,5 +1,5 @@
 <!-- Menú del Celador -->
-<nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5 ">
+<nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5">
     <div class="container-fluid">   
         <a class="navbar-brand" href="./homepage_celador.php">
             <img class="" src="../bootstrap-5.0.2-dist/img/Logo-sena-blanco.png" width="50">
@@ -15,8 +15,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../pages/listado.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Listado
+                <a class="nav-link text-white" href="../pages/listado.php">
+                        Listados
                     </a>
                 </li>
         </ul>

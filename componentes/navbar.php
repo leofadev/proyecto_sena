@@ -15,16 +15,17 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../pages/listado.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Listado
+                <a class="nav-link text-white" href="../pages/listado.php">
+                        Listado
                     </a>
                 </li>
     </div>
 </div>
+
 <!-- dropdwon para cambiar contraseña, cerrar sesión y mostar -->
 <div class="btn-group d-flex d-flex px-5">
   <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    <!-- icono de cerar sesión  --> action
+    <!-- icono de cerar sesión  --> opciones
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Aqu&iacute; va nombre</a></li>
