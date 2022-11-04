@@ -78,7 +78,7 @@
                     <select for="inputPassword2" class=" form-select mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
                     <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                     <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="1">Administrador</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="2">Celador</option>
+                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="2">Vigilante</option>
                     <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
                     </select>
                 </div>

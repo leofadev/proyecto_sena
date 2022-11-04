@@ -35,7 +35,7 @@
         <div class="row mt-5">
             <div class="col-3 p-7 mt-5">
             <form class="form p-5 rounded border" method="POST">
-                <h3 class="text-center" >Registraduria Nacional</h3>
+                <h3 class="text-center" >Registro de personas</h3>
                 <?php
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
@@ -69,8 +69,6 @@
                     <label for="exampleInputEmail1" class="form-label mb-1">Roles</label>
                     <select for="inputPassword2" class=" form-select mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
                     <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="1">Administrador</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="2">Vigilante</option>
                     <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
                     </select>
                 </div>

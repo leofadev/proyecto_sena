@@ -4,6 +4,7 @@ session_start();
 if(isset($_SESSION['documento'])){
   header("Location: ../pages/homepage.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,6 +33,7 @@ if(isset($_SESSION['documento'])){
       <div class="mt-3 text-center fs-1 fw-bold">
         <h2 class="text-black">Iniciar Sesi&oacute;n</h2>
       </div>
+      
       <div class="input-group mt-5">
         <div class="input-group-text">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

@@ -1,7 +1,7 @@
 <!-- Este codigo hace que segun el rol que tenga la persona en la base de datos, al momento de ingresar los datos le redirija a su pagina web correspondiente, ya sea administrador o ususario -->
 
 <?php
-include'../crud/model/connection.php';
+  include("../crud/model/connection.php");
 
 if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST["pass"])){
   $documento= $_POST["documento"];
@@ -13,9 +13,14 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
 // CONDICIONAL PARA SABER SI EXISTE EL USUARIO
   if($numeroRegistros>0){
     while($registro = mysqli_fetch_array($arreglosDatos)){
+      $docmuento=$registro["documento"];
       $contrasena= $registro['pass'];
       $rol = $registro['rol'];
     }
+
+    //VERIFICAR DOCUMENTO
+  
+
     // VERIFICAR LA CONTRASEÑA
     if(password_verify($pass, $contrasena)){
       session_start();
@@ -40,27 +45,18 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
     }  
     
   } else{
- 
+    echo'<script>
+    alert("El número de documento está vacío, por favor verifica los datos introducidos");
+    window.location= "../index.php";
+  </script>'; 
   }
-    
-// if(){
-//     if ($registro = mysqli_fetch_array($arreglosDatos)){
-//       $id = $registro['id'];
-//       $documento = $registro['tipo_documento'];
-//       $documento = $registro['documento'];
-//       $correo = $registro['correo'];
-//       $nombre = $registro['nombre'];
-//       $apellido = $registro['apellido']; 
-//       $pass= $registro['pass']; 
-//       $rol = $registro['rol']; 
-//     }
-//   }
-//     //$consulta = "SELECT * FROM personas WHERE documento=$documento AND pass=$pass";
 
-    
-//   }
- 
-
+}
+else{
+  echo'<script>
+        alert("Los campos están vacíos, por favor verifica los datos introducidos");
+        window.location= "../index.php";
+      </script>';
 }
 
 ?>
