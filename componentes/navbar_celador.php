@@ -15,26 +15,25 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white" href="../pages/listado.php">
+                    <a class="nav-link text-white" href="../pages/listado.php">
                         Listados
                     </a>
                 </li>
-        </ul>
+            </ul>
+            <li class="nav-item dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle ml-5" data-bs-toggle="dropdown" aria-expanded="false">
+                        <!-- icono de cerar sesión  --> opciones
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Aqu&iacute; va nombre</a></li>
+                    <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>
+                </ul>
+            </li>
     </div>
 </div>
-
-<!-- dropdwon para cambiar contraseña, cerrar sesión y mostar -->
-<div class="btn-group d-flex px-5">
-  <button type="button" class="btn btn-success border border-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    <!-- icono de cerar sesión  --> action
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Aqu&iacute; va nombre</a></li>
-    <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>
-  </ul>
-</div>
 </nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
