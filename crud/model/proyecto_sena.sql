@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2022 a las 02:12:35
+-- Tiempo de generación: 05-11-2022 a las 13:27:24
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -90,8 +90,8 @@ CREATE TABLE `personas` (
 --
 
 INSERT INTO `personas` (`id`, `tipo_documento`, `documento`, `correo`, `nombre`, `apellido`, `pass`, `rol`) VALUES
-(26, 3, 1007199208, 'geovannyroman2019@gmail.com', 'Geovanny', 'Camargo', '1234', 1),
-(28, 3, 1041850153, 'leonardopinto@gmail.com', 'leonardo', 'pinto', '1234', 2);
+(31, 4, 1326952475, 'greogo@gmail.com', 'paula', 'Pinto', '$2y$10$Vxz.nDc0AV/tS481dCzaLe0av97pUFBvCB/1GmtNeFR7UZFimvLqC', 2),
+(40, 5, 1122222, 'grpaa@gmail.com', 'leonardo', 'pinto', '$2y$10$C0LuMroikw6rnihvptrMyOJfsr1C4TSFe7Ov2yXBo3WezbbAFK8ha', 1);
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `sub_item` (
 
 INSERT INTO `sub_item` (`id`, `id_item`, `descripcion`) VALUES
 (1, 1, 'administrador'),
-(2, 1, 'usuario'),
+(2, 1, 'vigilante'),
 (3, 2, 'TI'),
 (4, 2, 'CC'),
 (5, 2, 'CE'),
@@ -169,7 +169,7 @@ ALTER TABLE `objetos`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `sub_item`
