@@ -20,7 +20,7 @@
 ?>
 <div class="container mt-5">
 <!-- Inicio del CRUD -->
-<div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4  mt-5">
+<div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4  mt-5 ml-auto mr-auto">
             <?php
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");

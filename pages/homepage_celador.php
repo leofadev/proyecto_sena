@@ -31,7 +31,7 @@
     include("../componentes/navbar_celador.php");
     ?>
 <!-- Registro de personas -->
-    <div class="container">
+    <div class="container m-auto ">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-7 mt-5">
             <form class="form p-5 rounded border" method="POST">
@@ -81,6 +81,7 @@
 
             <!-- Inicio del CRUD -->
             <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-7 mt-5">
+            <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");
@@ -118,6 +119,7 @@
                             ?> 
                         </tbody>
                 </table>
+            </div>
             </div>
             <!-- Fin del CRUD -->
         </div>

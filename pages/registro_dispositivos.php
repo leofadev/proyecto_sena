@@ -16,7 +16,6 @@
         include("../componentes/navbar_celador.php");
     ?>  
     <!-- Formulario para registrar objetos -->
-    <!-- Darle estilos a los formularios y  las tablas -->
 <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-7 mt-5">
