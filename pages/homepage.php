@@ -138,7 +138,7 @@
                             <th scope="col" class="bg-success">Eliminar</th>
                         </tr>
                     </thead>
-                        <tbody>
+                        <tbody id="myTable" >
                             <?php
                             include("../crud/model/connection.php");
                             $sql = $con->query(" SELECT * FROM personas");

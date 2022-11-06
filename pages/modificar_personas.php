@@ -3,7 +3,7 @@ include("../crud/model/connection.php");
 
 $id=$_GET["id"];
 
-$sql=$con->query(" SELECT * FROM personas WHERE id=$id");
+$sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
 ?>
 <!-- Pagina para modificar los registros de usuarios existentes en la tabla personas de la base de datos -->
 <!DOCTYPE html>
@@ -33,10 +33,6 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id");
                 include("../crud/controller/modificar_persona.php");
 
                 while ($datos=$sql->fetch_object()) {?>
-                <!-- <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Tipo De Documento</label>
-                    <input class="form-control mb-1" list="listaDocumento" id="exampleDataList" placeholder="Tipo de documento" name="tipo_documento" value="<= $datos->tipo_documento?>">
-                </div> -->
                 <div class="form form-group">
                     <label for="exampleInputEmail1" class="form-label mb-1">Tipo de documento</label>
                     <select for="inputPassword2" class=" form-select mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">

@@ -3,7 +3,7 @@
 <!-- Menú del Administrador -->
 <nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5">
     <div class="container-fluid">   
-        <a class="navbar-brand" href="./homepage_celador.php">
+        <a class="navbar-brand" href="./homepage.php">
             <img class="" src="../bootstrap-5.0.2-dist/img/Logo-sena-blanco.png" width="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,9 +11,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"   style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/homepage.php">
+                        Ingresar Usuario
+                    </a>
+                </li>
                 <li class="nav-item">
                 <a class="nav-link text-white" href="../pages/listado.php">
-                        Listados
+                        Listado Usuarios
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/listado_ingreso.php">
+                        Listado Ingresos
                     </a>
                 </li>
         </ul>
@@ -21,12 +31,12 @@
                     <button type="button" class="btn btn-success dropdown-toggle ml-5" data-bs-toggle="dropdown" aria-expanded="false">
                         <!-- icono de cerar sesión  --> opciones
                     </button>
-                      <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Aqu&iacute; va nombre</a></li>
                         <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>
-                      </ul>
+                        </ul>
                 </li>
     </div>
 </div>

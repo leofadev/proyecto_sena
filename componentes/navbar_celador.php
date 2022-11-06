@@ -10,13 +10,23 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"   style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
+                <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/homepage_celador.php">
+                        Ingresar Usuario
+                    </a>
+                </li>
                     <a class="nav-link text-white" href="./registro_dispositivos.php">
                         Registro Dispositivos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../pages/listado.php">
-                        Listados
+                <a class="nav-link text-white" href="#">
+                        Listado Usuarios
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="#">
+                        Listado Ingresos
                     </a>
                 </li>
             </ul>
