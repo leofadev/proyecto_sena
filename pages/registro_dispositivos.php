@@ -16,9 +16,9 @@
         include("../componentes/navbar_celador.php");
     ?>  
     <!-- Formulario para registrar objetos -->
-<div class="container mt-5">
+<div class="container-fluid mt-5">
         <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-7 mt-5">
+            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
             <form class="form p-3 rounded border" method="POST">
                 <h3 class="text-center" >Registro De Objetos</h3>
                 <?php
@@ -49,7 +49,7 @@
                 <!-- Fin de formulario para registrar objetos -->
 
                 <!-- Inicio del CRUD -->
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-7 mt-5">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
             <?php
             include("../crud/model/connection.php");
             include("../crud-celador/modificar_objetos.php");

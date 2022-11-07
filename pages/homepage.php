@@ -69,9 +69,9 @@
 <!-- Fin del section inicio -->
 
 <!-- Registro de personas -->
-    <div class="container m-auto  " id="crud">
+    <div class="container-fluid" id="crud">
         <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-7 mt-5">
+            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
             <form class="form p-3 rounded border" method="POST">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
@@ -120,7 +120,7 @@
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-4">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
