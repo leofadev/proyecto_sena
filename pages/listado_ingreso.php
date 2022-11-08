@@ -16,11 +16,12 @@
 <body class="nav">
 
 <?php
+session_start();
     include("../componentes/navbar.php");
 ?>
 <div class="container mt-5">
     <!-- Inicio del CRUD -->
-    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-7 mt-5 ml-auto mr-auto">
+    <div class="col-12 col-sm-12 col-md-10 col-xl-10 p-4 mt-5 ml-auto mr-auto">
         <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
@@ -29,6 +30,7 @@
                 <table class="table table-striped text-center text-white" id="myTable">
                     <thead>
                         <tr>
+                            <th scope="col" class="bg-success">Vigilante</th>
                             <th scope="col" class="bg-success">Fecha ingreso</th>
                             <th scope="col" class="bg-success">Nombre</th> 
                             <th scope="col" class="bg-success">cargo</th>
@@ -46,6 +48,7 @@
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">
+                                <td><?= $datos->vigilante?></td>
                                 <td><?= $datos->fecha?></td>
                                 <td><?= $datos->nombre?></td>
                                 <td><?= $datos->cargo?></td>

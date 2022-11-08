@@ -17,6 +17,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/items.php">
+                        Ingresar Roles
+                    </a>
+                </li>
+                <li class="nav-item">
                 <a class="nav-link text-white" href="../pages/listado.php">
                         Listado Usuarios
                     </a>
@@ -32,7 +37,20 @@
                         <!-- icono de cerar sesión  --> opciones
                     </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Aqu&iacute; va nombre</a></li>
+                            <?php
+                                include("../crud/model/connection.php");
+                                
+                                $documento = $_SESSION["documento"];
+                                $sql = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
+                                $resultado = $con->query($sql);
+
+                                while ($datos=$resultado->fetch_assoc()) {
+                                    $nombre = $datos['nombre'];
+                                    $apellido = $datos['apellido'];
+                                
+                            ?>
+                        <li><a class="dropdown-item" href="#"><?php echo $nombre." ".$apellido;?></a></li>
+                        <?php } ?>
                         <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>

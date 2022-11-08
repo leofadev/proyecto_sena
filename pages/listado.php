@@ -16,6 +16,7 @@
 <body class="nav">
 
 <?php
+session_start();
     include("../componentes/navbar.php");
 ?>
 <div class="container mt-5">
