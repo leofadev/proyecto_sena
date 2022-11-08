@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    if(!isset($_SESSION ['documento'])){
+        echo '<script>
+            alert("Por favor inicie sesión");
+            
+        </script>';
+        
+        header("Location: ../index.php");
+        session_destroy();
+        die();
+    }
+
+
+?>
 <!-- Pagina de los listados de registro de objetos -->
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +31,6 @@
 <body class="nav">
 
 <?php
-session_start();
     include("../componentes/navbar.php");
 ?>
 <div class="container mt-5">

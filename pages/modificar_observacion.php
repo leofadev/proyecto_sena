@@ -1,4 +1,18 @@
 <?php
+
+session_start();
+if(!isset($_SESSION ['documento'])){
+    echo '<script>
+        alert("Por favor inicie sesión");
+        
+    </script>';
+    
+    header("Location: ../index.php");
+    session_destroy();
+    die();
+}
+
+
 include("../crud/model/connection.php");
 
 $id=$_GET["id"];
@@ -34,19 +48,19 @@ $sql=$con->query(" SELECT `observacion` FROM `objetos` WHERE  id=$id ");
             include("../crud/model/connection.php");
             include("../crud-celador/editar_observacion.php");
 
-                while($datos=$sql->fetch_object()) {
-            ?>
+            while ($datos=$sql->fetch_object()) { ?>
             
             <div class="col-12 form form-group">
                 <label  class=" mb-1">Observaci&oacute;n</label>
-                <input type="text" class="form-control mb-1" name="observacion" value="<?= $datos-> observacion?>">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-success mt-2" value="ok" name="btnModificar">Modificar</button>
+                <input type="text" class="form-control mb-1" name="observacion" 
+                value="<?= $datos-> observacion?>">
             </div>
             <?php
                 }
             ?>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success mt-2" value="ok" name="btnModificar">Modificar</button>
+            </div>
         </form>
         </div>
         <!-- Fin de formulario para registrar objetos -->      

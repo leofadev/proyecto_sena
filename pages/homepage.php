@@ -40,11 +40,9 @@
     ?>
 <!-- Section inicio -->
 <section class="container mt-5">
-    <div class="row">
-        <div class="col-12 mt-5 ">
-            <h1 class="text-success">Sede TIC</h1>
-        </div>
+<div class="row mt-5">
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
+        <h1 class="text-success mb-3">Sede TIC</h1>
             <h4 class="text-center text-black" >Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
             <p class="h5 mt-4 text-secondary" >En este node del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
         </div>

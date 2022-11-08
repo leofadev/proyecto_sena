@@ -1,4 +1,17 @@
 <?php
+session_start();
+if(!isset($_SESSION ['documento'])){
+    echo '<script>
+        alert("Por favor inicie sesión");
+        
+    </script>';
+    
+    header("Location: ../index.php");
+    session_destroy();
+    die();
+}
+
+
 include("../crud/model/connection.php");
 
 $id=$_GET["id"];

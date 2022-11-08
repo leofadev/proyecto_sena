@@ -37,7 +37,6 @@
                 <ul class="dropdown-menu">
                 <?php
                                 include("../crud/model/connection.php");
-                                session_start();
                                 $documento = $_SESSION["documento"];
                                 $sql = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
                                 $resultado = $con->query($sql);
