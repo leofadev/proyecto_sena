@@ -1,6 +1,21 @@
+<?php
+session_start();
+if (!isset($_SESSION['documento'])) {
+    echo '<script>
+        alert("Por favor inicie sesión");
+        
+    </script>';
+
+    header("Location: ../index.php");
+    session_destroy();
+    die();
+}
+
+?>
 <!-- Pagina para los registros de objetos  -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,99 +26,185 @@
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
-<body class="nav">
-    <?php    
-        include("../componentes/navbar_celador.php");
-    ?>  
-    <!-- Formulario para registrar objetos -->
-    <!-- Darle estilos a lpos formularios y  las tablas -->
-<div class="container mt-5">
-        <div class="row mt-5">
-            <div class="col-3 p-7 mt-5">
-            <form class="form p-3 rounded border" method="POST">
-                <h3 class="text-center" >Registro De Objetos</h3>
-                <?php
-                include("../crud/model/connection.php");
-                include("../crud-celador/registro_objetos.php");
-                ?>
-                <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Nombre</label>
-                    <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
-                </div>
-                <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Cargo</label>
-                    <input type="text" class="form-control mb-1" placeholder="Ingrese Su Cargo"  name="cargo">
-                </div>
-                <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Dispositivo</label>
-                    <input type="text" class="form-control mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
-                </div>
-                <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Observaciones</label>
-                    <input type="text" class="form-control mb-1" placeholder="Ingrese una observación" name="observacion">
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-success mt-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
-                </div>
-            </form>
-            </div>
-                <!-- Fin de formulario para registrar objetos -->
 
-                <!-- Inicio del CRUD -->
-            <div class="col-9 p-7 mt-5">
-            <?php
-            include("../crud/model/connection.php");
-            include("../crud-celador/modificar_objetos.php");
-            ?>
-                <table class="table table-striped text-center text-white" id="myTable">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="bg-success">Fecha ingreso</th>
-                            <th scope="col" class="bg-success">Nombre</th> 
-                            <th scope="col" class="bg-success">cargo</th>
-                            <th scope="col" class="bg-success">Dispositivo</th>
-                            <th scope="col" class="bg-success">Hora Ingreso</th>
-                            <th scope="col" class="bg-success">Fecha Salida</th>
-                            <th scope="col" class="bg-success">Hora Salida</th>
-                            <th scope="col" class="bg-success">Observacion</th>
-                            <th scope="col" class="bg-success">Actualizar Salida</th>
-                        </tr>
-                    </thead>
-                        <tbody id="myTable">
+<body class="nav">
+    <?php
+    include("../componentes/navbar_celador.php");
+    ?>
+    <div class="container-fluid mt-5">
+        <div class="row mt-5">
+            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
+                <form class="form p-3 rounded border" method="POST">
+                    <h3 class="text-center">Buscar usuario</h3>
+                    <?php
+                    include("../crud/model/connection.php");
+                    include("../crud-celador/registro_documento.php");
+                    ?>
+                    <div class="form form-group">
+                        <label for="inputPassword2" class=" mb-1">Documento</label>
+                        <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="documento">
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success mt-2" value="ok" name="btnDocumento">Buscar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Formulario para registrar objetos -->
+            <div class="container-fluid mt-5">
+                <div class="row mt-5">
+                    <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
+                        <form class="form p-3 rounded border" method="POST">
+                            <h3 class="text-center">Registro De Objetos</h3>
                             <?php
                             include("../crud/model/connection.php");
-                            $sql = $con->query(" SELECT * FROM objetos");
-                            while($datos=$sql->fetch_object()) {?>
+                            include("../crud-celador/registro_objetos.php");
 
-                            <tr class="table-active">
-                                <td><?= $datos->fecha?></td>
-                                <td><?= $datos->nombre?></td>
-                                <td><?= $datos->cargo?></td>
-                                <td><?= $datos->dispositivo?></td>
-                                <td><?= $datos->h_ingreso?></td>
-                                <td><?= $datos->fecha_salida?></td>
-                                <td><?= $datos->h_salida?></td>
-                                <td><?= $datos->observacion?></td>
-                                <td>
-                                    <a class="btn btn-small btn-success" href="./modificar_objeto.php?id=<?= $datos->id ?>">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> 
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
-                                </td>
-                            </tr>
-                        <?php
+                            include("../crud/controller/modificar_persona.php");
+                            ?>
+
+                            <?php
+                            include("../crud-celador/registro_documento.php");
+
+                            $name = $con->query("SELECT `documento` FROM `personas` WHERE `documento` = '$documento'");
+
+
+                            while ($dato = $name->fetch_object()) {
+
+                            ?>
+                                <div class="form form-group">
+                                    <label class=" mb-1">Documento</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
+                                </div>
+                            <?php
                             }
-                            ?> 
-                        </tbody>
-                </table>
+                            ?>
+                            <?php
+                            include("../crud-celador/registro_documento.php");
+                            $nombre_sql = $con->query("SELECT `nombre` FROM `personas` WHERE `documento` = '$documento'");
+                            while ($date = $nombre_sql->fetch_object()) {
+
+                            ?>
+                                <div class="form form-group">
+                                    <label class=" mb-1">Nombre</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
+                                </div>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            include("../crud-celador/registro_documento.php");
+                            $apellido_sql = $con->query("SELECT `apellido` FROM `personas` WHERE `documento` = '$documento'");
+
+                            while ($dati = $apellido_sql->fetch_object()) {
+
+                            ?>
+                                <div class="form form-group">
+                                    <label class=" mb-1">Apellido</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
+                                </div>
+                            <?php
+                            }
+                            ?>
+                            <div class="form form-group">
+                                <label class=" mb-1">Cargo</label>
+                                <input type="text" class="form-control mb-1" placeholder="Ingrese Su Cargo" name="cargo">
+                            </div>
+                            <div class="form form-group">
+                                <label class=" mb-1">Dispositivo</label>
+                                <input type="text" class="form-control mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
+                            </div>
+                            <div class="form form-group">
+                                <label class=" mb-1">Observaciones</label>
+                                <input type="text" class="form-control mb-1" placeholder="Ingrese una observación" name="observacion">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-success mt-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Fin de formulario para registrar objetos -->
+
+                    <!-- Inicio del CRUD -->
+                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
+                        <div class="overflow-auto">
+                            <?php
+                            include("../crud/model/connection.php");
+                            include("../crud-celador/modificar_objetos.php");
+                            ?>
+                            <table class="table table-striped text-center text-white" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="bg-success">Vigilante</th>
+                                        <th scope="col" class="bg-success">Documento</th>
+                                        <th scope="col" class="bg-success">Apellido</th>
+                                        <th scope="col" class="bg-success">Nombre</th>
+                                        <th scope="col" class="bg-success">cargo</th>
+                                        <th scope="col" class="bg-success">Dispositivo</th>
+                                        <th scope="col" class="bg-success">Fecha ingreso</th>
+                                        <th scope="col" class="bg-success">Hora Ingreso</th>
+                                        <th scope="col" class="bg-success">Fecha Salida</th>
+                                        <th scope="col" class="bg-success">Hora Salida</th>
+                                        <th scope="col" class="bg-success">Observaci&oacute;n</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <?php
+                                    include("../crud/model/connection.php");
+                                    $sql = $con->query(" SELECT * FROM objetos");
+                                    while ($datos = $sql->fetch_object()) { ?>
+
+                                        <tr class="table-active">
+                                            <td></td>
+                                            <td><?= $datos->documento ?></td>
+                                            <td><?= $datos->nombre ?></td>
+                                            <td><?= $datos->apellido ?></td>
+                                            <td><?= $datos->cargo ?></td>
+                                            <td><?= $datos->dispositivo ?></td>
+                                            <td><?= $datos->fecha ?></td>
+                                            <td><?= $datos->h_ingreso ?></td>
+                                            <td>
+
+
+                                                <?php
+                                                if (empty($datos->fecha_salida)) {
+                                                    echo '<a class="btn btn-small btn-success"
+                                                     href="./modificar_objeto.php?id=<?= $datos->id ?>">
+                                                     pendient</a>';
+                                                } else {
+                                                    echo $datos->fecha_salida;
+                                                }
+                                                ?>
+
+                                            </td>
+                                            <td><?= $datos->h_salida ?></td>
+                                            <td>
+                                                <?php
+                                                if (empty($datos->observacion)) {
+                                                    echo '<a class="btn btn-small btn-success" href="../pages/modificar_observacion.php?id=<?= $datos->id ?>">pendiente</a>';
+                                                } else {
+                                                    echo $datos->observacion;
+                                                }
+                                                ?>
+                                            </td>
+
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Fin del CRUD -->
+                </div>
+                <br><br><br><br><br><br><br><br><br>
             </div>
-            <!-- Fin del CRUD -->
-        </div>
-    </div>
+
 </body>
+
 </html>
-
-
 
 <?php
 include("../componentes/footer.php");

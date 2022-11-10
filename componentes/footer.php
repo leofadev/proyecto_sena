@@ -1,26 +1,29 @@
-<!-- <div class="container-fluid bg-light mt-5">
+<div class="container-fluid bg-light mt-4 p-3">
 <footer>
-    <container class="bg-light">
-            <div class="col-4 text-center">
-                Logo del Sena 
+    <div class="container bg-light">
+            
+            <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-xl-4 text-center">
+                <!-- Logo del Sena  -->
                 <img src="../bootstrap-5.0.2-dist/img/logo-sena-verde.png" alt="Logo" width="50">
             </div>
-            <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-md-6 col-xl-6">
                     <h4 class="text-center">&copy;Developers</h4>
-                </div>
-            <div class="col-6 text-right">
-                     GITHUB de Pinto
+                    <div class="row">
+                    <div class="col-6 text-right">
+                    <!-- GITHUB de Pinto -->
                     <a class="navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
             </div>
-            <div class="col-6 text-right">
-                     GITHUB de Camargo
+            <div class="col-6 text-left">
+                    <!-- GITHUB de Camargo -->
                     <a class="navbar-brand" href="https://github.com/geovanny-star">&copy;Geovanny Camargo</a>
             </div>
             </div>
-</container>
+                    </div>
+                </div>
+</div>
 </footer>
-</div> -->
+</div> 
 
 <!-- Codigo JavaScript -->
 <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

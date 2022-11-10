@@ -38,10 +38,38 @@
 <?php
     include("../componentes/navbar.php");
     ?>
+<!-- Section inicio -->
+<section class="container mt-5">
+<div class="row mt-5">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
+        <h1 class="text-success mb-3">Sede TIC</h1>
+            <h4 class="text-center text-black" >Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
+            <p class="h5 mt-4 text-secondary" >En este node del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
+            <div class=" shadow p-3 mb-5 bg-white rounded mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center">
+                    <img src="../bootstrap-5.0.2-dist/img/logo-sena-verde.png" class="img-fluid rounded-start" alt="Logo-Sena">
+                    </div>
+                    <div class="col-md-8 mt-4 pl-5">
+                    <div class="card-body mt-2">
+                        <h5 class="card-title">Administraci&oacute;n</h5>
+                        <a class="btn btn-success" href="#crud">Registar Usuarios</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+<!-- Fin del section inicio -->
+
 <!-- Registro de personas -->
-    <div class="container">
+    <div class="container-fluid" id="crud">
         <div class="row mt-5">
-            <div class="col-3 p-7 mt-5">
+            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
             <form class="form p-3 rounded border" method="POST">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
@@ -90,7 +118,8 @@
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-9 p-4 mt-4">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
+            <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");
@@ -108,7 +137,7 @@
                             <th scope="col" class="bg-success">Eliminar</th>
                         </tr>
                     </thead>
-                        <tbody>
+                        <tbody id="myTable" >
                             <?php
                             include("../crud/model/connection.php");
                             $sql = $con->query(" SELECT * FROM personas");
@@ -141,6 +170,7 @@
                             ?> 
                         </tbody>
                 </table>
+                </div>
             </div>
             <!-- Fin del CRUD -->
         </div>

@@ -54,7 +54,7 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
 }
 else{
   echo'<script>
-        alert("Los campos están vacíos, por favor verifica los datos introducidos");
+        alert("Los campos están vacíos!");
         window.location= "../index.php";
       </script>';
 }

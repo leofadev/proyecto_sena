@@ -1,4 +1,4 @@
-<!-- web login -->
+<!-- web login index.php-->
 <?php
 session_start();
 if(isset($_SESSION['documento'])){
@@ -64,7 +64,13 @@ if(isset($_SESSION['documento'])){
           href="#"
           class=" text-decoration-none text-secondary fw-semibold fst-italic"
           style="font-size: 0.9rem"
-          >Olvidaste tú contraseña?</a>
+          >¿Olvidaste tú contraseña?</a>
+        </div>
+        <a
+          href="#"
+          class=" text-decoration-none text-secondary fw-semibold fst-italic"
+          style="font-size: 0.9rem"
+          >¿Cambiar contraseña?</a>
         </div>
       </div>
       <input type="submit" class="btn bg-sena text-white w-100 mt-4 fw-semibold shadow-sm" name="btningresar"
