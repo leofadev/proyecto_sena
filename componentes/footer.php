@@ -1,5 +1,4 @@
-<div class="container-fluid bg-light mt-4 p-3">
-<footer>
+<footer class="container-fluid bg-light mt-4 p-3">
     <div class="container bg-light">
             
             <div class="row">
@@ -23,7 +22,7 @@
                 </div>
 </div>
 </footer>
-</div> 
+
 
 <!-- Codigo JavaScript -->
 <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

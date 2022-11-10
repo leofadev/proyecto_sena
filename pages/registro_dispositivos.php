@@ -129,8 +129,7 @@ if (!isset($_SESSION['documento'])) {
                     <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
                         <div class="overflow-auto">
                             <?php
-                            include("../crud/model/connection.php");
-                            include("../crud-celador/modificar_objetos.php");
+                            include("../crud/model/connection.php"); 
                             ?>
                             <table class="table table-striped text-center text-white" id="myTable">
                                 <thead>
@@ -169,9 +168,8 @@ if (!isset($_SESSION['documento'])) {
 
                                                 <?php
                                                 if (empty($datos->fecha_salida)) {
-                                                    echo '<a class="btn btn-small btn-success"
-                                                     href="./modificar_objeto.php?id=<?= $datos->id ?>">
-                                                     pendient</a>';
+                                                    echo '<button type="button" class="btn btn-success">pendiente</button>
+                                                    ';
                                                 } else {
                                                     echo $datos->fecha_salida;
                                                 }
@@ -182,7 +180,8 @@ if (!isset($_SESSION['documento'])) {
                                             <td>
                                                 <?php
                                                 if (empty($datos->observacion)) {
-                                                    echo '<a class="btn btn-small btn-success" href="../pages/modificar_observacion.php?id=<?= $datos->id ?>">pendiente</a>';
+                                                    echo '<button type="button" class="btn btn-success">pediente</button>
+                                                    ';
                                                 } else {
                                                     echo $datos->observacion;
                                                 }
