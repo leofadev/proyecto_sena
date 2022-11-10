@@ -1,4 +1,4 @@
-<!-- web login index.php-->
+<!-- pagina del login, index.php -->
 <?php
 session_start();
 if(isset($_SESSION['documento'])){
