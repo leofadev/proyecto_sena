@@ -5,9 +5,14 @@ if (!empty($_POST["btnModificar"])) {
         $id=$_POST["id"];
         $item=$_POST["item"];
 
-        $sql=$con->query("UPDATE `item` SET `descripcion`=' $item' WHERE `id`=$id");
+        $sql=$con->query("UPDATE `item` SET `descripcion`='$item' WHERE `id`='$id'");
         if ($sql==1) {
-            header("Location:./items.php");
+             echo '<script>
+             window.location = "../pages/items.php";
+         </script>
+         
+         ';
+         exit();
         } else {
             echo'<div class="alert alert-danger">Error al modificar item</div>';
         }
@@ -17,3 +22,4 @@ if (!empty($_POST["btnModificar"])) {
     }
 }
 ?>
+

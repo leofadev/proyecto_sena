@@ -6,9 +6,12 @@ if (!empty($_POST["btnModificar"])) {
         $sub_item=$_POST["sub_item"];
 
 
-        $sql=$con->query("UPDATE `item` SET `descripcion`=' $sub_item' WHERE `id`=$id");
-        if ($sql==1) {
-            header("Location:./items.php");
+        $sql_sub=$con->query("UPDATE `sub_item` SET `descripcion`='$sub_item' WHERE `id`=$id");
+        if ($sql_sub==1) {
+            echo '<script>
+            window.location = "../pages/items.php";
+        </script>';
+        
         } else {
             echo'<div class="alert alert-danger">Error al modificar sub_item</div>';
         }

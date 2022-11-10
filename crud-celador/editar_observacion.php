@@ -8,7 +8,9 @@ if (!empty($_POST["btnModificar"])) {
         
         $sql=$con->query(" UPDATE `objetos` SET `observacion`='$observacion' WHERE id=$id");
         if ($sql==1) {
-            header("Location:../pages/registro_dispositivos.php");
+            echo'<script>
+            window.location = "../pages/registro_dispositivos.php";
+        </script>'; 
         }else{
             echo'<div class="alert alert-danger"> Error Al Modificar La Observaci&oacute;n</div>';
         }

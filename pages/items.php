@@ -135,7 +135,7 @@
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
-            $sql = $con->query("SELECT * FROM sub_item");
+            $sql_sub = $con->query("SELECT * FROM sub_item");
             
             ?>
                 <table class="table table-striped table-hover text-center text-white" id="myTable">
@@ -150,17 +150,9 @@
                         <tbody>
                         
                         <?php
-                            while($datos=$sql->fetch_object()) {
-                            $sql_tipoDoc = $con->query("SELECT descripcion FROM sub_item WHERE id = '$datos->id_item'");
-                            while($row= mysqli_fetch_array($sql_tipoDoc)) {
-                            $tipoDoc = $row['descripcion'];
-                            }
-                            $sql_rol = $con->query("SELECT descripcion FROM sub_item WHERE id = '$datos->id_item'");
-                            while($row= mysqli_fetch_array($sql_rol)) {
-                            $rol = $row['descripcion'];
-                            }
                         
-                        
+                            while($datos=$sql_sub->fetch_object()) {
+                           
                         ?>
                             <tr class="table-active">
                                 <td><?=$datos->id_item?></td>

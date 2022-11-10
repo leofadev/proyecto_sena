@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2022 a las 13:27:24
+-- Tiempo de generación: 10-11-2022 a las 01:23:11
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -37,8 +37,11 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `descripcion`) VALUES
-(2, 'identificadores'),
-(1, 'roles');
+(5, 'cargo'),
+(3, 'ejemplo'),
+(4, 'ejemplo0000'),
+(1, 'roles'),
+(2, 'tipo documento');
 
 -- --------------------------------------------------------
 
@@ -48,25 +51,39 @@ INSERT INTO `item` (`id`, `descripcion`) VALUES
 
 CREATE TABLE `objetos` (
   `id` int(11) NOT NULL,
+  `vigiliante` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
+  `documento` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `fecha` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `nombre` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `cargo` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `dispositivo` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `h_ingreso` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
-  `fecha_salida` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_salida` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
   `h_salida` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `observacion` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+  `observacion` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `objetos`
 --
 
-INSERT INTO `objetos` (`id`, `fecha`, `nombre`, `cargo`, `dispositivo`, `h_ingreso`, `fecha_salida`, `h_salida`, `observacion`) VALUES
-(26, '2022/10/28', 'geovanny', 'aprendiz', 'lenovo-pc', '07:15:05', '2022/11/02', '07:59:09', 'ninguna'),
-(27, '2022/10/28', 'pedro', 'instructor', 'lenovo-pc', '07:58:59', '2022/10/28', '07:59:14', 'pack mouse, 2 cargador'),
-(30, '2022/10/28', 'melanie', 'aprendiz', 'lenovo-pc', '08:09:09', '2022/11/02', '08:08:13', 'ninguna'),
-(31, '2022/11/02', 'maria', 'aprendiz', 'lenovo pc', '08:09:02', '2022/11/02', '08:09:07', 'sin cargador');
+INSERT INTO `objetos` (`id`, `vigiliante`, `documento`, `fecha`, `nombre`, `apellido`, `cargo`, `dispositivo`, `h_ingreso`, `fecha_salida`, `h_salida`, `observacion`) VALUES
+(26, '', '', '2022/10/28', 'geovanny', '', 'aprendiz', 'lenovo-pc', '07:15:05', '2022/11/08', '05:47:14', 'varias'),
+(40, '', '1007199208', '2022/11/08', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '07:01:12', '2022/11/09', '11:31:27', 'ninguna'),
+(44, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '12:35:11', NULL, NULL, 'sin cargador'),
+(45, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '01:42:38', NULL, NULL, NULL),
+(46, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '01:42:52', NULL, NULL, NULL),
+(47, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '01:56:49', NULL, NULL, NULL),
+(48, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '01:57:27', NULL, NULL, NULL),
+(49, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '01:58:20', NULL, NULL, NULL),
+(50, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '02:17:32', NULL, NULL, NULL),
+(51, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '02:17:43', NULL, NULL, NULL),
+(52, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '02:18:26', NULL, NULL, NULL),
+(53, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'lenovo-pc', '02:18:34', NULL, NULL, NULL),
+(54, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'gffffff', '02:44:52', NULL, NULL, NULL),
+(55, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'gffffff', '02:50:29', NULL, NULL, NULL),
+(56, '', '1007199208', '2022/11/09', 'del valle', 'maria', 'aprendiz', 'gffffff', '02:51:09', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,7 +108,8 @@ CREATE TABLE `personas` (
 
 INSERT INTO `personas` (`id`, `tipo_documento`, `documento`, `correo`, `nombre`, `apellido`, `pass`, `rol`) VALUES
 (31, 4, 1326952475, 'greogo@gmail.com', 'paula', 'Pinto', '$2y$10$Vxz.nDc0AV/tS481dCzaLe0av97pUFBvCB/1GmtNeFR7UZFimvLqC', 2),
-(40, 5, 1122222, 'grpaa@gmail.com', 'leonardo', 'pinto', '$2y$10$C0LuMroikw6rnihvptrMyOJfsr1C4TSFe7Ov2yXBo3WezbbAFK8ha', 1);
+(41, 5, 1007199208, 'grpaa@gmail.com', 'maria', 'del valle', '$2y$10$xNzbqNGRjPxhRs6QtmnN5eG0tYtdJLRyVdlbLOGdPUTSNxJ6hN2ZG', 1),
+(42, 4, 1122222, 'geovannyroman2019@gmail.com ', 'Geovanny', 'Camargo', '$2y$10$gRQnRjNoGsuXpaKvlNef0.3vYYKNvDI2pdPbxCfFqJu48ydMvOZVq', 2);
 
 -- --------------------------------------------------------
 
@@ -115,7 +133,10 @@ INSERT INTO `sub_item` (`id`, `id_item`, `descripcion`) VALUES
 (3, 2, 'TI'),
 (4, 2, 'CC'),
 (5, 2, 'CE'),
-(6, 1, 'instructor');
+(6, 1, 'instructor'),
+(8, 1, 'visitante'),
+(10, 2, ' pasaporte'),
+(11, 1, ' policia');
 
 --
 -- Índices para tablas volcadas
@@ -157,25 +178,25 @@ ALTER TABLE `sub_item`
 -- AUTO_INCREMENT de la tabla `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `objetos`
 --
 ALTER TABLE `objetos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `sub_item`
 --
 ALTER TABLE `sub_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas

@@ -47,7 +47,8 @@ $sql=$con->query(" SELECT `observacion` FROM `objetos` WHERE  id=$id ");
 
             include("../crud/model/connection.php");
             include("../crud-celador/editar_observacion.php");
-
+            
+            $sql=$con->query(" SELECT `observacion` FROM `objetos` WHERE  id=$id ");
             while ($datos=$sql->fetch_object()) { ?>
             
             <div class="col-12 form form-group">

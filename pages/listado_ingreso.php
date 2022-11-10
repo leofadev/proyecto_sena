@@ -62,7 +62,7 @@
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">
-                                <td><?= $datos->vigilante?></td>
+                                <td></td>
                                 <td><?= $datos->fecha?></td>
                                 <td><?= $datos->nombre?></td>
                                 <td><?= $datos->cargo?></td>
