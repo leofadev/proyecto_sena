@@ -66,11 +66,6 @@ if(isset($_SESSION['documento'])){
           style="font-size: 0.9rem"
           >¿Olvidaste tú contraseña?</a>
         </div>
-        <a
-          href="#"
-          class=" text-decoration-none text-secondary fw-semibold fst-italic"
-          style="font-size: 0.9rem"
-          >¿Cambiar contraseña?</a>
         </div>
       </div>
       <input type="submit" class="btn bg-sena text-white w-100 mt-4 fw-semibold shadow-sm" name="btningresar"

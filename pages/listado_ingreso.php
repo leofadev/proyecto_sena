@@ -39,7 +39,6 @@
         <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
-            include("../crud-celador/modificar_objetos.php");
             ?>
                 <table class="table table-striped text-center text-white" id="myTable">
                     <thead>
