@@ -1,6 +1,8 @@
 
 <link rel="stylesheet" href="../jquery/css/bootstrap.min.css">
 <link rel="stylesheet" href="../jquery/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="../jquery/css/alertify.css">
+<link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
 <!-- Menú del Administrador -->
 <nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5">
     <div class="container-fluid">   

@@ -1,6 +1,8 @@
 <!-- Menú del Celador -->
 <link rel="stylesheet" href="../jquery/css/bootstrap.min.css">
 <link rel="stylesheet" href="../jquery/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="../jquery/css/alertify.css">
+<link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
 <nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5">
     <div class="container-fluid">   
         <a class="navbar-brand" href="./homepage_celador.php">
