@@ -20,7 +20,7 @@ if (!isset($_SESSION['documento'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro-Dispopsitivo Vigilantes</title>
 
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
