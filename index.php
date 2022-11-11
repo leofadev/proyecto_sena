@@ -18,7 +18,7 @@ if(isset($_SESSION['documento'])){
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <title>Inicio De Sesi&oacute;n</title>
   </head>
-    <body class=" nav bg-light d-flex justify-content-center align-items-center vh-100">
+    <body class=" nav bg-success d-flex justify-content-center align-items-center vh-100">
 
       <!-- Inicio del login -->
         <form  method="post" action="./controller/controlador.php"
