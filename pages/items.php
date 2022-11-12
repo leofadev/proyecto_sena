@@ -54,11 +54,11 @@
 
                     <div class="form form-group">
                         <label class=" mb-1">Nombre</label>
-                        <input type="text" class="text-success input  mb-1"  placeholder="Ingrese el nombre" name="item">
+                        <input type="text" class=" label input  mb-1"  placeholder="Ingrese el nombre" name="item">
                     </div>
 
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-success mt-2" value="ok" name="btnGuardar">Agregar item</button>
+                        <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Agregar item</button>
                     </div>
                 </form>
             </div>
@@ -75,18 +75,18 @@
                     <thead>
                         <tr>
                             
-                            <th scope="col" class="bg-success text-center">Nombre</th>
-                            <th scope="col" class="bg-success text-center">Editar</th>
+                            <th scope="col" id="th" class="text-center">Nombre</th>
+                            <th scope="col" id="th" class="text-center">Editar</th>
                         </tr>
                     </thead>
-                        <tbody>
+                        <tbody id="myTable">
                             <?php
                                 while($datos=$sql->fetch_object()) {
                             ?>
                             <tr class="table-active">
-                                <td><?=$datos->descripcion?></td>
-                                <td>
-                                    <a class="btn btn-small btn-success" href="./modificar_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
+                                <td id="td"><?=$datos->descripcion?></td>
+                                <td id="td">
+                                    <a class="btn btn-small btn-warning" href="./modificar_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
                                 </td>
                         <?php
                             }
@@ -111,18 +111,18 @@
                 ?>
                 <div class="form form-group">
                     <label class="form-label mb-1">items</label>
-                    <select class="gn text-success mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
+                    <select id="td" class=" gn mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="1">Rol</option>
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="2">Tipo documento</option>>
                     </select>
                     <div class="form form-group">
                     <label class=" mb-1">Nombre</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese el nombre" name="descripcion">
+                    <input type="text" class=" label input  mb-1"  placeholder="Ingrese el nombre" name="descripcion">
                 </div>
                 </div>    
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-success mt-2" value="ok" name="GuardarSubItem">Agregar subitem</button>
+                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="GuardarSubItem">Agregar subitem</button>
                 </div>
             </form>
     </div>
@@ -135,16 +135,16 @@
             $sql_sub = $con->query("SELECT * FROM sub_item");
             
             ?>
-                <table class="table table-striped table-hover text-center text-white" id="myTable">
+                <table class="table table-striped rounded border table-hover text-center text-white" id="myTable">
                     <thead>
                         <tr>
                             
-                            <th scope="col" class="bg-success text-center">Nombre</th>
-                            <th scope="col" class="bg-success text-center">Tipo</th>
-                            <th scope="col" class="bg-success text-center">Editar</th>
+                            <th scope="col" id="th" class=" text-center">Nombre</th>
+                            <th scope="col" id="th" class=" text-center">Tipo</th>
+                            <th scope="col" id="th" class=" text-center">Editar</th>
                         </tr>
                     </thead>
-                        <tbody>
+                        <tbody id="myTable">
                         
                         <?php
                         
@@ -152,10 +152,10 @@
                         
                         ?>
                             <tr class="table-active">
-                                <td><?=$datos->id_item?></td>
-                                <td><?=$datos->descripcion?></td>
-                                <td>
-                                    <a class="btn btn-small btn-success" href="../pages/modificar_sub_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
+                                <td id="td"><?=$datos->id_item?></td>
+                                <td id="td"><?=$datos->descripcion?></td>
+                                <td id="td">
+                                    <a class="btn btn-small btn-warning" href="../pages/modificar_sub_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
                                 </td>
                             <?php
                             }

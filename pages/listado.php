@@ -42,7 +42,7 @@
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");
             ?>
-                <table  class="table rounded border text-center text-white" id="myTable">
+                <table  class="table rounded border table-hover text-center text-white" id="myTable">
                     <thead>
                         <tr>
                             <th scope="col" id="th">Tipo De Documento</th>

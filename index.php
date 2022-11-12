@@ -16,6 +16,7 @@ if(isset($_SESSION['documento'])){
 
     <title>Inicio De Sesi&oacute;n</title>
     <!-- link Css -->
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
   </head>
@@ -27,7 +28,7 @@ if(isset($_SESSION['documento'])){
           style="width: 25rem">
         <div class=" d-flex justify-content-center">
           <img
-            src="./bootstrap-5.0.2-dist/img/logo-sena-verde.png"
+            src="./bootstrap-5.0.2-dist/img/logo-de-SENA-png-Negro.png"
             alt="login-icon"
             style="height: 7rem"/>
       </div>
@@ -43,7 +44,7 @@ if(isset($_SESSION['documento'])){
             </svg>
         </div>
         <input
-          class="form-control bg-light"
+          class="form-control bg-light btn-light border"
           type="text"
           placeholder="Username" 
           name="documento"/>
@@ -54,11 +55,12 @@ if(isset($_SESSION['documento'])){
             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
             </svg>
           </div>
-        <input
-          class="form-control bg-light"
+        <input id="inputContraseña"
+          class="form-control bg-light btn-light border"
           type="password"
           placeholder="Password"
           name="pass"/>
+          <input class="mt-2 ml-2"  type="checkbox" onclick="myFuction()">
       </div>
       <div class="pt-1">
         <a
@@ -69,9 +71,21 @@ if(isset($_SESSION['documento'])){
         </div>
         </div>
       </div>
-      <input type="submit" class="btn bg-sena text-white w-100 mt-4 fw-semibold shadow-sm" name="btningresar"
-      value="Login">
+      <button id="th"  type="submit" class="btn text-white btn-light w-100 mt-4 " name="btningresar"
+      >Login</button>
     </form>
     <!-- Fin del login -->
   </body>
 </html>
+
+<script type="text/javascript">
+  function myFuction(){
+    var x = document.getElementById("inputContraseña");
+    if (x.type==="password") {
+      x.type="text";
+    }else{
+      x.type="password";
+    }
+  }
+
+</script>

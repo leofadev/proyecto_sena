@@ -1,21 +1,21 @@
-<footer class="container-fluid bg-light mt-4 p-3">
-    <div class="container bg-light">
+<footer id="footer" class="container-fluid mt-4 p-3">
+    <div id="footer" class="container">
             
             <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-xl-4 text-center">
                 <!-- Logo del Sena  -->
-                <img src="../bootstrap-5.0.2-dist/img/logo-sena-verde.png" alt="Logo" width="50">
+                <img src="../bootstrap-5.0.2-dist/img/logo-de-SENA-png-Negro.png" alt="Logo" width="80">
             </div>
-                <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+                <div class=" text-black col-12 col-sm-12 col-md-6 col-xl-6">
                     <h4 class="text-center">&copy;Developers</h4>
                     <div class="row">
                     <div class="col-6 text-right">
                     <!-- GITHUB de Pinto -->
-                    <a class="navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
+                    <a class="text-secondary navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
             </div>
             <div class="col-6 text-left">
                     <!-- GITHUB de Camargo -->
-                    <a class="navbar-brand" href="https://github.com/geovanny-star">&copy;Geovanny Camargo</a>
+                    <a class="text-secondary navbar-brand" href="https://github.com/geovanny-star">&copy;Geovanny Camargo</a>
             </div>
             </div>
                     </div>

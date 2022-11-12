@@ -49,7 +49,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
                 while ($datos=$sql->fetch_object()) {?>
                 <div class="form form-group">
                     <label class="form-label mb-1">Tipo de documento</label>
-                    <select class="gn text-success mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
+                    <select id="td" class=" gn mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
@@ -58,24 +58,24 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese Su Numero De Documento" name="documento" value="<?= $datos->documento ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Numero De Documento" name="documento" value="<?= $datos->documento ?>">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Correo</label>
-                    <input type="mail" class="text-success input  mb-1"  placeholder="Ingrese Su Correo" name="correo" value="<?= $datos->correo ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Correo" name="correo" value="<?= $datos->correo ?>">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Nombre</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese Su Nombre" name="nombre" value="<?= $datos->nombre ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Nombre" name="nombre" value="<?= $datos->nombre ?>">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Apellido</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese Su Apellido" name="apellido" value="<?= $datos->apellido ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Apellido" name="apellido" value="<?= $datos->apellido ?>">
                 </div>
                 <?php }
                 ?>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-success mt-2" value="ok" name="btnModificar">Guardar Cambios</button>
+                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnModificar">Guardar Cambios</button>
                 </div>
             </form>
         </div>

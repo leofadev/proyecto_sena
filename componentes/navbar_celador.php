@@ -1,7 +1,7 @@
 <!-- Menú del Celador -->
 <link rel="stylesheet" href="../jquery/css/bootstrap.min.css">
 <link rel="stylesheet" href="../jquery/css/dataTables.bootstrap5.min.css">
-<nav  class=" nav fixed-top navbar navbar-expand-lg navbar-light bg-success mb-5">
+<nav  id="th" class="nav fixed-top navbar navbar-expand-lg navbar-light p-2 mb-5">
     <div class="container-fluid">   
         <a class="navbar-brand" href="./homepage_celador.php">
             <img class="" src="../bootstrap-5.0.2-dist/img/Logo-sena-blanco.png" width="50">
@@ -13,27 +13,27 @@
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"   style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                 <li class="nav-item">
-                <a class="nav-link text-white" href="../pages/homepage_celador.php">
+                <a id="placeholder"  class="nav-link text-white" href="../pages/homepage_celador.php">
                         Ingresar Usuario
                     </a>
                 </li>
-                    <a class="nav-link text-white" href="./registro_dispositivos.php">
+                    <a id="placeholder"  class="nav-link text-white" href="./registro_dispositivos.php">
                         Registro Dispositivos
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a id="placeholder"  class="nav-link text-white" href="#">
                         Listado Usuarios
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a id="placeholder"  class="nav-link text-white" href="#">
                         Listado Ingresos
                     </a>
                 </li>
             </ul>
             <li class="nav-item dropdown">
-                <button type="button" class="btn btn-success dropdown-toggle ml-5" data-bs-toggle="dropdown" aria-expanded="false">
+                <button id="th" type="button" class="btn text-white btn-light dropdown-toggle ml-5" data-bs-toggle="dropdown" aria-expanded="false">
                         <!-- icono de cerar sesión  --> opciones
                 </button>
                 <ul class="dropdown-menu">

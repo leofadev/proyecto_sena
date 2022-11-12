@@ -32,7 +32,6 @@
   --danger: #e74a3b;
   --light: #f8f9fc;
   --dark: #5a5c69;
-  --sena:#39AA00;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -57,9 +56,6 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
-}
-.menu{
-  background-color:#ff8138;
 }
 body {
   margin: 0;
@@ -6491,10 +6487,6 @@ button.bg-light:focus {
   background-color: #5a5c69 !important;
 }
 
-.bg-sena{
-  background-color: #39AA00 !important;
-}
-
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
@@ -9682,11 +9674,6 @@ a.text-dark:hover, a.text-dark:focus {
 .text-white-50 {
   color: rgba(255, 255, 255, 0.5) !important;
 }
-
-.text-sena{
-  color:#39AA00;
-}
- 
 
 .text-hide {
   font: 0/0 a;

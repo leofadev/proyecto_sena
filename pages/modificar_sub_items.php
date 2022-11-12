@@ -37,20 +37,20 @@ $sql=$con->query(" SELECT * FROM item WHERE id=$id");
                 while($dato=$sql->fetch_object()) {?>
                     <div class="form form-group">
                     <label class=" mb-1">items</label>
-                    <select  class=" gn text-success mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
+                    <select  id="td" class=" gn mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="1">Rol</option>
                         <option class="form mb-1" list="listaRoles" id="exampleDataList" value="2">Tipo documento</option>>
                     </select>
                 <div class="form form-group">
                     <label class=" mb-1">Modificar sub&iacute;tems</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese nombre" name="item" value="<?= $dato->descripcion ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese nombre" name="item" value="<?= $dato->descripcion ?>">
                 </div>
                 <?php
                     }
                 ?>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-success mt-2" value="ok" name="btnModificar">Guardar Cambios</button>
+                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnModificar">Guardar Cambios</button>
                 </div>
             </form>
         </div>

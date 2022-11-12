@@ -43,7 +43,7 @@
                 ?>
                 <div class="form form-group">
                     <label  class="form-label mb-1">Tipo de documento</label>
-                    <select class="gn text-success mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
+                    <select id="td" class=" gn  mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
@@ -52,29 +52,29 @@
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder=" Numero De Documento" name="documento">
+                    <input type="text" class="label input  mb-1"  placeholder=" Numero De Documento" name="documento">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Correo</label>
-                    <input type="mail" class="text-success input  mb-1"  placeholder="Ingrese Su Correo" name="correo">
+                    <input type="mail" class="label input  mb-1"  placeholder="Ingrese Su Correo" name="correo">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Nombre</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
+                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Apellido</label>
-                    <input type="text" class="text-success input  mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
+                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
                 </div>
                 <div class="form form-group">
                     <label class="form-label mb-1">Roles</label>
-                    <select class="gn text-success mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
+                    <select id="td" class=" gn  mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
                     </select>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-success mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
                 </div>
             </form>
             </div>
@@ -87,15 +87,15 @@
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");
             ?>
-                <table class="table table-striped text-center text-white" id="myTable">
+                <table class="table rounded border table-hover text-center text-white" id="myTable">
                     <thead>
                         <tr>
-                            <th scope="col" class="bg-success">Tipo De Documento</th>
-                            <th scope="col" class="bg-success">Documento</th>
-                            <th scope="col" class="bg-success">Correo</th>
-                            <th scope="col" class="bg-success">Nombre</th>
-                            <th scope="col" class="bg-success">Apellido</th>
-                            <th scope="col" class="bg-success">Editar</th>
+                            <th scope="col" id="th">Tipo De Documento</th>
+                            <th scope="col" id="th">Documento</th>
+                            <th scope="col" id="th">Correo</th>
+                            <th scope="col" id="th">Nombre</th>
+                            <th scope="col" id="th">Apellido</th>
+                            <th scope="col" id="th">Editar</th>
                         </tr>
                     </thead>
                         <tbody id="myTable">
@@ -105,14 +105,14 @@
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">
-                                <td><?= $datos->tipo_documento?></td>
-                                <td><?= $datos->documento?></td>
-                                <td><?= $datos->correo?></td>
-                                <td><?= $datos->nombre?></td>
-                                <td><?= $datos->apellido?></td>
+                                <td id="td" ><?= $datos->tipo_documento?></td>
+                                <td id="td" ><?= $datos->documento?></td>
+                                <td id="td" ><?= $datos->correo?></td>
+                                <td id="td" ><?= $datos->nombre?></td>
+                                <td id="td" ><?= $datos->apellido?></td>
                                 <!-- <td><= $datos->pass?></td> -->
-                                <td>
-                                    <a class="btn btn-small btn-success" href="./modificar_personas.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
+                                <td id="td" >
+                                    <a class="btn btn-small btn-warning" href="./modificar_personas.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
                                 </td>
                             </tr>
                         <?php

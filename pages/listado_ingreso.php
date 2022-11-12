@@ -36,23 +36,23 @@
 ?>
 <div class="container mt-5">
     <!-- Inicio del CRUD -->
-    <div class="col-12 col-sm-12 col-md-10 col-xl-10 p-4 mt-5 ml-auto mr-auto">
+    <div class="col-12 col-sm-12 col-md-10 col-xl-10 p-4 shadow mt-5 ml-auto mr-auto">
         <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
             ?>
-                <table class="table table-striped text-center text-white" id="myTable">
+                <table class="table table-striped rounded border table-hover text-center text-white" id="myTable">
                     <thead>
                         <tr>
-                            <th scope="col" class="bg-success">Vigilante</th>
-                            <th scope="col" class="bg-success">Fecha ingreso</th>
-                            <th scope="col" class="bg-success">Nombre</th> 
-                            <th scope="col" class="bg-success">cargo</th>
-                            <th scope="col" class="bg-success">Dispositivo</th>
-                            <th scope="col" class="bg-success">Hora Ingreso</th>
-                            <th scope="col" class="bg-success">Fecha Salida</th>
-                            <th scope="col" class="bg-success">Hora Salida</th>
-                            <th scope="col" class="bg-success">Observacion</th>
+                            <th scope="col" id="th">Vigilante</th>
+                            <th scope="col" id="th">Fecha ingreso</th>
+                            <th scope="col" id="th">Nombre</th> 
+                            <th scope="col" id="th">cargo</th>
+                            <th scope="col" id="th">Dispositivo</th>
+                            <th scope="col" id="th">Hora Ingreso</th>
+                            <th scope="col" id="th">Fecha Salida</th>
+                            <th scope="col" id="th">Hora Salida</th>
+                            <th scope="col" id="th">Observacion</th>
                         </tr>
                     </thead>
                         <tbody id="myTable">
@@ -62,15 +62,15 @@
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">
-                                <td></td>
-                                <td><?= $datos->fecha?></td>
-                                <td><?= $datos->nombre?></td>
-                                <td><?= $datos->cargo?></td>
-                                <td><?= $datos->dispositivo?></td>
-                                <td><?= $datos->h_ingreso?></td>
-                                <td><?= $datos->fecha_salida?></td>
-                                <td><?= $datos->h_salida?></td>
-                                <td><?= $datos->observacion?></td>
+                                <td id="td" ></td>
+                                <td id="td" ><?= $datos->fecha?></td>
+                                <td id="td" ><?= $datos->nombre?></td>
+                                <td id="td" ><?= $datos->cargo?></td>
+                                <td id="td" ><?= $datos->dispositivo?></td>
+                                <td id="td" ><?= $datos->h_ingreso?></td>
+                                <td id="td" ><?= $datos->fecha_salida?></td>
+                                <td id="td" ><?= $datos->h_salida?></td>
+                                <td id="td" ><?= $datos->observacion?></td>
                             </tr>
                         <?php
                             }
