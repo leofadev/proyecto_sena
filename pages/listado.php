@@ -23,6 +23,7 @@
     <title>Listado Personas</title>
     
     <!-- Estilos css -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
@@ -35,21 +36,21 @@
 ?>
 <div class="container mt-5">
 <!-- Inicio del CRUD -->
-<div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4  mt-5 ml-auto mr-auto">
+<div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow  mt-5 ml-auto mr-auto">
     <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
             include("../crud/controller/eliminar_persona.php");
             ?>
-                <table class="table table-striped text-center text-white" id="myTable">
+                <table  class="table rounded border text-center text-white" id="myTable">
                     <thead>
                         <tr>
-                            <th scope="col" class="bg-success">Tipo De Documento</th>
-                            <th scope="col" class="bg-success">Documento</th>
-                            <th scope="col" class="bg-success">Correo</th>
-                            <th scope="col" class="bg-success">Nombre</th>
-                            <th scope="col" class="bg-success">Apellido</th>
-                            <th scope="col" class="bg-success">Rol</th>
+                            <th scope="col" id="th">Tipo De Documento</th>
+                            <th scope="col" id="th">Documento</th>
+                            <th scope="col" id="th">Correo</th>
+                            <th scope="col" id="th">Nombre</th>
+                            <th scope="col" id="th">Apellido</th>
+                            <th scope="col" id="th">Rol</th>
                         </tr>
                     </thead>
                         <tbody id="myTable" >
@@ -67,12 +68,12 @@
                                     }
                                     ?>
                             <tr class="table-active">
-                                <td><?= $tipoDoc?></td>
-                                <td><?= $datos->documento?></td>
-                                <td><?= $datos->correo?></td>
-                                <td><?= $datos->nombre?></td>
-                                <td><?= $datos->apellido?></td>
-                                <td><?= $rol?></td> 
+                                <td id="td"><?= $tipoDoc?></td>
+                                <td id="td"><?= $datos->documento?></td>
+                                <td id="td"><?= $datos->correo?></td>
+                                <td id="td"><?= $datos->nombre?></td>
+                                <td id="td"><?= $datos->apellido?></td>
+                                <td id="td"><?= $rol?></td> 
                             </tr>
                         <?php
                             }

@@ -21,7 +21,8 @@ if (!isset($_SESSION['documento'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro-Dispopsitivo Vigilantes</title>
-
+    <!-- link Css -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
@@ -34,15 +35,15 @@ if (!isset($_SESSION['documento'])) {
     <div class="container-fluid mt-5">
         <div class="row mt-5">
             <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                <form class="form p-3 rounded border" method="POST">
+                <form class="form p-3 rounded border shadow" method="POST">
                     <h3 class="text-center">Buscar usuario</h3>
                     <?php
                     include("../crud/model/connection.php");
                     include("../crud-celador/registro_documento.php");
                     ?>
                     <div class="form form-group">
-                        <label for="inputPassword2" class=" mb-1">Documento</label>
-                        <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="documento">
+                        <label class=" mb-1">Documento</label>
+                        <input type="text" class="text-success input  mb-1" placeholder="Ingrese # documento" name="documento">
                     </div>
 
                     <div class="col-auto">
@@ -54,7 +55,7 @@ if (!isset($_SESSION['documento'])) {
             <div class="container-fluid mt-5">
                 <div class="row mt-5">
                     <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                        <form class="form p-3 rounded border" method="POST">
+                        <form class="form p-3 rounded border shadow" method="POST">
                             <h3 class="text-center">Registro De Objetos</h3>
                             <?php
                             include("../crud/model/connection.php");
@@ -74,7 +75,7 @@ if (!isset($_SESSION['documento'])) {
                             ?>
                                 <div class="form form-group">
                                     <label class=" mb-1">Documento</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
+                                    <input type="text" class="text-success input  mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
                                 </div>
                             <?php
                             }
@@ -87,7 +88,7 @@ if (!isset($_SESSION['documento'])) {
                             ?>
                                 <div class="form form-group">
                                     <label class=" mb-1">Nombre</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
+                                    <input type="text" class="text-success input  mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
                                 </div>
                             <?php
                             }
@@ -101,22 +102,22 @@ if (!isset($_SESSION['documento'])) {
                             ?>
                                 <div class="form form-group">
                                     <label class=" mb-1">Apellido</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
+                                    <input type="text" class="text-success input  mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
                                 </div>
                             <?php
                             }
                             ?>
                             <div class="form form-group">
                                 <label class=" mb-1">Cargo</label>
-                                <input type="text" class="form-control mb-1" placeholder="Ingrese Su Cargo" name="cargo">
+                                <input type="text" class="text-success input  mb-1" placeholder="Ingrese Su Cargo" name="cargo">
                             </div>
                             <div class="form form-group">
                                 <label class=" mb-1">Dispositivo</label>
-                                <input type="text" class="form-control mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
+                                <input type="text" class="text-success input  mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
                             </div>
                             <div class="form form-group">
                                 <label class=" mb-1">Observaciones</label>
-                                <input type="text" class="form-control mb-1" placeholder="Ingrese una observación" name="observacion">
+                                <input type="text" class="text-success input  mb-1" placeholder="Ingrese una observación" name="observacion">
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-success mt-2" value="ok" name="btnIngresar">Ingresar Objeto</button>

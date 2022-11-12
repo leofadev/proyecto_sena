@@ -14,15 +14,16 @@ if(isset($_SESSION['documento'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Inicio De Sesi&oacute;n</title>
+    <!-- link Css -->
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <title>Inicio De Sesi&oacute;n</title>
   </head>
     <body class=" nav bg-light d-flex justify-content-center align-items-center vh-100">
 
       <!-- Inicio del login -->
         <form  method="post" action="./controller/controlador.php"
-          class="bg-white p-5 rounded-5 text-black shadow"
+          class="bg-white p-5 rounded text-black shadow"
           style="width: 25rem">
         <div class=" d-flex justify-content-center">
           <img

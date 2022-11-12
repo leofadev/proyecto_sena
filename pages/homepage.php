@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administraci&oacute;n</title>
     <!-- Estilos css -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
@@ -70,44 +71,44 @@
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-            <form class="form p-3 rounded border" method="POST">
-                <h3 class="text-center" >Registro de Personas</h3>
+            <form class="form p-3 rounded border shadow" method="POST">
+                <h3 class="text-center " >Registro de Personas</h3>
                 <?php
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
                 ?>
                 <div class="form form-group">
-                    <label for="exampleInputEmail1" class="form-label mb-1">Tipo de documento</label>
-                    <select for="inputPassword2" class=" form-select mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="3">TI</option>
+                    <label  class="form-label mb-1">Tipo de documento</label>
+                    <select class=" gn text-success mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="3">TI</option>
                     </select>
                 </div>
                 <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Documento</label>
-                    <input type="text" class="form-control mb-1"  placeholder=" Numero De Documento" name="documento">
+                    <label class=" mb-1">Documento</label>
+                    <input type="text" class=" text-success input  mb-1"  placeholder=" Numero De Documento" name="documento">
                 </div>
                 <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Correo</label>
-                    <input type="mail" class="form-control mb-1"  placeholder="Ingrese Su Correo" name="correo">
+                    <label class=" mb-1">Correo</label>
+                    <input type="mail" class=" text-success input mb-1"  placeholder="Ingrese Su Correo" name="correo">
                 </div>
                 <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Nombre</label>
-                    <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
+                    <label class=" mb-1">Nombre</label>
+                    <input type="text" class=" text-success input mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
                 </div>
                 <div class="form form-group">
-                    <label for="inputPassword2" class=" mb-1">Apellido</label>
-                    <input type="text" class="form-control mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
+                    <label class=" mb-1">Apellido</label>
+                    <input type="text" class=" text-success input mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
                 </div>
                 <div class="form form-group">
-                    <label for="exampleInputEmail1" class="form-label mb-1">Roles</label>
-                    <select for="inputPassword2" class=" form-select mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" value="1">Administrador</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="2">Vigilante</option>
-                    <option class="form-control mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
+                    <label class="form-label mb-1">Roles</label>
+                    <select class=" gn text-success mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
+                    <option class=" form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
+                    <option class=" form mb-1" list="listaRoles" id="exampleDataList" value="1">Administrador</option>
+                    <option class=" form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="2">Vigilante</option>
+                    <option class=" form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
                     </select>
                 </div>
                 <div class="col-auto">
