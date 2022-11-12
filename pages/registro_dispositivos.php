@@ -164,16 +164,17 @@ if (!isset($_SESSION['documento'])) {
                                             <td><?= $datos->fecha ?></td>
                                             <td><?= $datos->h_ingreso ?></td>
                                             <td>
-
-
-                                                <?php
+                                            <?php
                                                 if (empty($datos->fecha_salida)) {
-                                                    echo '<button type="button" class="btn btn-success">pendiente</button>
-                                                    ';
+                                                    echo' <button type="button" class="btn btn-success" value="btnModificar" id="Salida" onclick="iniciarSalida();">pendiente</button>';
+                                                    
                                                 } else {
                                                     echo $datos->fecha_salida;
                                                 }
                                                 ?>
+                                           
+
+                                              
 
                                             </td>
                                             <td><?= $datos->h_salida ?></td>
@@ -200,7 +201,33 @@ if (!isset($_SESSION['documento'])) {
                 </div>
                 <br><br><br><br><br><br><br><br><br>
             </div>
+<script>
+    iniciarSalida();
+    function iniciarSalida() {
+        $("#Salida").click(function(s){
+           s.preventDefault();
+           var id = $(this).attr("id");
+           var btn = $(this)[0];
+           btn.blur();
 
+           if(confirm("Desea registar la salida del dispositivo?")) {
+            $.ajax({ 
+                type: "POST",
+                url: "crud-celador/salida.php",
+                data: 'id='+id,
+                success: function(data){
+                    alert(data, 1);
+                    window.location.reload()
+                }
+
+            });
+           } else{
+            alert("denegado");
+           }
+        });
+    }
+
+</script>
 </body>
 
 </html>
