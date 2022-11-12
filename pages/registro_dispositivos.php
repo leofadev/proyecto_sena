@@ -1,5 +1,6 @@
 <?php
 session_start();
+$nombreCompleto = $_SESSION ['nombre_user'];
 if (!isset($_SESSION['documento'])) {
     echo '<script>
         alert("Por favor inicie sesión");
@@ -68,42 +69,43 @@ if (!isset($_SESSION['documento'])) {
 
                             $name = $con->query("SELECT `documento` FROM `personas` WHERE `documento` = '$documento'");
 
-
-                            while ($dato = $name->fetch_object()) {
-
-                            ?>
-                                <div class="form form-group">
-                                    <label class=" mb-1">Documento</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
-                                </div>
-                            <?php
-                            }
-                            ?>
-                            <?php
-                            include("../crud-celador/registro_documento.php");
-                            $nombre_sql = $con->query("SELECT `nombre` FROM `personas` WHERE `documento` = '$documento'");
-                            while ($date = $nombre_sql->fetch_object()) {
+                            if ($name->num_rows > 0) {
+                                while ($dato = $name->fetch_object()) {
 
                             ?>
-                                <div class="form form-group">
-                                    <label class=" mb-1">Nombre</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
-                                </div>
-                            <?php
-                            }
-                            ?>
-                            <?php
-                            include("../crud-celador/registro_documento.php");
-                            $apellido_sql = $con->query("SELECT `apellido` FROM `personas` WHERE `documento` = '$documento'");
+                                    <div class="form form-group">
+                                        <label class=" mb-1">Documento</label>
+                                        <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                include("../crud-celador/registro_documento.php");
+                                $nombre_sql = $con->query("SELECT `nombre` FROM `personas` WHERE `documento` = '$documento'");
+                                while ($date = $nombre_sql->fetch_object()) {
 
-                            while ($dati = $apellido_sql->fetch_object()) {
+                                ?>
+                                    <div class="form form-group">
+                                        <label class=" mb-1">Nombre</label>
+                                        <input type="text" class="form-control mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                include("../crud-celador/registro_documento.php");
+                                $apellido_sql = $con->query("SELECT `apellido` FROM `personas` WHERE `documento` = '$documento'");
 
-                            ?>
-                                <div class="form form-group">
-                                    <label class=" mb-1">Apellido</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
-                                </div>
+                                while ($dati = $apellido_sql->fetch_object()) {
+
+                                ?>
+                                    <div class="form form-group">
+                                        <label class=" mb-1">Apellido</label>
+                                        <input type="text" class="form-control mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
+                                    </div>
                             <?php
+                                }
                             }
                             ?>
                             <div class="form form-group">
@@ -129,7 +131,7 @@ if (!isset($_SESSION['documento'])) {
                     <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
                         <div class="overflow-auto">
                             <?php
-                            include("../crud/model/connection.php"); 
+                            include("../crud/model/connection.php");
                             ?>
                             <table class="table table-striped text-center text-white" id="myTable">
                                 <thead>
@@ -144,6 +146,7 @@ if (!isset($_SESSION['documento'])) {
                                         <th scope="col" class="bg-success">Hora Ingreso</th>
                                         <th scope="col" class="bg-success">Fecha Salida</th>
                                         <th scope="col" class="bg-success">Hora Salida</th>
+                                        <th scope="col" class="bg-success">Hora Salida</th>
                                         <th scope="col" class="bg-success">Observaci&oacute;n</th>
 
                                     </tr>
@@ -155,7 +158,7 @@ if (!isset($_SESSION['documento'])) {
                                     while ($datos = $sql->fetch_object()) { ?>
 
                                         <tr class="table-active">
-                                            <td></td>
+                                            <td><?= $datos->vigiliante ?></td>
                                             <td><?= $datos->documento ?></td>
                                             <td><?= $datos->nombre ?></td>
                                             <td><?= $datos->apellido ?></td>
@@ -163,22 +166,16 @@ if (!isset($_SESSION['documento'])) {
                                             <td><?= $datos->dispositivo ?></td>
                                             <td><?= $datos->fecha ?></td>
                                             <td><?= $datos->h_ingreso ?></td>
-                                            <td>
-                                            <?php
-                                                if (empty($datos->fecha_salida)) {
-                                                    echo' <button type="button" class="btn btn-success" value="btnModificar" id="Salida" onclick="iniciarSalida();">pendiente</button>';
-                                                    
-                                                } else {
-                                                    echo $datos->fecha_salida;
-                                                }
-                                                ?>
-                                           
-
-                                              
-
-                                            </td>
+                                            <td><?= $datos->fecha_salida ?></td>
                                             <td><?= $datos->h_salida ?></td>
                                             <td>
+                                              <?php if($datos->fecha_salida==NULL){?>
+                                            <a href="#" class="btn btn-success Salida" 
+                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();">pendiente</a></td>
+                                            <?php }else{?>
+                                                <a href="#" class="btn btn-secondary" readonly>No disponible</a>
+                                            <?php }?>
+                                                <td>
                                                 <?php
                                                 if (empty($datos->observacion)) {
                                                     echo '<button type="button" class="btn btn-success">pediente</button>
@@ -201,34 +198,36 @@ if (!isset($_SESSION['documento'])) {
                 </div>
                 <br><br><br><br><br><br><br><br><br>
             </div>
-<script>
-    iniciarSalida();
-    function iniciarSalida() {
-        $("#Salida").click(function(s){
-           s.preventDefault();
-           var id = $(this).attr("id");
-           var btn = $(this)[0];
-           btn.blur();
+            <script>
+                iniciarSalida();
 
-           if(confirm("Desea registar la salida del dispositivo?")) {
-            $.ajax({ 
-                type: "POST",
-                url: "crud-celador/salida.php",
-                data: 'id='+id,
-                success: function(data){
-                    alert(data, 1);
-                    window.location.reload()
+                function iniciarSalida() {
+                    $(".Salida").click(function(e) {
+                        
+                        e.preventDefault();
+                        var id = $(this).attr("id-salida");
+                        var btn = $(this)[0];
+                        btn.blur();
+                       
+                        if (confirm("Desea registar la salida del dispositivo?")) {
+                            $.ajax({
+                                type: "POST",
+                                url: "../crud-celador/salida.php",
+                                data: 'id=' + id,
+                                success: function(data) {
+                                    alert(data, 1);
+                                    window.location.reload()
+                                }
+
+                            });
+                        } else {
+                            alert("denegado");
+                        }
+                    });
                 }
-
-            });
-           } else{
-            alert("denegado");
-           }
-        });
-    }
-
-</script>
+            </script>
 </body>
+<script src="../jquery/js/jquery.min.js"></script>
 
 </html>
 

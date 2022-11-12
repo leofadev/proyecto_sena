@@ -1,5 +1,6 @@
-<!-- Este codigo almacena datos los cuales son llamados al momento de realizar la conexion a la base de datos -->
+
 <?php 
+//Este codigo almacena datos los cuales son llamados al momento de realizar la conexion a la base de datos
 @define("server","localhost");
 @define("user","root");
 @define("pw","");
