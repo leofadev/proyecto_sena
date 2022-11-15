@@ -1,4 +1,3 @@
-<!-- Este codigo realiza el registros de objetos a la base de datos, en la tabla objetos, y se visualizan de forma inmediata al cargar la pagina web -->
 <?php
 
 if (!empty($_POST["btnIngresar"])) {
@@ -11,7 +10,6 @@ if (!empty($_POST["btnIngresar"])) {
         //$h_ingreso=$_POST["h_ingreso"];
         //$h_salida=$_POST["h_salida"];
         //$fecha_salida=$_POST["fecha_salida"];
-       
         $sql=$con->query("INSERT INTO `objetos`(`vigiliante`,`documento`,`nombre`,`apellido`,`fecha`, `cargo`, `dispositivo`, `h_ingreso`) VALUES ('$nombreCompleto','$documento','$apellido','$nombre','$fecha','$cargo','$dispositivo','$h_ingreso')");
         
         if ($sql==1) {
