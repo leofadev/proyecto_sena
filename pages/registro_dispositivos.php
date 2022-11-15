@@ -23,6 +23,7 @@ if (!isset($_SESSION['documento'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro-Dispopsitivo Vigilantes</title>
 
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
@@ -42,12 +43,12 @@ if (!isset($_SESSION['documento'])) {
                     include("../crud-celador/registro_documento.php");
                     ?>
                     <div class="form form-group">
-                        <label for="inputPassword2" class=" mb-1">Documento</label>
-                        <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="documento">
+                        <label  class=" mb-1">Documento</label>
+                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="documento">
                     </div>
 
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-success mt-2" value="ok" name="btnDocumento">Buscar</button>
+                        <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnDocumento">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +76,7 @@ if (!isset($_SESSION['documento'])) {
                             ?>
                                     <div class="form form-group">
                                         <label class=" mb-1">Documento</label>
-                                        <input type="text" class="form-control mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
+                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
                                     </div>
                                 <?php
                                 }
@@ -88,7 +89,7 @@ if (!isset($_SESSION['documento'])) {
                                 ?>
                                     <div class="form form-group">
                                         <label class=" mb-1">Nombre</label>
-                                        <input type="text" class="form-control mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
+                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
                                     </div>
                                 <?php
                                 }
@@ -102,7 +103,7 @@ if (!isset($_SESSION['documento'])) {
                                 ?>
                                     <div class="form form-group">
                                         <label class=" mb-1">Apellido</label>
-                                        <input type="text" class="form-control mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
+                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
                                     </div>
                             <?php
                                 }
@@ -110,18 +111,18 @@ if (!isset($_SESSION['documento'])) {
                             ?>
                             <div class="form form-group">
                                 <label class=" mb-1">Cargo</label>
-                                <input type="text" class="form-control mb-1" placeholder="Ingrese Su Cargo" name="cargo">
+                                <input type="text" class=" label input  mb-1" placeholder="Ingrese Su Cargo" name="cargo">
                             </div>
                             <div class="form form-group">
                                 <label class=" mb-1">Dispositivo</label>
-                                <input type="text" class="form-control mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
+                                <input type="text" class=" label input  mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
                             </div>
                             <div class="form form-group">
                                 <label class=" mb-1">Observaciones</label>
-                                <input type="text" class="form-control mb-1" placeholder="Ingrese una observación" name="observacion">
+                                <input type="text" class=" label input  mb-1" placeholder="Ingrese una observación" name="observacion">
                             </div>
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-success mt-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+                                <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnIngresar">Ingresar Objeto</button>
                             </div>
                         </form>
                     </div>
@@ -136,16 +137,16 @@ if (!isset($_SESSION['documento'])) {
                             <table class="table table-striped text-center text-white" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="bg-success">Documento</th>
-                                        <th scope="col" class="bg-success">Apellido</th>
-                                        <th scope="col" class="bg-success">Nombre</th>
-                                        <th scope="col" class="bg-success">cargo</th>
-                                        <th scope="col" class="bg-success">Dispositivo</th>
-                                        <th scope="col" class="bg-success">Fecha ingreso</th>
-                                        <th scope="col" class="bg-success">Hora Ingreso</th>
-                                        <th scope="col" class="bg-success">Fecha Salida</th>
-                                        <th scope="col" class="bg-success">Hora Salida</th>
-                                        <th scope="col" class="bg-success">Observaci&oacute;n</th>
+                                        <th scope="col" id="th">Documento</th>
+                                        <th scope="col" id="th">Apellido</th>
+                                        <th scope="col" id="th">Nombre</th>
+                                        <th scope="col" id="th">cargo</th>
+                                        <th scope="col" id="th">Dispositivo</th>
+                                        <th scope="col" id="th">Fecha ingreso</th>
+                                        <th scope="col" id="th">Hora Ingreso</th>
+                                        <th scope="col" id="th">Fecha Salida</th>
+                                        <th scope="col" id="th">Hora Salida</th>
+                                        <th scope="col" id="th">Observaci&oacute;n</th>
 
                                     </tr>
                                 </thead>
@@ -156,28 +157,34 @@ if (!isset($_SESSION['documento'])) {
                                     while ($datos = $sql->fetch_object()) { ?>
 
                                         <tr class="table-active">
-                                            <td><?= $datos->documento ?></td>
-                                            <td><?= $datos->nombre ?></td>
-                                            <td><?= $datos->apellido ?></td>
-                                            <td><?= $datos->cargo ?></td>
-                                            <td><?= $datos->dispositivo ?></td>
-                                            <td><?= $datos->fecha ?></td>
-                                            <td><?= $datos->h_ingreso ?></td>
-                                            <td>
+                                            <td id="td" ><?= $datos->documento ?></td>
+                                            <td id="td" ><?= $datos->nombre ?></td>
+                                            <td id="td" ><?= $datos->apellido ?></td>
+                                            <td id="td" ><?= $datos->cargo ?></td>
+                                            <td id="td" ><?= $datos->dispositivo ?></td>
+                                            <td id="td" ><?= $datos->fecha ?></td>
+                                            <td id="td" ><?= $datos->h_ingreso ?></td>
+                                            <td id="td" >
                                                 <?php if($datos->fecha_salida==NULL){?>
-                                            <a href="#" class="btn btn-success Salida" 
-                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();">pendiente</a></td>
+                                            <a href="#" class="btn btn-warning Salida" 
+                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                                                <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
+                                                <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
+                                            </svg></a></td>
                                             <?php }else{
                                                 echo $datos->fecha_salida;
-                                             }?>
-                                             </td>
-                                            <td><?= $datos->h_salida ?></td>
-                                                <td>
+                                            }?>
+                                            </td>
+                                            <td id="td"><?= $datos->h_salida ?></td>
+                                                <td id="td">
                                                 <?php
                                                 if (empty($datos->observacion)){ ?>
-                                                    <button type="button" class="btn btn-success">pediente</button>
- 
-                                               <?php }else{
+                                                    <button type="button" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                                        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                                    </svg></button>
+
+                                                <?php }else{
                                                     echo $datos->observacion;
                                                 } ?>
                                             </td>
@@ -204,7 +211,6 @@ if (!isset($_SESSION['documento'])) {
                         var id = $(this).attr("id-salida");
                         var btn = $(this)[0];
                         btn.blur();
-                       
                         if (confirm("Desea registar la salida del dispositivo?")) {
                             $.ajax({
                                 type: "POST",
