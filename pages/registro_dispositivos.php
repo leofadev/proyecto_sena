@@ -136,7 +136,6 @@ if (!isset($_SESSION['documento'])) {
                             <table class="table table-striped text-center text-white" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="bg-success">Vigilante</th>
                                         <th scope="col" class="bg-success">Documento</th>
                                         <th scope="col" class="bg-success">Apellido</th>
                                         <th scope="col" class="bg-success">Nombre</th>
@@ -145,7 +144,6 @@ if (!isset($_SESSION['documento'])) {
                                         <th scope="col" class="bg-success">Fecha ingreso</th>
                                         <th scope="col" class="bg-success">Hora Ingreso</th>
                                         <th scope="col" class="bg-success">Fecha Salida</th>
-                                        <th scope="col" class="bg-success">Hora Salida</th>
                                         <th scope="col" class="bg-success">Hora Salida</th>
                                         <th scope="col" class="bg-success">Observaci&oacute;n</th>
 
@@ -158,7 +156,6 @@ if (!isset($_SESSION['documento'])) {
                                     while ($datos = $sql->fetch_object()) { ?>
 
                                         <tr class="table-active">
-                                            <td><?= $datos->vigiliante ?></td>
                                             <td><?= $datos->documento ?></td>
                                             <td><?= $datos->nombre ?></td>
                                             <td><?= $datos->apellido ?></td>
@@ -166,24 +163,23 @@ if (!isset($_SESSION['documento'])) {
                                             <td><?= $datos->dispositivo ?></td>
                                             <td><?= $datos->fecha ?></td>
                                             <td><?= $datos->h_ingreso ?></td>
-                                            <td><?= $datos->fecha_salida ?></td>
-                                            <td><?= $datos->h_salida ?></td>
                                             <td>
-                                              <?php if($datos->fecha_salida==NULL){?>
+                                                <?php if($datos->fecha_salida==NULL){?>
                                             <a href="#" class="btn btn-success Salida" 
                                             value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();">pendiente</a></td>
-                                            <?php }else{?>
-                                                <a href="#" class="btn btn-secondary" readonly>No disponible</a>
-                                            <?php }?>
+                                            <?php }else{
+                                                echo $datos->fecha_salida;
+                                             }?>
+                                             </td>
+                                            <td><?= $datos->h_salida ?></td>
                                                 <td>
                                                 <?php
-                                                if (empty($datos->observacion)) {
-                                                    echo '<button type="button" class="btn btn-success">pediente</button>
-                                                    ';
-                                                } else {
+                                                if (empty($datos->observacion)){ ?>
+                                                    <button type="button" class="btn btn-success">pediente</button>
+ 
+                                               <?php }else{
                                                     echo $datos->observacion;
-                                                }
-                                                ?>
+                                                } ?>
                                             </td>
 
                                         </tr>

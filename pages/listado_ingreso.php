@@ -1,15 +1,16 @@
 <?php
-    session_start();
-    if(!isset($_SESSION ['documento'])){
-        echo '<script>
-            alert("Por favor inicie sesión");
-            
-        </script>';
+session_start();
+$nombreCompleto = $_SESSION ['nombre_user'];
+if (!isset($_SESSION['documento'])) {
+    echo '<script>
+        alert("Por favor inicie sesión");
         
-        header("Location: ../index.php");
-        session_destroy();
-        die();
-    }
+    </script>';
+
+    header("Location: ../index.php");
+    session_destroy();
+    die();
+}
 
 
 ?>
@@ -62,7 +63,7 @@
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">
-                                <td id="td" ></td>
+                                <td id="td" ><?= $datos->vigiliante ?></td>
                                 <td id="td" ><?= $datos->fecha?></td>
                                 <td id="td" ><?= $datos->nombre?></td>
                                 <td id="td" ><?= $datos->cargo?></td>
