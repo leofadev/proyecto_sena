@@ -62,7 +62,6 @@ if (!isset($_SESSION['documento'])) {
                             include("../crud/model/connection.php");
                             include("../crud-celador/registro_objetos.php");
 
-                            include("../crud/controller/modificar_persona.php");
                             ?>
 
                             <?php
@@ -201,7 +200,10 @@ if (!isset($_SESSION['documento'])) {
                 </div>
                 <br><br><br><br><br><br><br><br><br>
             </div>
-            <script>
+
+</body>
+<script src="../jquery/js/jquery.min.js"></script>
+<script>
                 iniciarSalida();
 
                 function iniciarSalida() {
@@ -228,9 +230,6 @@ if (!isset($_SESSION['documento'])) {
                     });
                 }
             </script>
-</body>
-<script src="../jquery/js/jquery.min.js"></script>
-
 </html>
 
 <?php
