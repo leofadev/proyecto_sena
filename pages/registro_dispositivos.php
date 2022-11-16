@@ -145,7 +145,7 @@ if (!isset($_SESSION['documento'])) {
                                         <th scope="col" id="th">Hora Ingreso</th>
                                         <th scope="col" id="th">Fecha Salida</th>
                                         <th scope="col" id="th">Hora Salida</th>
-                                        <th scope="col" id="th">Observaci&oacute;n</th>
+                                        <!-- <th scope="col" id="th">Observaci&oacute;n</th> -->
 
                                     </tr>
                                 </thead>
@@ -166,7 +166,7 @@ if (!isset($_SESSION['documento'])) {
                                             <td id="td" >
                                                 <?php if($datos->fecha_salida==NULL){?>
                                             <a href="#" class="btn btn-warning Salida" 
-                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();">pendiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
                                                 <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
                                                 <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
                                             </svg></a></td>
@@ -174,19 +174,19 @@ if (!isset($_SESSION['documento'])) {
                                                 echo $datos->fecha_salida;
                                             }?>
                                             </td>
-                                            <td id="td"><?= $datos->h_salida ?></td>
-                                                <td id="td">
-                                                <?php
+                                           <td id="td"><?= $datos->h_salida ?></td>
+                                                <!--  <td id="td">
+                                                <php
                                                 if (empty($datos->observacion)){ ?>
-                                                    <button type="button" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                                    <button type="button" class="btn btn-warning">pendiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                                                         <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                                                     </svg></button>
 
-                                                <?php }else{
+                                                <php }else{
                                                     echo $datos->observacion;
                                                 } ?>
-                                            </td>
+                                            </td> -->
 
                                         </tr>
                                     <?php
@@ -200,7 +200,10 @@ if (!isset($_SESSION['documento'])) {
                 </div>
                 <br><br><br><br><br><br><br><br><br>
             </div>
-            <script>
+
+</body>
+<script src="../jquery/js/jquery.min.js"></script>
+<script>
                 iniciarSalida();
 
                 function iniciarSalida() {
@@ -227,9 +230,6 @@ if (!isset($_SESSION['documento'])) {
                     });
                 }
             </script>
-</body>
-<script src="../jquery/js/jquery.min.js"></script>
-
 </html>
 
 <?php
