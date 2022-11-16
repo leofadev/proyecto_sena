@@ -62,7 +62,6 @@ if (!isset($_SESSION['documento'])) {
                             include("../crud/model/connection.php");
                             include("../crud-celador/registro_objetos.php");
 
-                            include("../crud/controller/modificar_persona.php");
                             ?>
 
                             <?php

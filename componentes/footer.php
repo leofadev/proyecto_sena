@@ -11,11 +11,11 @@
                     <div class="row">
                     <div class="col-6 text-right">
                     <!-- GITHUB de Pinto -->
-                    <a class="text-secondary navbar-brand" href="https://github.com/leofadev"> &copy;Leonardo Pinto</a>
+                    <a class="text-secondary navbar-brand" href="https://github.com/leofadev" target="_blank"> &copy;Leonardo Pinto</a>
             </div>
             <div class="col-6 text-left">
                     <!-- GITHUB de Camargo -->
-                    <a class="text-secondary navbar-brand" href="https://github.com/geovanny-star">&copy;Geovanny Camargo</a>
+                    <a class="text-secondary navbar-brand" href="https://github.com/geovanny-star" target="_blank">&copy;Geovanny Camargo</a>
             </div>
             </div>
                     </div>
