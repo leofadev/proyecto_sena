@@ -101,7 +101,7 @@
                         <tbody id="myTable">
                             <?php
                             include("../crud/model/connection.php");
-                            $sql = $con->query(" SELECT * FROM personas");
+                            $sql = $con->query("SELECT *, sub_item.descripcion AS tipo_documento FROM personas inner JOIN sub_item ON personas.tipo_documento = sub_item.id;");
                             while($datos=$sql->fetch_object()) {?>
 
                             <tr class="table-active">

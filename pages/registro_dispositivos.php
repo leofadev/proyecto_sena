@@ -8,6 +8,7 @@ if (!isset($_SESSION['documento'])) {
     </script>';
 
     header("Location: ../index.php");
+    include_once('../crud/model/connection.php');
     session_destroy();
     die();
 }
@@ -30,6 +31,7 @@ if (!isset($_SESSION['documento'])) {
 </head>
 
 <body class="nav">
+
     <?php
     include("../componentes/navbar_celador.php");
     ?>
@@ -44,86 +46,32 @@ if (!isset($_SESSION['documento'])) {
                     ?>
                     <div class="form form-group">
                         <label  class=" mb-1">Documento</label>
-                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="documento">
+                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="documento" id="document">
                     </div>
 
                     <div class="col-auto">
-                        <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnDocumento">Buscar</button>
+                        <button type="button" class="btn text-white btn-primary buscar-doc">Buscar</button>
                     </div>
                 </form>
             </div>
-            <!-- Formulario para registrar objetos -->
+        <?php
+        $nombre = null;
+        $sql_regist = "SELECT *, sub_item.descripcion AS ROLES FROM personas inner JOIN sub_item ON personas.rol = sub_item.id;" ;
+        $Query1 = mysqli_query($con,$sql_regist);
+        if($Query1){
+        if($row= mysqli_fetch_array($Query1)){
+            $nombre =$row ['nombre'];
+            $id_rol = $row ['rol'];
+            $rol =$row ['ROLES'];
+            $apellido = $row ['apellido'];
+            $documen = $row ['documento'];
+        }}
+    ?>
             <div class="container-fluid mt-5">
                 <div class="row mt-5">
                     <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                        <form class="form p-3 rounded border" method="POST">
-                            <h3 class="text-center">Registro De Objetos</h3>
-                            <?php
-                            include("../crud/model/connection.php");
-                            include("../crud-celador/registro_objetos.php");
-
-                            ?>
-
-                            <?php
-                            include("../crud-celador/registro_documento.php");
-
-                            $name = $con->query("SELECT `documento` FROM `personas` WHERE `documento` = '$documento'");
-
-                            if ($name->num_rows > 0) {
-                                while ($dato = $name->fetch_object()) {
-
-                            ?>
-                                    <div class="form form-group">
-                                        <label class=" mb-1">Documento</label>
-                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="document" value="<?= $dato->documento ?>">
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                include("../crud-celador/registro_documento.php");
-                                $nombre_sql = $con->query("SELECT `nombre` FROM `personas` WHERE `documento` = '$documento'");
-                                while ($date = $nombre_sql->fetch_object()) {
-
-                                ?>
-                                    <div class="form form-group">
-                                        <label class=" mb-1">Nombre</label>
-                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese Nombre" name="nombre" value="<?= $date->nombre ?>">
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                include("../crud-celador/registro_documento.php");
-                                $apellido_sql = $con->query("SELECT `apellido` FROM `personas` WHERE `documento` = '$documento'");
-
-                                while ($dati = $apellido_sql->fetch_object()) {
-
-                                ?>
-                                    <div class="form form-group">
-                                        <label class=" mb-1">Apellido</label>
-                                        <input type="text" class=" label input  mb-1" placeholder="Ingrese apellido" name="apellido" value="<?= $dati->apellido ?>">
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                            <div class="form form-group">
-                                <label class=" mb-1">Cargo</label>
-                                <input type="text" class=" label input  mb-1" placeholder="Ingrese Su Cargo" name="cargo">
-                            </div>
-                            <div class="form form-group">
-                                <label class=" mb-1">Dispositivo</label>
-                                <input type="text" class=" label input  mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
-                            </div>
-                            <div class="form form-group">
-                                <label class=" mb-1">Observaciones</label>
-                                <input type="text" class=" label input  mb-1" placeholder="Ingrese una observación" name="observacion">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnIngresar">Ingresar Objeto</button>
-                            </div>
-                        </form>
+                        
+                        <div id="register"></div>
                     </div>
                     <!-- Fin de formulario para registrar objetos -->
 
@@ -174,20 +122,8 @@ if (!isset($_SESSION['documento'])) {
                                                 echo $datos->fecha_salida;
                                             }?>
                                             </td>
-                                           <td id="td"><?= $datos->h_salida ?></td>
-                                                <!--  <td id="td">
-                                                <php
-                                                if (empty($datos->observacion)){ ?>
-                                                    <button type="button" class="btn btn-warning">pendiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                                                        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-                                                    </svg></button>
-
-                                                <php }else{
-                                                    echo $datos->observacion;
-                                                } ?>
-                                            </td> -->
-
+                                            <td id="td"><?= $datos->h_salida ?></td>
+ 
                                         </tr>
                                     <?php
                                     }
@@ -230,6 +166,29 @@ if (!isset($_SESSION['documento'])) {
                     });
                 }
             </script>
+<script>   
+    formulario();
+    
+    
+    function formulario(){
+        $(".buscar-doc").click(function(e){
+            let doc = $('#document').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '../crud-celador/php/ponerForm.php',
+                data:{
+                    'documento' :doc,
+                },
+                success: function(data) {
+                    $("#register").html(data);
+                }
+
+            });
+        });
+    }
+
+</script>
 </html>
 
 <?php
