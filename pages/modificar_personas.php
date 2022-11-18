@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 if(!isset($_SESSION ['documento'])){
     echo '<script>
         alert("Por favor inicie sesión");
@@ -33,9 +34,10 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
 <body class="nav">
-    <!-- <php
-    include("../componentes/navbar.php");
-    ?> -->
+     <?php
+     include("../crud/controller/navbar.php");
+    
+    ?>
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">
     <div class="row mt-5">

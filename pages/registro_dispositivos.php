@@ -65,6 +65,7 @@ if (!isset($_SESSION['documento'])) {
             $rol =$row ['ROLES'];
             $apellido = $row ['apellido'];
             $documen = $row ['documento'];
+            
         }}
     ?>
             <div class="container-fluid mt-5">
