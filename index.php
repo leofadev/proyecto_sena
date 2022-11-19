@@ -45,7 +45,7 @@ if(isset($_SESSION['documento'])){
         </div>
         <input
           class="form-control bg-light btn-light border"
-          type="text"
+          type="text" id="age" onkeypress="return valideKey(event);"
           placeholder="Username" 
           name="documento"/>
       </div>
@@ -83,6 +83,21 @@ if(isset($_SESSION['documento'])){
     <!-- Fin del login -->
   </body>
 </html>
+<script type="text/javascript">
+		function valideKey(evt){
+			
+			// code is the decimal ASCII representation of the pressed key.
+			var code = (evt.which) ? evt.which : evt.keyCode;
+			
+			if(code==8) { // backspace.
+			  return true;
+			} else if(code>=48 && code<=57) { // is a number.
+			  return true;
+			} else{ // other keys.
+			  return false;
+			}
+		}
+		</script>
 
 <script type="text/javascript">
   function myFuction(){
@@ -95,3 +110,14 @@ if(isset($_SESSION['documento'])){
   }
 
 </script>
+<!-- <script src="../jquery/js/jquery.min.js"></script>
+<script type="text/javascript">
+		// Initialize our function when the document is ready for events.
+		jQuery(document).ready(function(){
+			// Listen for the input event.
+			jQuery("#age").on('input', function (evt) {
+				// Allow only numbers.
+				jQuery(this).val(jQuery(this).val().replace(/[^0-9]/g, ''));
+			});
+		});
+		</script> -->

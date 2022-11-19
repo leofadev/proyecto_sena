@@ -139,6 +139,7 @@ if (!isset($_SESSION['documento'])) {
             </div>
 
 </body>
+
 <script src="../jquery/js/jquery.min.js"></script>
 <script>
                 iniciarSalida();

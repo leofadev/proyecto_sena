@@ -23,7 +23,7 @@
 </div>
 </footer>
 
-
+<script src="../fontawesome/js/fontawesome.js"></script>
 <!-- Codigo JavaScript -->
 <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 <!-- Buscador -->

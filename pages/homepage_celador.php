@@ -52,7 +52,7 @@
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>
-                    <input type="text" class="label input  mb-1"  placeholder=" Numero De Documento" name="documento">
+                    <input type="text" class="label input  mb-1"  placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Correo</label>
@@ -126,6 +126,21 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+		function valideKey(evt){
+			
+			// code is the decimal ASCII representation of the pressed key.
+			var code = (evt.which) ? evt.which : evt.keyCode;
+			
+			if(code==8) { // backspace.
+			  return true;
+			} else if(code>=48 && code<=57) { // is a number.
+			  return true;
+			} else{ // other keys.
+			  return false;
+			}
+		}
+		</script>
 </html>
 
 <?php
