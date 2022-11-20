@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 if(!isset($_SESSION ['documento'])){
     echo '<script>
         alert("Por favor inicie sesión");
@@ -17,7 +18,7 @@ include("../crud/model/connection.php");
 
 $id=$_GET["id"];
 
-$sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
+$sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
 ?>
 <!-- Pagina para modificar los registros de usuarios existentes en la tabla personas de la base de datos -->
 <!DOCTYPE html>
@@ -33,9 +34,6 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
 </head>
 <body class="nav">
-    <!-- <php
-    include("../componentes/navbar.php");
-    ?> -->
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">
     <div class="row mt-5">
@@ -58,7 +56,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Numero De Documento" name="documento" value="<?= $datos->documento ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Numero De Documento" name="documento" value="<?= $datos->documento ?>" id="age" onkeypress="return valideKey(event);">
                 </div>
                 <div class="form form-group">
                     <label class=" mb-1">Correo</label>
@@ -83,4 +81,19 @@ $sql=$con->query(" SELECT * FROM personas WHERE id=$id ");
 </div>
 <!-- Fin de formulario para modificar registros de usuarios -->
 </body>
+<script type="text/javascript">
+function valideKey(evt){
+    
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57) { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
+</script> 
 </html>

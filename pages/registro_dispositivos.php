@@ -65,6 +65,7 @@ if (!isset($_SESSION['documento'])) {
             $rol =$row ['ROLES'];
             $apellido = $row ['apellido'];
             $documen = $row ['documento'];
+            
         }}
     ?>
             <div class="container-fluid mt-5">
@@ -138,6 +139,7 @@ if (!isset($_SESSION['documento'])) {
             </div>
 
 </body>
+
 <script src="../jquery/js/jquery.min.js"></script>
 <script>
                 iniciarSalida();

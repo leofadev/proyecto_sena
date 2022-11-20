@@ -9,7 +9,7 @@ if (!empty($_POST["btnModificar"])) {
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
 
-        $sql=$con->query("UPDATE `personas` SET `tipo_documento`=' $tipo_documento',`documento`='$documento',`correo`='$correo',`nombre`='$nombre',`apellido`='$apellido' WHERE `id` = $id");
+        $sql=$con->query("UPDATE `personas` SET `tipo_documento`=' $tipo_documento',`documento`='$documento',`correo`='$correo',`nombre`='$nombre',`apellido`='$apellido' WHERE `id` = '$id'");
         if ($sql==1) {
             header("Location:./homepage.php");
         } else {

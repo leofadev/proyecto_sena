@@ -2,7 +2,7 @@
 
 <?php
   include("../crud/model/connection.php");
-if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST["pass"]) && empty($_POST["nombre"] && empty($_POST["apellido"]))){
+if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST["pass"]) && empty($_POST["nombre"] && empty($_POST["apellido"])  && empty($_POST["rol"]))){
   $documento= $_POST["documento"];
   $pass=$_POST["pass"];
   
@@ -27,7 +27,6 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
       session_start();
       $_SESSION ['documento'] = $documento;
       $_SESSION ['nombre_user'] = $name ." ".$apellido;
-
       switch ($rol) {
         case $rol==1:
           header('Location:../pages/homepage.php');
