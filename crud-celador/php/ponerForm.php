@@ -13,8 +13,8 @@ if($row = mysqli_fetch_array($query)){
 }
 if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
 ?>
-    <form class="form p-3 rounded border" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
-        <h3 class="text-center">Registro De Objetos 1</h3>
+    <form class="form p-3 rounded border shadow" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
+        <h3 class="text-center">Registro De Objetos</h3>
                 
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>

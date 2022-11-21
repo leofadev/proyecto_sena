@@ -18,7 +18,7 @@ include("../crud/model/connection.php");
 
 $id=$_GET["id"];
 
-$sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
+$sql=$con->query(" SELECT * FROM personas WHERE id =$id");
 ?>
 <!-- Pagina para modificar los registros de usuarios existentes en la tabla personas de la base de datos -->
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
 </head>
 <body class="nav">
     <?php
-        include("../componentes/navbar.php");
+        include("../componentes/navbar_celador.php");
     ?>
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">
@@ -45,7 +45,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                 <h3 class="text-center" >Editar Datos Personales</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
-                include("../crud/controller/modificar_persona.php");
+                include("../crud/controller/modificar_ps_celador.php");
 
                 while ($datos=$sql->fetch_object()) {?>
                 <div class="form form-group">
@@ -72,7 +72,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                 <?php }
                 ?>
                 <div class="col-auto">
-                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnModificar">Guardar Cambios</button>
+                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnModificar_c">Guardar Cambios</button>
                 </div>
             </form>
         </div>

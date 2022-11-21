@@ -39,8 +39,8 @@
                                 include("../crud/model/connection.php");
                                 
                                 $documento = $_SESSION["documento"];
-                                $sql = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
-                                $resultado = $con->query($sql);
+                                $sql_1 = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
+                                $resultado = $con->query($sql_1);
 
                                 while ($datos=$resultado->fetch_assoc()) {
                                     $nombre = $datos['nombre'];
@@ -49,7 +49,7 @@
                             ?>
                         <li><a class="dropdown-item" href="#"><?php echo $nombre." ".$apellido;?></a></li>
                         <?php } ?>
-                        <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
+                        <li><a class="dropdown-item" href="../pages/cambiar_clave.php">Cambiar contrase&nacute;a</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>
                         </ul>

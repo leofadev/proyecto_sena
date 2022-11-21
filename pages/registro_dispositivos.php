@@ -37,8 +37,8 @@ if (!isset($_SESSION['documento'])) {
     ?>
     <div class="container-fluid mt-5">
         <div class="row mt-5">
-            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                <form class="form p-3 rounded border" method="POST">
+            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4  mt-5">
+                <form class="form p-3 rounded border shadow" method="POST">
                     <h3 class="text-center">Buscar usuario</h3>
                     <?php
                     include("../crud/model/connection.php");
@@ -50,7 +50,7 @@ if (!isset($_SESSION['documento'])) {
                     </div>
 
                     <div class="col-auto">
-                        <button type="button" class="btn text-white btn-primary buscar-doc">Buscar</button>
+                        <button type="button" class="btn text-light btn-dark mt-2 buscar-doc">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['documento'])) {
                     <!-- Fin de formulario para registrar objetos -->
 
                     <!-- Inicio del CRUD -->
-                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
+                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
                         <div class="overflow-auto">
                             <?php
                             include("../crud/model/connection.php");

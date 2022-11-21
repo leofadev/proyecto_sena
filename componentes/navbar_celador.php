@@ -21,16 +21,6 @@
                         Registro Dispositivos
                     </a>
                 </li>
-                <li class="nav-item">
-                <a id="placeholder"  class="nav-link text-white" href="#">
-                        Listado Usuarios
-                    </a>
-                </li>
-                <li class="nav-item">
-                <a id="placeholder"  class="nav-link text-white" href="#">
-                        Listado Ingresos
-                    </a>
-                </li>
             </ul>
             <li class="nav-item dropdown">
                 <button id="th" type="button" class="btn text-white btn-light dropdown-toggle ml-5" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,8 +30,8 @@
                 <?php
                                 include("../crud/model/connection.php");
                                 $documento = $_SESSION["documento"];
-                                $sql = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
-                                $resultado = $con->query($sql);
+                                $sql_2 = "SELECT `nombre`, `apellido` FROM `personas` WHERE `documento` = '$documento'";
+                                $resultado = $con->query($sql_2);
 
                                 while ($datos=$resultado->fetch_assoc()) {
                                     $nombre = $datos['nombre'];
@@ -50,7 +40,7 @@
                             ?>
                         <li><a class="dropdown-item" href="#"><?php echo $nombre." ".$apellido;?></a></li>
                         <?php } ?>
-                    <li><a class="dropdown-item" href="#">Cambiar contrase&nacute;a</a></li>
+                    <li><a class="dropdown-item" href="../pages/cambiar_clave.php">Cambiar contrase&nacute;a</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="../pages/cerrar_sesion.php">Cerrar Sesi&oacute;n</a></li>
                 </ul>

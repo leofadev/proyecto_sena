@@ -65,7 +65,7 @@
             <!-- Fin de registro de items -->
 
             <!-- Inicio del CRUD items -->
-            <div class="col-12 col-sm-12 col-md-8 col-xl-7 p-4 mt-5">
+            <div class="col-12 col-sm-12 col-md-8 col-xl-7 p-4 shadow mt-5">
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
@@ -128,7 +128,7 @@
     </div>
 
             <!-- Inicio del CRUD Sub_items -->
-            <div class="col-12 col-sm-12 col-md-8 col-xl-7 p-4 mt-5">
+            <div class="col-12 col-sm-12 col-md-8 col-xl-7 p-4 shadow mt-5">
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");

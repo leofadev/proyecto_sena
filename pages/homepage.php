@@ -45,7 +45,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
         <h1 id="td" class=" mb-3">Sede TIC</h1>
             <h4 class="text-center text-black" >Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
-            <p class="h5 mt-4 text-secondary" >En este node del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
+            <p class="h5 mt-4 text-secondary" >En esta sede del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
             <div class=" shadow p-3 mb-5 bg-white rounded mb-3" style="max-width: 540px;">
@@ -119,7 +119,7 @@
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 mt-5">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
