@@ -35,28 +35,18 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 p-7 d-flex justify-content-center mt-5">
-        <form class="form p-3 rounded border shadow"  action="../crud/controller/modificar_clave.php"  method="POST">
+        <form class="form p-3 rounded border shadow" action="../crud/controller/modificar_clave.php" method="POST">
             <h2>Cambiar Contraseña</h2>
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
+            
+            <input type="password" name="op" class=" label input  mb-1" placeholder="Contraseña Actual" required><br>
 
-            <?php if (isset($_GET['success'])) { ?>
-                <p class="success"><?php echo $_GET['success']; ?></p>
-            <?php } ?>
-
-            <label>Contraseña Actual</label>
-            <input type="password" name="op" class=" label input  mb-1" placeholder="Old Passsword"><br>
-
-            <label>Nueva Contraseña</label>
-            <input type="password" name="np" class=" label input  mb-1" placeholder="New Password">
+            <input type="password" name="np" class=" label input  mb-1" placeholder="Nueva Contraseña" required>
             <br>
 
-            <label>Confirmar Nueva Contraseña</label>
-            <input type="password" name="c_np" class=" label input  mb-1" placeholder="New Password">
+            <input type="password" name="c_np" class=" label input  mb-1" placeholder="Nueva Contraseña" required>
             <br>
 
-            <button type="submit" class="btn text-light btn-dark mt-2">Cambiar</button>
+            <button type="submit" name="btnPass" class="btn text-light btn-dark mt-2">Cambiar</button>
             <a href="../pages/cerrar_sesion.php" class="btn text-light btn-danger mt-2">Salir</a>
         </form>
         </div>
