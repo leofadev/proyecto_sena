@@ -135,7 +135,7 @@
             $sql_sub = $con->query("SELECT * FROM sub_item");
             
             ?>
-                <table class="table table-striped rounded border table-hover text-center text-white" id="myTable">
+                <table class="table table-striped rounded border table-hover text-center text-white" id="myTabl">
                     <thead>
                         <tr>
                             
@@ -144,7 +144,7 @@
                             <th scope="col" id="th" class=" text-center">Editar</th>
                         </tr>
                     </thead>
-                        <tbody id="myTable">
+                        <tbody id="myTabl">
                         
                         <?php
                         
