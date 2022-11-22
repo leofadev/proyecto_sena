@@ -64,83 +64,43 @@
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST">
+            <form class="form p-3 rounded border shadow" method="POST">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
                 ?>
                 <div class="form form-group">
-                    <label for="validation" class="form-label mb-1">Tipo de documento</label>
-                    <select id="validation" class="form-select gn  mb-1" name="tipo_documento" aria-label="Default select example" required>
-                    <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                    <label  class="form-label mb-1">Tipo de documento</label>
+                    <select id="td" class=" gn  mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="3">TI</option>
                     </select>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                      por favor seleccione un campo
-                    </div>
                 </div>
                 <div class="form form-group">
-                    <label for="document" class="form-label mb-1">Documento</label>
-                    <input type="text" class="form-control label input  mb-1" id="document" placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);" required>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                        Ess necesario poner el documento
-                    </div>
+                    <label class=" mb-1">Documento</label>
+                    <input type="text" class="label input  mb-1"  placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
                 </div>
                 <div class="form form-group">
-                    <label for="validationCustomUsername" class="form-label mb-1">Correo</label>
-                    <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" class="form-control label input mb-1" id="validationCustomUsername" placeholder="Ingrese Su Correo" name="correo" required>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                        Ess necesario poner el documento
-                    </div>
-                   </div>
+                    <label class=" mb-1">Correo</label>
+                    <input type="mail" class="label input  mb-1"  placeholder="Ingrese Su Correo" name="correo">
                 </div>
                 <div class="form form-group">
-                    <label for="nameId" class="form-label mb-1">Nombre</label>
-                    <input type="text" class="form-control label input mb-1" id="nameId" placeholder="Ingrese Su Nombre" name="nombre" required>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                        Ess necesario poner el nombre
-                    </div>
+                    <label class=" mb-1">Nombre</label>
+                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
                 </div>
                 <div class="form form-group">
-                    <label for="" class="form-label mb-1">Apellido</label>
-                    <input type="text" class="form-control label input mb-1" id="" placeholder="Ingrese Su Apellido" name="apellido" required>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                        Ess necesario poner el apellido
-                    </div>
+                    <label class=" mb-1">Apellido</label>
+                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
                 </div>
                 <div class="form form-group">
-                    <label for="validation1" class="form-label mb-1">Roles</label>
-                    <select  name="rol" id="validation1" class="form-select gn  mb-1" aria-label="Default select example" required>
-                    <option class=" form mb-1" list="listaRoles" value="" disabled selected >Seleccione</option>
-                    <option class=" form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
+                    <label class="form-label mb-1">Roles</label>
+                    <select id="td" class=" gn  mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
                     </select>
-                    <div class="valid-feedback">
-                        correcto
-                    </div>
-                    <div class="invalid-feedback">
-                      por favor seleccione un campo
-                    </div>
-
                 </div>
                 <div class="col-auto">
                     <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
@@ -197,28 +157,6 @@
         </div>
     </div>
 </body>
-<script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-    </script>
 <script type="text/javascript">
 		function valideKey(evt){
 			

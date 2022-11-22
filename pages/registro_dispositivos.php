@@ -1,6 +1,6 @@
 <?php
 session_start();
-$nombreCompleto = $_SESSION['nombre_user'];
+$nombreCompleto = $_SESSION ['nombre_user'];
 if (!isset($_SESSION['documento'])) {
     echo '<script>
         alert("Por favor inicie sesión");
@@ -37,7 +37,7 @@ if (!isset($_SESSION['documento'])) {
     ?>
     <div class="container-fluid mt-5">
         <div class="row mt-5">
-            <div class="col-12 p-7 col-sm-10 col-md-6 col-xl-3 p-4">
+            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4  mt-5">
                 <form class="form p-3 rounded border shadow" method="POST">
                     <h3 class="text-center">Buscar usuario</h3>
                     <?php
@@ -45,7 +45,7 @@ if (!isset($_SESSION['documento'])) {
                     include("../crud-celador/registro_documento.php");
                     ?>
                     <div class="form form-group">
-                        <label class=" mb-1">Documento</label>
+                        <label  class=" mb-1">Documento</label>
                         <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="documento" id="document">
                     </div>
 
@@ -54,152 +54,133 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                 </form>
             </div>
-            <?php
-            $nombre = null;
-            $sql_regist = "SELECT *, sub_item.descripcion AS ROLES FROM personas inner JOIN sub_item ON personas.rol = sub_item.id;";
-            $Query1 = mysqli_query($con, $sql_regist);
-            if ($Query1) {
-                if ($row = mysqli_fetch_array($Query1)) {
-                    $nombre = $row['nombre'];
-                    $id_rol = $row['rol'];
-                    $rol = $row['ROLES'];
-                    $apellido = $row['apellido'];
-                    $documen = $row['documento'];
-                }
-            }
-            ?>
+        <?php
+        $nombre = null;
+        $sql_regist = "SELECT *, sub_item.descripcion AS ROLES FROM personas inner JOIN sub_item ON personas.rol = sub_item.id;" ;
+        $Query1 = mysqli_query($con,$sql_regist);
+        if($Query1){
+        if($row= mysqli_fetch_array($Query1)){
+            $nombre =$row ['nombre'];
+            $id_rol = $row ['rol'];
+            $rol =$row ['ROLES'];
+            $apellido = $row ['apellido'];
+            $documen = $row ['documento'];
+            
+        }}
+    ?>
+            <div class="container-fluid mt-5">
+                <div class="row mt-5">
+                    <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
+                        
+                        <div id="register"></div>
+                    </div>
+                    <!-- Fin de formulario para registrar objetos -->
 
-            <!-- Fin de formulario para registrar objetos -->
-        </div>
+                    <!-- Inicio del CRUD -->
+                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
+                        <div class="overflow-auto">
+                            <?php
+                            include("../crud/model/connection.php");
+                            ?>
+                            <table class="table table-striped text-center text-white" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" id="th">Documento</th>
+                                        <th scope="col" id="th">Apellido</th>
+                                        <th scope="col" id="th">Nombre</th>
+                                        <th scope="col" id="th">cargo</th>
+                                        <th scope="col" id="th">Dispositivo</th>
+                                        <th scope="col" id="th">Fecha ingreso</th>
+                                        <th scope="col" id="th">Hora Ingreso</th>
+                                        <th scope="col" id="th">Fecha Salida</th>
+                                        <th scope="col" id="th">Hora Salida</th>
+                                        <!-- <th scope="col" id="th">Observaci&oacute;n</th> -->
 
-    </div>
-    <div class="container-fluid">
-        <div class="row">
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <?php
+                                    include("../crud/model/connection.php");
+                                    $sql = $con->query(" SELECT * FROM objetos");
+                                    while ($datos = $sql->fetch_object()) { ?>
 
+                                        <tr class="table-active">
+                                            <td id="td" ><?= $datos->documento ?></td>
+                                            <td id="td" ><?= $datos->nombre ?></td>
+                                            <td id="td" ><?= $datos->apellido ?></td>
+                                            <td id="td" ><?= $datos->cargo ?></td>
+                                            <td id="td" ><?= $datos->dispositivo ?></td>
+                                            <td id="td" ><?= $datos->fecha ?></td>
+                                            <td id="td" ><?= $datos->h_ingreso ?></td>
+                                            <td id="td" >
+                                                <?php if($datos->fecha_salida==NULL){?>
+                                            <a href="#" class="btn btn-warning Salida" 
+                                            value="btnModificar" id="Salida" id-salida="<?= $datos->id?>" onclick="iniciarSalida();">pendiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                                                <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
+                                                <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
+                                            </svg></a></td>
+                                            <?php }else{
+                                                echo $datos->fecha_salida;
+                                            }?>
+                                            </td>
+                                            <td id="td"><?= $datos->h_salida ?></td>
+ 
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Fin del CRUD -->
+                </div>
+                <br><br><br><br><br><br><br><br><br>
+            </div>
 
-            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5" id="register"></div>
-        </div>
-
-        <!-- Inicio del CRUD -->
-        <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow">
-                <?php
-                include("../crud/model/connection.php");
-                ?>
-                <table class="table table-striped text-center text-white" id="myTable">
-                    <thead>
-                        <tr>
-                            <th scope="col" id="th">Documento</th>
-                            <th scope="col" id="th">Apellido</th>
-                            <th scope="col" id="th">Nombre</th>
-                            <th scope="col" id="th">cargo</th>
-                            <th scope="col" id="th">Dispositivo</th>
-                            <th scope="col" id="th">Fecha ingreso</th>
-                            <th scope="col" id="th">Hora Ingreso</th>
-                            <th scope="col" id="th">Fecha Salida</th>
-                            <th scope="col" id="th">Hora Salida</th>
-                            <!-- <th scope="col" id="th">Observaci&oacute;n</th> -->
-
-                        </tr>
-                    </thead>
-                    <tbody id="myTable">
-                        <?php
-                        include("../crud/model/connection.php");
-                        $sql = $con->query(" SELECT * FROM objetos");
-                        while ($datos = $sql->fetch_object()) { ?>
-
-                            <tr class="table-active">
-                                <td id="td"><?= $datos->documento ?></td>
-                                <td id="td"><?= $datos->nombre ?></td>
-                                <td id="td"><?= $datos->apellido ?></td>
-                                <td id="td"><?= $datos->cargo ?></td>
-                                <td id="td"><?= $datos->dispositivo ?></td>
-                                <td id="td"><?= $datos->fecha ?></td>
-                                <td id="td"><?= $datos->h_ingreso ?></td>
-                                <td id="td">
-                                    <?php if ($datos->fecha_salida == NULL) { ?>
-                                        <a href="#" class="btn btn-warning Salida" value="btnModificar" id="Salida" id-salida="<?= $datos->id ?>" onclick="iniciarSalida();">pendiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
-                                                <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z" />
-                                                <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z" />
-                                            </svg></a>
-                                </td>
-                            <?php } else {
-                                        echo $datos->fecha_salida;
-                                    } ?>
-                            </td>
-                            <td id="td"><?= $datos->h_salida ?></td>
-
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br>
 </body>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-    })()
-</script>
 <script src="../jquery/js/jquery.min.js"></script>
 <script>
-    iniciarSalida();
+                iniciarSalida();
 
-    function iniciarSalida() {
-        $(".Salida").click(function(e) {
+                function iniciarSalida() {
+                    $(".Salida").click(function(e) {
+                        
+                        e.preventDefault();
+                        var id = $(this).attr("id-salida");
+                        var btn = $(this)[0];
+                        btn.blur();
+                        if (confirm("Desea registar la salida del dispositivo?")) {
+                            $.ajax({
+                                type: "POST",
+                                url: "../crud-celador/salida.php",
+                                data: 'id=' + id,
+                                success: function(data) {
+                                    alert(data, 1);
+                                    window.location.reload()
+                                }
 
-            e.preventDefault();
-            var id = $(this).attr("id-salida");
-            var btn = $(this)[0];
-            btn.blur();
-            if (confirm("Desea registar la salida del dispositivo?")) {
-                $.ajax({
-                    type: "POST",
-                    url: "../crud-celador/salida.php",
-                    data: 'id=' + id,
-                    success: function(data) {
-                        alert(data, 1);
-                        window.location.reload()
-                    }
-
-                });
-            } else {
-                alert("denegado");
-            }
-        });
-    }
-</script>
-<script>
+                            });
+                        } else {
+                            alert("denegado");
+                        }
+                    });
+                }
+            </script>
+<script>   
     formulario();
-
-
-    function formulario() {
-        $(".buscar-doc").click(function(e) {
+    
+    
+    function formulario(){
+        $(".buscar-doc").click(function(e){
             let doc = $('#document').val();
 
             $.ajax({
                 type: 'POST',
                 url: '../crud-celador/php/ponerForm.php',
-                data: {
-                    'documento': doc,
+                data:{
+                    'documento' :doc,
                 },
                 success: function(data) {
                     $("#register").html(data);
@@ -208,8 +189,8 @@ if (!isset($_SESSION['documento'])) {
             });
         });
     }
-</script>
 
+</script>
 </html>
 
 <?php
