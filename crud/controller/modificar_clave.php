@@ -1,4 +1,5 @@
 <?php
+//Este codigo modifica la clave del usuario que inicia sesion
 include("../../crud/model/connection.php");
 if (!empty($_POST["op"])&& !empty($_POST["np"])&& !empty($_POST["c_np"])) {
     session_start();

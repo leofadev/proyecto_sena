@@ -1,4 +1,5 @@
 <?php
+//pagina para cambiar contraseña
     session_start();
     if(!isset($_SESSION ['documento'])){
         echo '<script>
