@@ -7,7 +7,7 @@ if(!empty($_POST["btnGuardar"])){
    
 
         //Evitar que se duplique item exixtente
-        $consulta_item = "SELECT * FROM item WHERE descripcion = '$item'";
+        $consulta_item = "SELECT `descripcion` FROM `item` WHERE `descripcion` = '$item'";
         $verificar_item = mysqli_query($con, $consulta_item);
         if(mysqli_num_rows($verificar_item)>0){
             echo '<script>
