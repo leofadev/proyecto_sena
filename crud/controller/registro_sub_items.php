@@ -8,7 +8,7 @@ if(!empty($_POST["GuardarSubItem"])){
    
 
         //Evitar que se duplique sub_item exixtente
-        $consulta_sub_item ="SELECT * FROM sub_item WHERE id_item = '$descripcion' AND descripcion = '$id_item'";
+        $consulta_sub_item ="SELECT * FROM sub_item WHERE descripcion = '$descripcion'";
         $verificar_sub_item = mysqli_query($con, $consulta_sub_item);
         if(mysqli_num_rows($verificar_sub_item)>0){
             echo '<script>
@@ -20,9 +20,7 @@ if(!empty($_POST["GuardarSubItem"])){
             exit();
         }
 
-    $sql=$con->query("INSERT INTO `sub_item` (`id_item`, `descripcion`) VALUES ('$id_item',
-    
-    ' $descripcion')");
+    $sql=$con->query("INSERT INTO `sub_item` (`id_item`, `descripcion`) VALUES ('$id_item','$descripcion')");
 
 
 

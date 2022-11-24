@@ -135,8 +135,9 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                     <!-- Fin del CRUD -->
                 </div>
-                <br><br><br><br><br><br><br><br><br>
+                
             </div>
+            
 
 </body>
 

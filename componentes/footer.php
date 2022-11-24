@@ -1,6 +1,6 @@
 <footer id="footer" class="container-fluid mt-4 p-3">
     <div id="footer" class="container">
-            
+    <br>
             <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-xl-4 text-center">
                 <!-- Logo del Sena  -->
@@ -20,6 +20,7 @@
             </div>
                     </div>
                 </div>
+                <br>
 </div>
 </footer>
 

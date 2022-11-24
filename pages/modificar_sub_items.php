@@ -4,7 +4,7 @@ include("../crud/model/connection.php");
 
 $id=$_GET["id"];
 
-$sql=$con->query(" SELECT * FROM item WHERE id=$id");
+$sql=$con->query(" SELECT * FROM sub_item WHERE id='$id'");
 ?>
 <!-- Pagina para modificar los registros de usuarios existentes en la tabla personas de la base de datos -->
 <!DOCTYPE html>
@@ -32,19 +32,13 @@ $sql=$con->query(" SELECT * FROM item WHERE id=$id");
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
                 include("../crud/controller/modificar_sub_items.php");
-
-                $sql=$con->query(" SELECT * FROM sub_item WHERE id=$id");
+                 
+                $sql=$con->query(" SELECT * FROM sub_item WHERE id='$id'");
+               
                 while($dato=$sql->fetch_object()) {?>
-                    <div class="form form-group">
-                    <label class=" mb-1">items</label>
-                    <select  id="td" class=" gn mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="1">Rol</option>
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="2">Tipo documento</option>>
-                    </select>
                 <div class="form form-group">
                     <label class=" mb-1">Modificar sub&iacute;tems</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese nombre" name="item" value="<?= $dato->descripcion ?>">
+                    <input type="text" class=" label input mb-1"  placeholder="Ingrese nombre" name="sub_item" value="<?= $dato->descripcion ?>">
                 </div>
                 <?php
                     }
