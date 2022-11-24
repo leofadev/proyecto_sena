@@ -47,7 +47,7 @@ if (!isset($_SESSION['documento'])) {
           echo "error de registro";
           break;
       }
-        // include("../componentes/navbar.php");
+        
     ?>
     <!-- Formulario para cambiar contraseña -->
     <div class="container">

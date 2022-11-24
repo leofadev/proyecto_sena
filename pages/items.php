@@ -12,6 +12,17 @@
         die();
     }
 
+    $roles = $_SESSION ['roles'];
+    switch ($roles) {
+      case $roles==2:
+        session_unset();
+        session_destroy();
+        header("Location: ../index.php");
+        break;
+      default:
+        echo "error de registro";
+        break;
+    }
 
 ?>
 
@@ -108,7 +119,9 @@
                 <?php
                     include("../crud/model/connection.php");
                     include("../crud/controller/registro_sub_items.php");
+            
                 ?>
+
                 <div class="form form-group">
                     <label for="dede" class="form-label mb-1">items</label>
                     <select id="dede" class="form-select gn mb-1" name="id_item" placeholder="Tipo de roles" required>

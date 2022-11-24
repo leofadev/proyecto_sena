@@ -1,5 +1,15 @@
 <?php
-
+    session_start();
+    if(!isset($_SESSION ['documento'])){
+        echo '<script>
+            alert("Por favor inicie sesión");
+            
+        </script>';
+        
+        header("Location: ../index.php");
+        session_destroy();
+        die();
+    }
 include("../crud/model/connection.php");
 
 $id=$_GET["id"];
@@ -22,13 +32,26 @@ $sql=$con->query(" SELECT * FROM sub_item WHERE id='$id'");
 <body class="nav">
     <?php
         include("../componentes/navbar.php");
+        $roles = $_SESSION ['roles'];
+        switch ($roles) {
+          case $roles==2:
+            session_start();
+            session_unset();
+            session_destroy();
+            header("Location: ../index.php");
+            break;
+          default:
+            echo "error de registro";
+            break;
+        }
+
     ?> 
     <!-- Formulario para modificar registros de  -->
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 p-7 d-flex justify-content-center mt-5">
             <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return modificarSub();">
-                <h3 class="text-center">Editar sub&iacute;tem</h3>
+                <h3 class="text-center" >Editar sub&iacute;tem</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
                 include("../crud/controller/modificar_sub_items.php");

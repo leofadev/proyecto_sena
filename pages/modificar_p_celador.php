@@ -36,6 +36,17 @@ $sql=$con->query(" SELECT * FROM personas WHERE id =$id");
 <body class="nav">
     <?php
         include("../componentes/navbar_celador.php");
+        $roles = $_SESSION ['roles'];
+        switch ($roles) {
+          case $roles==1:
+            session_unset();
+            session_destroy();
+            header("Location: ../index.php");
+            break;
+          default:
+            echo "error de registro";
+            break;
+        }
     ?>
     <!-- Formulario para modificar registros de usuarios -->
 <div class="container">
