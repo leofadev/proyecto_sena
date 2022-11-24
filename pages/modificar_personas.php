@@ -41,7 +41,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 p-7 d-flex justify-content-center mt-5">
-            <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST">
+            <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarPersonas();">
                 <h3 class="text-center" >Editar Datos Personales</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
@@ -70,7 +70,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                         Correcto
                     </div>
                     <div class="invalid-feedback">
-                        Seleccione un tipo de documento
+                        Campo requerido
                     </div>
                 </div>
                 <div class="form form-group">
@@ -80,7 +80,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                         Correcto
                     </div>
                     <div class="invalid-feedback">
-                        Seleccione un tipo de documento
+                        Campo requerido
                     </div>
                 </div>
                 <div class="form form-group">
@@ -90,7 +90,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                         Correcto
                     </div>
                     <div class="invalid-feedback">
-                        Seleccione un tipo de documento
+                        Campo requerido
                     </div>
                 </div>
                 <?php }
@@ -105,6 +105,49 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
 <!-- Fin de formulario para modificar registros de usuarios -->
 
 </body>
+<script>
+       function validarPersonas(){
+          var nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
+          
+          nombre = document.getElementById("NombreVALL").value;
+          apellido = document.getElementById("APellidoVALUE").value;
+          correo = document.getElementById("subitem2").value;
+          
+          expresiones =/\w+@\w+\.+[a-z]/;
+          ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+
+
+          if(correo.length>80){
+            alert("el correo es muy largo");
+            return false;
+            
+          }
+          if(!expresiones.test(correo)){
+            alert("el correo no es válido");
+            return false;
+
+          }
+          if(nombre.length>70){
+            alert("el nombre es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(nombre)){
+            alert("el nombre solo debe contener letras y/ espacios");
+            return false;
+
+          }
+          if(apellido.length>70){
+            alert("el apellido es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(apellido)){
+            alert("el apellido solo debe contener letras y/ espacios");
+            return false;
+          }
+
+
+        }
+    </script>
 <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -127,7 +170,7 @@ $sql=$con->query(" SELECT * FROM personas WHERE id='$id' ");
                 })
         })()
     </script> 
-    
+
 <script type="text/javascript">
 function valideKey(evt){
     
