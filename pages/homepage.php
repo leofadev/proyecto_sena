@@ -241,23 +241,6 @@ if (!isset($_SESSION['documento'])) {
             alert("el documento es muy largo");
             return false;
           }
-          if(nombre.length>70){
-            alert("el nombre es muy largo");
-            return false;
-          }
-          if(!ExpRegLetrasEspacio.test(nombre)){
-            alert("Solo debe contener letras y/ espacios");
-            return false;
-
-          }
-          if(apellido.length>70){
-            alert("el apellido es muy largo");
-            return false;
-          }
-          if(!ExpRegLetrasEspacio.test(apellido)){
-            alert("Solo debe contener letras y/ espacios");
-            return false;
-          }
           if(correo.length>80){
             alert("el correo es muy largo");
             return false;
@@ -267,6 +250,23 @@ if (!isset($_SESSION['documento'])) {
             alert("el correo no es válido");
             return false;
 
+          }
+          if(nombre.length>70){
+            alert("el nombre es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(nombre)){
+            alert("el nombre solo debe contener letras y/ espacios");
+            return false;
+
+          }
+          if(apellido.length>70){
+            alert("el apellido es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(apellido)){
+            alert("el apellido solo debe contener letras y/ espacios");
+            return false;
           }
           if(isNaN(documento)){
             alert("el documento no es válido");

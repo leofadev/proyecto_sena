@@ -234,7 +234,7 @@
             return false;
           }
           if(!ExpRegLetrasEspacio.test(apellido)){
-            alert("Solo apellido debe contener letras y/ espacios");
+            alert("el apellido solo debe contener letras y/ espacios");
             return false;
           }
 
