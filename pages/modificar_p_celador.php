@@ -41,34 +41,57 @@ $sql=$con->query(" SELECT * FROM personas WHERE id =$id");
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 p-7 d-flex justify-content-center mt-5">
-            <form class="form p-5 rounded border shadow" method="POST">
+            <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST">
                 <h3 class="text-center" >Editar Datos Personales</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
                 include("../crud/controller/modificar_ps_celador.php");
 
                 while ($datos=$sql->fetch_object()) {?>
-                <div class="form form-group">
-                    <label class="form-label mb-1">Tipo de documento</label>
-                    <select id="td" class=" gn mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
+                 <div class="form form-group">
+                    <label for="seleciona001" class="form-label mb-1">Tipo de documento</label>
+                    <select id="seleciona001" class="form-select gn mb-1" name="tipo_documento" required>
+                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="" selected disabled>Seleccione</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
                     <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="3">TI</option>
                     </select>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Seleccione un tipo de documento
+                        </div>
                 </div>
                 <div class="form form-group">
-                    <label class=" mb-1">Correo</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Correo" name="correo" value="<?= $datos->correo ?>">
+                    <label for="subitem2" class="form-label mb-1">Correo</label>
+                    <input  id="subitem2"  class="form-control label input mb-1" type="text" placeholder="Ingrese Su Correo" name="correo" value="<?= $datos->correo ?>" required>
+                    <div class="valid-feedback">
+                        Correcto
+                    </div>
+                    <div class="invalid-feedback">
+                        Seleccione un tipo de documento
+                    </div>
                 </div>
                 <div class="form form-group">
-                    <label class=" mb-1">Nombre</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Nombre" name="nombre" value="<?= $datos->nombre ?>">
+                    <label for="NombreVALL" class="form-label mb-1">Nombre</label>
+                    <input id="NombreVALL"  class="form-control label input mb-1" type="text" placeholder="Ingrese Su Nombre" name="nombre" value="<?= $datos->nombre ?>" required>
+                    <div class="valid-feedback">
+                        Correcto
+                    </div>
+                    <div class="invalid-feedback">
+                        Seleccione un tipo de documento
+                    </div>
                 </div>
                 <div class="form form-group">
-                    <label class=" mb-1">Apellido</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese Su Apellido" name="apellido" value="<?= $datos->apellido ?>">
-                </div>
+                    <label for="APellidoVALUE" class="form-label mb-1">Apellido</label>
+                    <input id="APellidoVALUE"  class="form-control label input mb-1" type="text"  placeholder="Ingrese Su Apellido" name="apellido" value="<?= $datos->apellido ?>" required>
+                    <div class="valid-feedback">
+                        Correcto
+                    </div>
+                    <div class="invalid-feedback">
+                        Seleccione un tipo de documento
+                    </div>
                 <?php }
                 ?>
                 <div class="col-auto">
@@ -79,7 +102,31 @@ $sql=$con->query(" SELECT * FROM personas WHERE id =$id");
     </div>
 </div>
 <!-- Fin de formulario para modificar registros de usuarios -->
+
 </body>
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script> 
+
 <script type="text/javascript">
 function valideKey(evt){
     
