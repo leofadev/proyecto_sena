@@ -1,7 +1,7 @@
 <!-- Este codigo modifica los registros de item ya existentes en la base de datos y los actualiza de manera inmediata en la vista de items que este en la pagina de items.php-->
 <?php
 if (!empty($_POST["btnModificar"])) {
-    if (!empty($_POST["sub_item"]) AND !empty($_POST["descripcion"])) {
+    if (!empty($_POST["sub_item"])) {
         $id=$_POST["id"];
         $sub_item=$_POST["sub_item"];
 
