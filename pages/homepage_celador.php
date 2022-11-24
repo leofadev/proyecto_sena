@@ -64,47 +64,83 @@
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-            <form class="form p-3 rounded border shadow" method="POST">
+            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
                 ?>
-                <div class="form form-group">
-                    <label  class="form-label mb-1">Tipo de documento</label>
-                    <select id="td" class=" gn  mb-1" name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="4">CC</option>
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="5">CE</option>
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de documento"  value="3">TI</option>
-                    </select>
-                </div>
-                <div class="form form-group">
-                    <label class=" mb-1">Documento</label>
-                    <input type="text" class="label input  mb-1"  placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
-                </div>
-                <div class="form form-group">
-                    <label class=" mb-1">Correo</label>
-                    <input type="mail" class="label input  mb-1"  placeholder="Ingrese Su Correo" name="correo">
-                </div>
-                <div class="form form-group">
-                    <label class=" mb-1">Nombre</label>
-                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Nombre" name="nombre">
-                </div>
-                <div class="form form-group">
-                    <label class=" mb-1">Apellido</label>
-                    <input type="text" class="label input  mb-1"  placeholder="Ingrese Su Apellido" name="apellido">
-                </div>
-                <div class="form form-group">
-                    <label class="form-label mb-1">Roles</label>
-                    <select id="td" class=" gn  mb-1" name="rol" aria-label="Default select example" placeholder="Tipo de roles">
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                    <option class="form mb-1" list="listaRoles" id="exampleDataList" placeholder="Tipo de roles"  value="6">Instructor</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
-                </div>
+<div class="form form-group">
+                        <label for="documentoVAL" class="form-label mb-1">Tipo de documento</label>
+                        <select class="form-select gn  mb-1" id="documentoVAL" required name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
+                            <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                            <option class="form mb-1" list="listaRoles" value="4">CC</option>
+                            <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="5">CE</option>
+                            <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="3">TI</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Sleccione un tipo de documento
+                        </div>
+                    </div>
+                    <div class="form form-group">
+                        <label for="validationCustom02" class="form-label mb-1">Documento</label>
+                        <input type="text" class="form-control label input mb-1" id="validationCustom02" required placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            campo requerido
+                        </div>
+                    </div>
+                    <div class="form form-group">
+                        <label for="validationCustomUsername" class="form-label mb-1">Correo</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control label input mb-1" id="validationCustomUsername" required placeholder="Ingrese Su Correo" name="correo">
+                            <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            campo requerido
+                        </div>
+                    </div>
+                    <div class="form form-group">
+                        <label for="NombreVALIDATION" class="form-label mb-1">Nombre</label>
+                        <input type="text" class="form-control label input mb-1" id="NombreVALIDATION" required placeholder="Ingrese Su Nombre" name="nombre">
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            campo requerido
+                        </div>
+                    </div>
+                    <div class="form form-group">
+                        <label for="ApellidoVALL" class="form-label mb-1">Apellido</label>
+                        <input type="text" class="form-control label input mb-1" id="ApellidoVALL" required placeholder="Ingrese Su Apellido" name="apellido">
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            campo requerido
+                        </div>
+                    </div>
+                    <div class="form form-group">
+                        <label for="validationCustom001" class="form-label mb-1">Roles</label>
+                        <select id="validationCustom001" class="form-select gn mb-1" name="rol" required aria-label="Default select example" placeholder="Tipo de roles">
+                            <option class=" form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                            <option class=" form mb-1" list="listaRoles" value="1">Administrador</option>
+                            <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="2">Vigilante</option>
+                            <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="6">Instructor</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Seleccione un rol
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                    </div>
             </form>
             </div>
             <!-- Fin de registro de personas -->
