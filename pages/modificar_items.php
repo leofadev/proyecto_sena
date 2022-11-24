@@ -27,7 +27,7 @@ $sql=$con->query(" SELECT * FROM item WHERE id=$id");
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 p-7 d-flex justify-content-center mt-5">
-            <form class="form p-5 rounded border shadow" method="POST">
+            <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return modificarItem();">
                 <h3 class="text-center" >Editar items</h3>
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
@@ -36,8 +36,14 @@ $sql=$con->query(" SELECT * FROM item WHERE id=$id");
                 $sql=$con->query(" SELECT * FROM item WHERE id=$id");
                 while($dat=$sql->fetch_object()) {?>
                 <div class="form form-group">
-                    <label class=" mb-1">Modificar items</label>
-                    <input type="text" class=" label input mb-1"  placeholder="Ingrese nombre" name="item" value="<?= $dat->descripcion ?>">
+                    <label for="NombreVALL" class="form-label mb-1">Modificar items</label>
+                    <input id="NombreVALL"  class="form-control label input mb-1" type="text" placeholder="Ingrese nombre" name="item" value="<?= $dat->descripcion ?>" required>
+                    <div class="valid-feedback">
+                        Correcto
+                    </div>
+                    <div class="invalid-feedback">
+                        Campo requerido
+                    </div>
                 </div>
                 <?php
                     }
@@ -51,6 +57,52 @@ $sql=$con->query(" SELECT * FROM item WHERE id=$id");
 </div>
 <!-- Fin de formulario para modificar registros de s -->
 </body>
+<script>
+function modificarItem(){
+   var nombre, ExpRegLetrasEspacio;
+   
+
+   nombre = document.getElementById("NombreVALL").value;
+
+   
+
+   ExpRegLetrasEspacio= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+
+  
+   if(nombre.length>70){
+     alert("el nombre es muy largo");
+     return false;
+   }
+   if(!ExpRegLetrasEspacio.test(nombre)){
+     alert("Solo debe contener letras y/ espacios, pero no puede estar vacío");
+     return false;
+
+   }
+ }
+
+</script>
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 </html>
 
 <?php
