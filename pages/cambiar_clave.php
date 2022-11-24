@@ -1,6 +1,7 @@
 <?php
 //pagina para cambiar contraseña
 session_start();
+
 if (!isset($_SESSION['documento'])) {
     echo '<script>
             alert("Por favor inicie sesión");
@@ -31,14 +32,28 @@ if (!isset($_SESSION['documento'])) {
 
 <body class="nav">
     <?php
-    include("../componentes/navbar.php");
-    include("../crud/controller/modificar_clave.php");
+      
+      
+      $roles = $_SESSION ['roles'];
+      switch ($roles) {
+        case $roles==1:
+          include("../componentes/navbar.php");
+          break;
+        case $roles==2:
+          include("../componentes/navbar_celador.php");
+          break;     
+        
+        default:
+          echo "error de registro";
+          break;
+      }
+        // include("../componentes/navbar.php");
     ?>
     <!-- Formulario para cambiar contraseña -->
     <div class="container">
         <div class="row mt-5">
             <div class="col-12 p-7 d-flex justify-content-center mt-5">
-                <form class="form p-5 rounded border shadow needs-validation" novalidate action="../crud/controller/modificar_clave.php" method="POST" onsubmit="return ModificarContrasena();">
+                <form action="../crud/controller/modificar_clave.php" class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return ModificarContrasena();">
                     <h2 class="mb-3 text-center">Cambiar Contraseña</h2>
                     <div class="form form-group">
                     <input id="ContraseActual" type="password" name="op" class="form-control label input  mb-3" placeholder="Contraseña Actual" required>
