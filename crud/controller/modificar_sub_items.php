@@ -6,7 +6,7 @@ if (!empty($_POST["btnModificar"])) {
         $sub_item=$_POST["sub_item"];
 
 
-        $sql_sub=$con->query("UPDATE `sub_item` SET `descripcion` = '$sub_item' WHERE `sub_item`.`id` = '$id'");
+        $sql_sub=$con->query("UPDATE `sub_item` SET `descripcion` = '$sub_item' WHERE `id` = '$id'");
         if ($sql_sub==1) {
             echo '<script>
             window.location = "../pages/items.php";

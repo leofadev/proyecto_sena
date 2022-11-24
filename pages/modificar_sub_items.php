@@ -32,8 +32,9 @@ $sql=$con->query(" SELECT * FROM sub_item WHERE id='$id'");
                 <input type="hidden" name="id" value="<?= $_GET["id"]?>">
                 <?php
                 include("../crud/controller/modificar_sub_items.php");
-
-                $sql=$con->query("SELECT * FROM sub_item WHERE id='$id'");
+                 
+                $sql=$con->query(" SELECT * FROM sub_item WHERE id='$id'");
+               
                 while($dato=$sql->fetch_object()) {?>
                 <div class="form form-group">
                     <label class=" mb-1">Modificar sub&iacute;tems</label>

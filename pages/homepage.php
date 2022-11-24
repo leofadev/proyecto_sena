@@ -72,7 +72,7 @@ if (!isset($_SESSION['documento'])) {
     <!-- Registro de personas -->
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
+            <div class="col-8 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
                 <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
                     <h3 class="text-center ">Registro de Personas</h3>
                     <?php
@@ -87,6 +87,9 @@ if (!isset($_SESSION['documento'])) {
                             <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="5">CE</option>
                             <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="3">TI</option>
                         </select>
+                            <div class="valid-feedback">
+                            Correcto
+                        </div>
                         <div class="invalid-feedback">
                             Sleccione un tipo de documento
                         </div>
@@ -102,9 +105,9 @@ if (!isset($_SESSION['documento'])) {
                         </div>
                     </div>
                     <div class="form form-group">
-                        <label for="validationCustomUsername" class="form-label mb-1">Correo</label>
+                        <label for="validationCustomUsername1" class="form-label mb-1">Correo</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control label input mb-1" id="validationCustomUsername" required placeholder="Ingrese Su Correo" name="correo">
+                            <input type="text" class="form-control label input mb-1" id="validationCustomUsername1" required placeholder="Ingrese Su Correo" name="correo">
                             <div class="valid-feedback">
                             Correcto
                         </div>
@@ -152,10 +155,12 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                 </form>
             </div>
+            </div>
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
+            <div class="row mt-5">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5 ml-auto mr-auto">
                 <div class="overflow-auto">
                     <?php
                     include("../crud/model/connection.php");
@@ -214,9 +219,12 @@ if (!isset($_SESSION['documento'])) {
                     </table>
                 </div>
             </div>
+            </div>
             <!-- Fin del CRUD -->
         </div>
     </div>
+
+   
     <script>
        function validarDatos(){
           var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
@@ -224,9 +232,9 @@ if (!isset($_SESSION['documento'])) {
           documento = document.getElementById("validationCustom02").value;
           nombre = document.getElementById("NombreVALIDATION").value;
           apellido = document.getElementById("ApellidoVALL").value;
-          correo = document.getElementById("validationCustomUsername").value;
+          correo = document.getElementById("validationCustomUsername1").value;
           
-          expresiones = /\w+@\w+\.+\[a-z]/;
+          expresiones =/\w+@\w+\.+[a-z]/;
           ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
           if(documento.length>30){

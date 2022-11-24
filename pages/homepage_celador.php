@@ -70,7 +70,7 @@
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
                 ?>
-<div class="form form-group">
+                        <div class="form form-group">
                         <label for="documentoVAL" class="form-label mb-1">Tipo de documento</label>
                         <select class="form-select gn  mb-1" id="documentoVAL" required name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
                             <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
@@ -141,10 +141,12 @@
                     </div>
             </form>
             </div>
+            </div>
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
+            <div class="row mt-5">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5 ml-auto mr-auto">
             <div class="overflow-auto">
             <?php
             include("../crud/model/connection.php");
@@ -187,6 +189,7 @@
                 </table>
             </div>
             </div>
+            </div>
             <!-- Fin del CRUD -->
         </div>
     </div>
@@ -200,7 +203,7 @@
           apellido = document.getElementById("ApellidoVALL").value;
           correo = document.getElementById("validationCustomUsername").value;
           
-          expresiones = /\w+@\w+\.+\[a-z]/;
+          expresiones = /\w+@\w+\.+[a-z]/;
           ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
           if(documento.length>30){

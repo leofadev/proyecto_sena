@@ -43,7 +43,7 @@
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12 col-sm-8 col-md-4 col-xl-4 p-4 mt-5">
-                <form class="form p-3 rounded border shadow" method="POST">
+                <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validaritems();">
                     <h3 class="text-center" >Registro de items</h3>
 
                     <?php
@@ -53,8 +53,9 @@
 
 
                     <div class="form form-group">
-                        <label class=" mb-1">Nombre</label>
-                        <input type="text" class=" label input  mb-1"  placeholder="Ingrese el nombre" name="item">
+                        <label for="NombreItem" class="form-label mb-1">Nombre</label>
+                        <input id="NombreItem" type="text" class="form-control label input  mb-1"  placeholder="Ingrese el nombre" name="item" required>
+                        
                     </div>
 
                     <div class="col-auto">
@@ -74,9 +75,8 @@
                 <table class="table table-striped table-hover text-center text-white" id="myTable">
                     <thead>
                         <tr>
-                            
                             <th scope="col" id="th" class="text-center">Nombre</th>
-                            <!-- <th scope="col" id="th" class="text-center">Editar</th> -->
+                            <th scope="col" id="th" class="text-center">Editar</th> 
                         </tr>
                     </thead>
                         <tbody id="myTable">
@@ -85,9 +85,9 @@
                             ?>
                             <tr class="table-active">
                                 <td id="td"><?=$datos->descripcion?></td>
-                                <!-- <td id="td">
+                                 <td id="td">
                                     <a class="btn btn-small btn-warning" href="./modificar_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
-                                </td> -->
+                                </td> 
                         <?php
                             }
                         ?> 
@@ -102,7 +102,7 @@
     <div class="container">
         <div class="row mt-5">
         <div class="col-12 col-sm-8 col-md-4 col-xl-4  p-4 mt-5">
-            <form class="form p-3 rounded border shadow" method="POST">
+            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarSubitems();">
                 <h3 class="text-center" >Registro de sub_items</h3>
 
                 <?php
@@ -110,15 +110,27 @@
                     include("../crud/controller/registro_sub_items.php");
                 ?>
                 <div class="form form-group">
-                    <label class="form-label mb-1">items</label>
-                    <select id="td" class=" gn mb-1" name="id_item" aria-label="Default select example" placeholder="Tipo de roles">
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="#" selected >Seleccione</option>
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="1">Rol</option>
-                        <option class="form mb-1" list="listaRoles" id="exampleDataList" value="2">Tipo documento</option>>
+                    <label for="dede" class="form-label mb-1">items</label>
+                    <select id="dede" class="form-select gn mb-1" name="id_item" placeholder="Tipo de roles" required>
+                        <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                        <option class="form mb-1" list="listaRoles" value="1">Rol</option>
+                        <option class="form mb-1" list="listaRoles" value="2">Tipo documento</option>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Seleccione un tipo de documento
+                        </div>
                     </select>
                     <div class="form form-group">
-                    <label class=" mb-1">Nombre</label>
-                    <input type="text" class=" label input  mb-1"  placeholder="Ingrese el nombre" name="descripcion">
+                    <label for="subitem2" class="form-label mb-1">Nombre</label>
+                    <input  id="subitem2" type="text" class="form-control label input  mb-1"  placeholder="Ingrese el nombre" name="descripcion" required>
+                    <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            el campo nombre es requerido
+                        </div>
                 </div>
                 </div>    
                 <div class="col-auto">
@@ -141,7 +153,7 @@
                             
                             <th scope="col" id="th" class=" text-center">Nombre</th>
                             <th scope="col" id="th" class=" text-center">Tipo</th>
-                            <!-- <th scope="col" id="th" class=" text-center">Editar</th> -->
+                             <th scope="col" id="th" class=" text-center">Editar</th> 
                         </tr>
                     </thead>
                         <tbody id="myTabl">
@@ -154,9 +166,9 @@
                             <tr class="table-active">
                                 <td id="td"><?=$datos->tipos?></td>
                                 <td id="td"><?=$datos->sub?></td>
-                                <!-- <td id="td">
+                                <td id="td">
                                     <a class="btn btn-small btn-warning" href="../pages/modificar_sub_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
-                                </td> -->
+                                </td>
                             <?php
                             }
                             ?> 
@@ -170,10 +182,81 @@
                 <!-- Fin del CRUD  Sub_items -->
         </div>
     </div>
+    <script>
+
+function validaritems(){
+   var nombre2,ExpRegLetrasEspacio;
+   
+
+   nombre2 = document.getElementById("NombreItem").value;
+
+   
+
+   ExpRegLetrasEspacio= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+
+  
+   if(nombre2.length>70){
+     alert("el nombre es muy largo");
+     return false;
+   }
+   if(!ExpRegLetrasEspacio.test(nombre2)){
+     alert("Solo debe contener letras y/ espacios, pero no puede estar vacío");
+     return false;
+
+   }
+ }
+
+</script>
     
+    <script>
 
+       function validarSubitems(){
+          var nombres,ExpRegLetrasEspacios;
+          
 
+          nombres = document.getElementById("subitem2").value;
+
+          
+
+          ExpRegLetrasEspacios= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+
+         
+          if(nombres.length>70){
+            alert("el nombre es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacios.test(nombres)){
+            alert("Solo debe contener letras y/ espacios, pero no puede estar vacío");
+            return false;
+
+          }
+        }
+
+    </script>
 </body>
+
+       <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script> 
 </html>
 
 <?php
