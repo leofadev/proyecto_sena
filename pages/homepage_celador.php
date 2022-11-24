@@ -64,7 +64,7 @@
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
             <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST">
+            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
                 include("../crud/model/connection.php");
@@ -127,8 +127,6 @@
                         <label for="validationCustom001" class="form-label mb-1">Roles</label>
                         <select id="validationCustom001" class="form-select gn mb-1" name="rol" required aria-label="Default select example" placeholder="Tipo de roles">
                             <option class=" form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
-                            <option class=" form mb-1" list="listaRoles" value="1">Administrador</option>
-                            <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="2">Vigilante</option>
                             <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="6">Instructor</option>
                         </select>
                         <div class="valid-feedback">
@@ -193,6 +191,80 @@
         </div>
     </div>
 </body>
+<script>
+       function validarDatos(){
+          var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
+          
+          documento = document.getElementById("validationCustom02").value;
+          nombre = document.getElementById("NombreVALIDATION").value;
+          apellido = document.getElementById("ApellidoVALL").value;
+          correo = document.getElementById("validationCustomUsername").value;
+          
+          expresiones = /\w+@\w+\.+\[a-z]/;
+          ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+
+          if(documento.length>30){
+            alert("el documento es muy largo");
+            return false;
+          }
+          if(correo.length>80){
+            alert("el correo es muy largo");
+            return false;
+            
+          }
+          if(!expresiones.test(correo)){
+            alert("el correo no es válido");
+            return false;
+
+          }
+          if(nombre.length>70){
+            alert("el nombre es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(nombre)){
+            alert(" El nombre solo debe contener letras y/ espacios");
+            return false;
+
+          }
+          if(apellido.length>70){
+            alert("el apellido es muy largo");
+            return false;
+          }
+          if(!ExpRegLetrasEspacio.test(apellido)){
+            alert("Solo apellido debe contener letras y/ espacios");
+            return false;
+          }
+
+          if(isNaN(documento)){
+            alert("el documento no es válido");
+            return false;
+          }
+
+
+        }
+    </script>
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 <script type="text/javascript">
 		function valideKey(evt){
 			
