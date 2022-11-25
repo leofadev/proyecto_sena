@@ -28,6 +28,7 @@ if (!isset($_SESSION['documento'])) {
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../jquery/css/alertify.css">
 </head>
 
 <body class="nav">
@@ -236,7 +237,6 @@ if (!isset($_SESSION['documento'])) {
         </div>
     </div>
 
-   
     <script>
        function validarDatos(){
           var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;

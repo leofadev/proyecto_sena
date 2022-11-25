@@ -1,6 +1,9 @@
-<footer id="footer" class="container-fluid mt-4 p-3">
-    <div id="footer" class="container">
-    <br>
+
+    
+
+<footer id="footer" class="bd-footer container-fluid py-5 mt-5 ">
+    <div id="footer" class=" container py-5 mt-5">
+     
             <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-xl-4 text-center">
                 <!-- Logo del Sena  -->
@@ -20,10 +23,15 @@
             </div>
                     </div>
                 </div>
-                <br>
+                
 </div>
 </footer>
-
+</body>
+</html>
+<body>
+</html>
+</body>
+<script src="../jquery/js/alertify.js"></script>
 <script src="../fontawesome/js/fontawesome.js"></script>
 <!-- Codigo JavaScript -->
 <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

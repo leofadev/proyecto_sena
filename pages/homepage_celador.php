@@ -180,7 +180,7 @@
                             include("../crud/model/connection.php");
                             $sql = $con->query(" SELECT * FROM personas");
                             while($datos=$sql->fetch_object()) {
-                                    $sql_tipoDoc = $con->query("SELECT descripcion FROM sub_item    WHERE id = '$datos->tipo_documento'");
+                                    $sql_tipoDoc = $con->query("SELECT descripcion FROM sub_item   WHERE id = '$datos->tipo_documento'");
                                     while($row= mysqli_fetch_array($sql_tipoDoc)) {
                                     $tipoDoc = $row['descripcion'];
                                     }?>

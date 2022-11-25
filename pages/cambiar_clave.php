@@ -50,13 +50,14 @@ if (!isset($_SESSION['documento'])) {
         
     ?>
     <!-- Formulario para cambiar contraseña -->
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-12 p-7 d-flex justify-content-center mt-5">
+    <div class="container mb-3">
+    <div class="row mt-5">
+        <div class="col-12 p-7 d-flex justify-content-center mt-5">
+            <div class="col-12 p-7 d-flex justify-content-center mt-5 mb-5">
                 <form action="../crud/controller/modificar_clave.php" class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return ModificarContrasena();">
                     <h2 class="mb-3 text-center">Cambiar Contraseña</h2>
                     <div class="form form-group">
-                    <input id="ContraseActual" type="password" name="op" class="form-control label input  mb-3" placeholder="Contraseña Actual" required>
+                    <input id="ContraseActual" type="password" name="op" class="form-control label input mb-3" placeholder="Contraseña Actual" required>
                     <div class="valid-feedback">
                         Correcto
                     </div>
@@ -75,7 +76,7 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                     </div>
                     <div class="form form-group">
-                    <input id="claveNueva" type="password" name="c_np" class="form-control label input  mb-3" placeholder="Nueva Contraseña" required>
+                    <input id="claveNueva" type="password" name="c_np" class="form-control label input mb-3" placeholder="Nueva Contraseña" required>
                     <div class="valid-feedback">
                         Correcto
                     </div>
@@ -90,8 +91,13 @@ if (!isset($_SESSION['documento'])) {
                 </form>
             </div>
         </div>
-    </div>
+    </div>}
+</div>
     <!-- Fin de formulario para cambiar contraseña -->
+    <?php
+    include("../componentes/footer.php");
+    
+    ?>
 </body>
 <script>
 function ModificarContrasena(){

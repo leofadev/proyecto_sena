@@ -10,7 +10,7 @@ if (!empty($_POST["btnModificar"])) {
 
         $sql=$con->query("UPDATE `personas` SET `tipo_documento`=' $tipo_documento',`correo`='$correo',`nombre`='$nombre',`apellido`='$apellido' WHERE `id` = '$id'");
         if ($sql==1) {
-            header("Location:./homepage.php");
+            header("Location:../../../proyecto_sena/pages/homepage.php");
         } else {
             echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
@@ -35,3 +35,4 @@ if (!empty($_POST["btnModificar"])) {
     }
 }
 ?>
+
