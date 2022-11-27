@@ -8,7 +8,7 @@ if (!empty($_POST["op"])&& !empty($_POST["np"])&& !empty($_POST["c_np"])) {
     $op = $_POST["op"];
     $np = $_POST["np"];
     $c_np = $_POST["c_np"];
-     $roles= $_SESSION ['roles'];
+    $roles= $_SESSION ['roles'];
     if ($op!==$np) {
         $query= mysqli_query($con,"SELECT pass FROM `personas` WHERE documento='$documento'");
         if ($query) {
@@ -24,7 +24,6 @@ if (!empty($_POST["op"])&& !empty($_POST["np"])&& !empty($_POST["c_np"])) {
                     alert("Contraseña cambiada exitosamente");
                         window.location = "../../pages/cambiar_clave.php";
                     </script>
-                    
                     ';
                     }
                 }else{
@@ -32,7 +31,6 @@ if (!empty($_POST["op"])&& !empty($_POST["np"])&& !empty($_POST["c_np"])) {
                     alert("La contraseñas no coinciden");
                         window.location = "../../pages/cambiar_clave.php";
                     </script>
-                    
                     ';
             
                     }
@@ -41,7 +39,6 @@ if (!empty($_POST["op"])&& !empty($_POST["np"])&& !empty($_POST["c_np"])) {
                 alert("La Contraseña actual no coincide con la de la base da datos");
                     window.location = "../../pages/cambiar_clave.php";
                 </script>
-                
                 ';
         
                 }

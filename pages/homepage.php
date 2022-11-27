@@ -43,13 +43,13 @@ if (!isset($_SESSION['documento'])) {
     include("../componentes/navbar.php");
     $roles = $_SESSION ['roles'];
     switch ($roles) {
-      case $roles==2:
+        case $roles==2:
         session_start();
         session_unset();
         session_destroy();
         header("Location: ../index.php");
         break;
-      default:
+        default:
         echo "error de registro";
         break;
     }
@@ -109,7 +109,7 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                     <div class="form form-group">
                         <label for="validationCustom02" class="form-label mb-1">Documento</label>
-                        <input type="text" class="form-control label input mb-1" id="validationCustom02" required placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
+                        <input type="text" class="form-control label input mb-1 " id="validationCustom02" required placeholder=" Numero De Documento" name="documento" id="age" onkeypress="return valideKey(event);">
                         <div class="valid-feedback">
                             Correcto
                         </div>
@@ -119,7 +119,7 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                     <div class="form form-group">
                         <label for="validationCustomUsername1" class="form-label mb-1">Correo</label>
-                        <div class="input-group has-validation">
+                        <div class="form form-group input-group has-validation">
                             <input type="text" class="form-control label input mb-1" id="validationCustomUsername1" required placeholder="Ingrese Su Correo" name="correo">
                             <div class="valid-feedback">
                             Correcto
@@ -238,52 +238,52 @@ if (!isset($_SESSION['documento'])) {
     </div>
 
     <script>
-       function validarDatos(){
-          var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
-          
-          documento = document.getElementById("validationCustom02").value;
-          nombre = document.getElementById("NombreVALIDATION").value;
-          apellido = document.getElementById("ApellidoVALL").value;
-          correo = document.getElementById("validationCustomUsername1").value;
-          
-          expresiones =/\w+@\w+\.+[a-z]/;
-          ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+        function validarDatos(){
+            var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
+            
+            documento = document.getElementById("validationCustom02").value;
+            nombre = document.getElementById("NombreVALIDATION").value;
+            apellido = document.getElementById("ApellidoVALL").value;
+            correo = document.getElementById("validationCustomUsername1").value;
+            
+            expresiones =/\w+@\w+\.+[a-z]/;
+            ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
-          if(documento.length>30){
+            if(documento.length>30){
             alert("el documento es muy largo");
             return false;
-          }
-          if(correo.length>80){
+            }
+            if(correo.length>80){
             alert("el correo es muy largo");
             return false;
             
-          }
-          if(!expresiones.test(correo)){
+            }
+            if(!expresiones.test(correo)){
             alert("el correo no es válido");
             return false;
 
-          }
-          if(nombre.length>70){
+            }
+            if(nombre.length>70){
             alert("el nombre es muy largo");
             return false;
-          }
-          if(!ExpRegLetrasEspacio.test(nombre)){
+            }
+            if(!ExpRegLetrasEspacio.test(nombre)){
             alert("el nombre solo debe contener letras y/ espacios");
             return false;
 
-          }
-          if(apellido.length>70){
+            }
+            if(apellido.length>70){
             alert("el apellido es muy largo");
             return false;
-          }
-          if(!ExpRegLetrasEspacio.test(apellido)){
+            }
+            if(!ExpRegLetrasEspacio.test(apellido)){
             alert("el apellido solo debe contener letras y/ espacios");
             return false;
-          }
-          if(isNaN(documento)){
+            }
+            if(isNaN(documento)){
             alert("el documento no es válido");
             return false;
-          }
+            }
 
 
         }

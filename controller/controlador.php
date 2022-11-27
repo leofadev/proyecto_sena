@@ -2,7 +2,7 @@
 
 <?php
   include("../crud/model/connection.php");
-if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST["pass"]) && empty($_POST["nombre"] && empty($_POST["apellido"])  && empty($_POST["rol"]))){
+if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST["pass"]) && empty($_POST["nombre"]) && empty($_POST["apellido"])  && empty($_POST["rol"])){
   $documento= $_POST["documento"];
   $pass=$_POST["pass"];
 

@@ -110,14 +110,3 @@ if(isset($_SESSION['documento'])){
   }
 
 </script>
-<!-- <script src="../jquery/js/jquery.min.js"></script>
-<script type="text/javascript">
-		// Initialize our function when the document is ready for events.
-		jQuery(document).ready(function(){
-			// Listen for the input event.
-			jQuery("#age").on('input', function (evt) {
-				// Allow only numbers.
-				jQuery(this).val(jQuery(this).val().replace(/[^0-9]/g, ''));
-			});
-		});
-		</script> -->

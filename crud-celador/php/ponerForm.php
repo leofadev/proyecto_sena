@@ -13,9 +13,9 @@ if($row = mysqli_fetch_array($query)){
 }
 if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
 ?>
-<div class="row mt-5">
-   <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow ml-auto mr-auto">
-    <form class="form p-3 rounded border shadow " method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
+<div class="row mb-5">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-12 p-4">
+    <form class="form p-3 rounded border shadow ml-auto mr-auto " method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
         <h3 class="text-center">Registro De Objetos</h3>
                 
                 <div class="form form-group">
@@ -51,7 +51,9 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
 
     </form>
 <?php  }else{ ?>
-    <form class="form p-3 rounded border" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
+<div class="row mb-5">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-12 p-4">
+    <form class="form p-3 rounded border shadow ml-auto mr-auto" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
         <h3 class="text-center">Registro De Objetos</h3>
                 <div class="form form-group">
                     <label class=" mb-1">Documento</label>
@@ -82,4 +84,6 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
             <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnIngresar">Ingresar Objeto</button>
         </div>
     </form>
+    </div>
+</div>
 <?php } ?>
