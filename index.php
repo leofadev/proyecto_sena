@@ -19,6 +19,7 @@ if(isset($_SESSION['documento'])){
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/plugins/sweetAlert/dist/sweetalert2.min.css">
   </head>
     <body class=" nav bg-light d-flex justify-content-center align-items-center vh-100">
 
@@ -110,3 +111,5 @@ if(isset($_SESSION['documento'])){
   }
 
 </script>
+<script src="./bootstrap-5.0.2-dist/plugins/sweetAlert/dist/sweetalert2.all.min.js"></script>
+<script src="./bootstrap-5.0.2-dist/plugins/sweetAlert-js/sweetAlert.js"></script>

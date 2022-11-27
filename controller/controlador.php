@@ -43,10 +43,17 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
           break;
       }
     } else{  
-      echo'<script>
-        alert("contraseña incorrecta, por favor verifica los datos introducidos");
-        window.location= "../index.php";
-      </script>';
+      echo'<script >
+      function pass_incorrect(){
+        Swal.fire({
+            icon: "error",
+            title: "Algo salió mal!",
+            text: "Contraseña incorrecta, por favor verifica los datos introducidos!",
+            })
+    }
+    let fun_1 = pass_incorrect();
+      window.location= "../index.php";
+    </script>';
     }  
     
   } else{
