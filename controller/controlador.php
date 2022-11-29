@@ -43,22 +43,15 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
           break;
       }
     } else{  
-      echo'<script >
-      function pass_incorrect(){
-        Swal.fire({
-            icon: "error",
-            title: "Algo salió mal!",
-            text: "Contraseña incorrecta, por favor verifica los datos introducidos!",
-            })
-    }
-    let fun_1 = pass_incorrect();
-      window.location= "../index.php";
-    </script>';
+      echo'<script>
+        alert("contraseña incorrecta, por favor verifica los datos introducidos");
+        window.location= "../index.php";
+      </script>';
     }  
     
   } else{
     echo'<script>
-    alert("El número de documento está vacío, por favor verifica los datos introducidos");
+    alert("El número de documento no es correcto, por favor verifica los datos introducidos");
     window.location= "../index.php";
   </script>'; 
   }
@@ -66,7 +59,7 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
 }
 else{
   echo'<script>
-        alert("Los campos están vacíos!");
+        alert("Algunos o ambos campos están vacíos!");
         window.location= "../index.php";
       </script>';
 }
