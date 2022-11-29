@@ -66,6 +66,7 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                 </form>
             </div>
+            <div id="register"></div>
         <?php
         $nombre = null;
         $sql_regist = "SELECT *, sub_item.descripcion AS ROLES FROM personas inner JOIN sub_item ON personas.rol = sub_item.id;" ;
@@ -80,16 +81,10 @@ if (!isset($_SESSION['documento'])) {
             
         }}
     ?>
-            <div class="container-fluid mt-5">
-                <div class="row mt-5">
-                    <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                        
-                        <div id="register"></div>
-                    </div>
                     <!-- Fin de formulario para registrar objetos -->
 
                     <!-- Inicio del CRUD -->
-                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5">
+                    <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5 ml-auto mr-auto">
                         <div class="overflow-auto">
                             <?php
                             include("../crud/model/connection.php");

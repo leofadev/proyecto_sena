@@ -55,14 +55,15 @@ if (!isset($_SESSION['documento'])) {
     }
     ?>
     <!-- Section inicio -->
+    <br><br><br><br><br><br>
     <section class="container mt-5">
         <div class="row mt-5">
-            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
-                <h1 id="td" class=" mb-3">Sede TIC</h1>
+            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5">
+                <h1 id="td" class=" mb-3 ">Sede TIC</h1>
                 <h4 class="text-center text-black">Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
                 <p class="h5 mt-4 text-secondary">En esta sede del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ">
+            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ml-auto mr-auto">
                 <div class=" shadow p-3 mb-5 bg-white rounded mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4 text-center">
@@ -83,19 +84,19 @@ if (!isset($_SESSION['documento'])) {
     <!-- Fin del section inicio -->
 
     <!-- Registro de personas -->
-    <div class="container-fluid" id="crud">
+    <div class="container-fluid mb-5" id="crud">
         <div class="row mt-5">
-            <div class="col-8 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-                <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-4 p-4 mt-5 mb-5 ml-auto mr-auto">
+                <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
                     <h3 class="text-center ">Registro de Personas</h3>
                     <?php
                     include("../crud/model/connection.php");
                     include("../crud/controller/registro_personas.php");
                     ?>
                     <div class="form form-group">
-                        <label for="documentoVAL" class="form-label mb-1">Tipo de documento</label>
+                        <label for="documentoVAL" class="form-label mb-1"></label>
                         <select class="form-select gn  mb-1" id="documentoVAL" required name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
-                            <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                            <option class="form mb-1" list="listaRoles" value="" selected disabled>Tipo De Documento</option>
                             <option class="form mb-1" list="listaRoles" value="4">CC</option>
                             <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="5">CE</option>
                             <option class="form mb-1" list="listaRoles" placeholder="Tipo de documento" value="3">TI</option>
@@ -119,7 +120,8 @@ if (!isset($_SESSION['documento'])) {
                     </div>
                     <div class="form form-group">
                         <label for="validationCustomUsername1" class="form-label mb-1">Correo</label>
-                        <div class="form form-group input-group has-validation">
+                        <div class="form form-group has-validation">
+                        <div class="has-validation">
                             <input type="text" class="form-control label input mb-1" id="validationCustomUsername1" required placeholder="Ingrese Su Correo" name="correo">
                             <div class="valid-feedback">
                             Correcto
@@ -127,6 +129,7 @@ if (!isset($_SESSION['documento'])) {
                         <div class="invalid-feedback">
                             campo requerido
                         </div>
+                    </div>
                     </div>
                     <div class="form form-group">
                         <label for="NombreVALIDATION" class="form-label mb-1">Nombre</label>
@@ -149,9 +152,9 @@ if (!isset($_SESSION['documento'])) {
                         </div>
                     </div>
                     <div class="form form-group">
-                        <label for="validationCustom001" class="form-label mb-1">Roles</label>
+                        <label for="validationCustom001" class="form-label mb-1"></label>
                         <select id="validationCustom001" class="form-select gn mb-1" name="rol" required aria-label="Default select example" placeholder="Tipo de roles">
-                            <option class=" form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
+                            <option class=" form mb-1" list="listaRoles" value="" selected disabled>Roles</option>
                             <option class=" form mb-1" list="listaRoles" value="1">Administrador</option>
                             <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="2">Vigilante</option>
                             <option class=" form mb-1" list="listaRoles" placeholder="Tipo de roles" value="6">Instructor</option>
@@ -163,8 +166,11 @@ if (!isset($_SESSION['documento'])) {
                             Seleccione un rol
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                    <div class="row">
+                    <div class="col-auto ml-auto mr-auto">
+                        <button id="th" type="submit" class="btn text-light btn-dark mt-3 p-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                        <a  href="#tabla" class="btn text-light btn-danger mt-3 p-2" value="ok" name="btnGuardar">Ver registros</a>
+                    </div>
                     </div>
                 </form>
             </div>
@@ -172,8 +178,8 @@ if (!isset($_SESSION['documento'])) {
             <!-- Fin de registro de personas -->
 
             <!-- Inicio del CRUD -->
-            <div class="row mt-5">
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9 p-4 shadow mt-5 ml-auto mr-auto">
+            <div class="row mt-5 mb-5" id="tabla">
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9 mb-3 p-4 shadow mt-5 ml-auto mr-auto">
                 <div class="overflow-auto">
                     <?php
                     include("../crud/model/connection.php");
@@ -236,7 +242,6 @@ if (!isset($_SESSION['documento'])) {
             <!-- Fin del CRUD -->
         </div>
     </div>
-
     <script>
         function validarDatos(){
             var documento, nombre, apellido, correo, expresiones, ExpRegLetrasEspacio;
