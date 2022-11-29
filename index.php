@@ -112,4 +112,3 @@ if(isset($_SESSION['documento'])){
 
 </script>
 <script src="./bootstrap-5.0.2-dist/plugins/sweetAlert/dist/sweetalert2.all.min.js"></script>
-<script src="./bootstrap-5.0.2-dist/plugins/sweetAlert-js/sweetAlert.js"></script>

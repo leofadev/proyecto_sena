@@ -39,6 +39,7 @@
 <script src="../jquery/js/jquery-3.6.1.min.js"></script>
 <script src="../jquery/js/jquery-3.5.1.js"></script>
 <script src="../jquery/js/jquery.dataTables.min.js"></script>
+<script src="../jquery/js/alertify.js"></script>
 
 
     <script>

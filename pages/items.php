@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../jquery/css/alertify.css">
+    <link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
 </head>
 <body class="nav">
     <script>
@@ -96,8 +101,8 @@
                             ?>
                             <tr class="table-active">
                                 <td id="td"><?=$datos->descripcion?></td>
-                                 <td id="td">
-                                    <a class="btn btn-small btn-warning" href="./modificar_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
+                                <td id="td">
+                                <a class="btn btn-small btn-warning" href="./modificar_items.php?id=<?= $datos->id ?>"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></a>
                                 </td> 
                         <?php
                             }
@@ -166,7 +171,7 @@
                             
                             <th scope="col" id="th" class=" text-center">Nombre</th>
                             <th scope="col" id="th" class=" text-center">Tipo</th>
-                             <th scope="col" id="th" class=" text-center">Editar</th> 
+                            <th scope="col" id="th" class=" text-center">Editar</th> 
                         </tr>
                     </thead>
                         <tbody id="myTabl">
@@ -198,57 +203,63 @@
     <script>
 
 function validaritems(){
-   var nombre2,ExpRegLetrasEspacio;
-   
+var nombre2,ExpRegLetrasEspacio;
+nombre2 = document.getElementById("NombreItem").value;
 
-   nombre2 = document.getElementById("NombreItem").value;
+ExpRegLetrasEspacio= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
-   
 
-   ExpRegLetrasEspacio= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
+if(nombre2.length>70){
+    alertify
+  .alert("el nombre es muy largo.", function(){
+    alertify.message('OK');
+  });
+    
+    return false;
+}
+if(!ExpRegLetrasEspacio.test(nombre2)){
+    alertify
+  .alert("Solo debe contener letras y/ espacios, pero no puede estar vacío.", function(){
+    alertify.message('OK');
+  });
 
-  
-   if(nombre2.length>70){
-     alert("el nombre es muy largo");
-     return false;
-   }
-   if(!ExpRegLetrasEspacio.test(nombre2)){
-     alert("Solo debe contener letras y/ espacios, pero no puede estar vacío");
-     return false;
+    return false;
 
-   }
- }
+}
+}
 
 </script>
     
-    <script>
+<script>
 
-       function validarSubitems(){
-          var nombres,ExpRegLetrasEspacios;
-          
+    function validarSubitems(){
+        var nombres,ExpRegLetrasEspacios;
+        nombres = document.getElementById("subitem2").value;
 
-          nombres = document.getElementById("subitem2").value;
+        ExpRegLetrasEspacios= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
-          
-
-          ExpRegLetrasEspacios= /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
-
-         
-          if(nombres.length>70){
-            alert("el nombre es muy largo");
+        if(nombres.length>70){
+    alertify
+.alert("el nombre es muy largo.", function(){
+    alertify.message('OK');
+});
+    
             return false;
-          }
-          if(!ExpRegLetrasEspacios.test(nombres)){
-            alert("Solo debe contener letras y/ espacios, pero no puede estar vacío");
+        }
+        if(!ExpRegLetrasEspacios.test(nombres)){
+            alertify
+.alert("Solo debe contener letras y/ espacios, pero no puede estar vacío.", function(){
+    alertify.message('OK');
+});
             return false;
 
-          }
+        }
         }
 
     </script>
 </body>
 
-       <script>
+<script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
             'use strict'

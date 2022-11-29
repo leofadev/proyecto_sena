@@ -27,27 +27,25 @@ if (!isset($_SESSION['documento'])) {
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/style.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../jquery/css/alertify.css">
+    <link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 
 <body class="nav">
     <?php
-      
-      
-      $roles = $_SESSION ['roles'];
-      switch ($roles) {
+    $roles = $_SESSION ['roles'];
+    switch ($roles) {
         case $roles==1:
-          include("../componentes/navbar.php");
-          break;
+        include("../componentes/navbar.php");
+        break;
         case $roles==2:
-          include("../componentes/navbar_celador.php");
-          break;     
-        
+        include("../componentes/navbar_celador.php");
+        break;     
         default:
-          echo "error de registro";
-          break;
-      }
-        
+        echo "error de registro";
+        break;
+    } 
     ?>
     <!-- Formulario para cambiar contraseña -->
     <div class="container mb-3">
@@ -85,9 +83,13 @@ if (!isset($_SESSION['documento'])) {
                     </div>
 
                     </div>
-                    
+                    <div class="row">
+                    <div class="col-auto ml-auto mr-auto">
                     <button type="submit" id="th" name="btnPass" class="btn text-light btn-dark mt-2">Cambiar</button>
                     <a href="../pages/cerrar_sesion.php" class="btn text-light btn-danger mt-2">Salir</a>
+                    </div>
+                    </div>
+                   
                 </form>
             </div>
         </div>
@@ -107,23 +109,34 @@ function ModificarContrasena(){
    nombre = document.getElementById("ContraseActual").value;
    nueva =   document.getElementById("passwordNuevo").value; 
    confirmar =  document.getElementById("claveNueva").value;
+
+ if(nombre.length>70){
+    alertify
+.alert("la contraseña es muy larga.", function(){
+    alertify.message('OK');
+});
+    return false;
+}
    
-   
-   if(nombre.length>70){
-       alert("la contraseña es muy larga");
-       return false;
-   }
-   
-   if(nueva.length>70){
-     alert("la contraseña es muy larga");
-     return false;
+if(nueva.length>70){
+    alertify
+.alert("la contraseña es muy larga.", function(){
+    alertify.message('OK');
+});
+    return false;
     }
     if(confirmar.length>70){
-     alert("la contraseña es muy larga");
+        alertify
+.alert("la contraseña es muy larga.", function(){
+    alertify.message('OK');
+});
      return false;
     }
     if(confirmar != nueva){
-        alert("las contraseñas no coiciden");
+        alertify
+.alert("la contraseñas no coiciden.", function(){
+    alertify.message('OK');
+});
         return false;
     }
 

@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../jquery/css/alertify.css">
+    <link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
+
 </head>
 <body class="nav">
 
@@ -223,41 +229,65 @@
           ExpRegLetrasEspacio=/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/;
 
           if(documento.length>30){
-            alert("el documento es muy largo");
+            alertify
+.alert("el documento es muy largo.", function(){
+    alertify.message('OK');
+});
             return false;
           }
           if(correo.length>80){
-            alert("el correo es muy largo");
+            alertify
+            .alert("el correo es muy largo.", function(){
+    alertify.message('OK');
+});
             return false;
             
           }
           if(!expresiones.test(correo)){
-            alert("el correo no es válido");
+            alertify
+.alert("el correo no es válido.", function(){
+    alertify.message('OK');
+});
             return false;
 
           }
           if(nombre.length>70){
-            alert("el nombre es muy largo");
-            return false;
+            alertify
+.alert("el nombre es muy largo.", function(){
+    alertify.message('OK');
+});            
+return false;
           }
           if(!ExpRegLetrasEspacio.test(nombre)){
-            alert(" El nombre solo debe contener letras y/ espacios");
-            return false;
+            alertify
+.alert("el nombre solo debe contener espacios y/o letras, pero no puede estar vacío.", function(){
+    alertify.message('OK');
+});           
+return false;
 
           }
           if(apellido.length>70){
-            alert("el apellido es muy largo");
+            alertify
+.alert("el apellido es muy largo.", function(){
+    alertify.message('OK');
+});
             return false;
           }
           if(!ExpRegLetrasEspacio.test(apellido)){
-            alert("el apellido solo debe contener letras y/ espacios");
-            return false;
-          }
+            alertify
+.alert("el apellido solo debe contener espacios y/o letras, pero no puede estar vacío.", function(){
+    alertify.message('OK');
+});
+return false;
+}
 
           if(isNaN(documento)){
-            alert("el documento no es válido");
+            alertify
+.alert("el documento no es válido.", function(){
+    alertify.message('OK');
+});
             return false;
-          }
+}
 
 
         }
