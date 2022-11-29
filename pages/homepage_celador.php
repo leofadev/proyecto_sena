@@ -75,15 +75,15 @@
 <!-- Registro de personas -->
     <div class="container-fluid" id="crud">
         <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
-            <form class="form p-3 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-4 p-4 mt-5 ml-auto mr-auto">
+            <form class="form p-5 rounded border shadow needs-validation" novalidate method="POST" onsubmit="return validarDatos();">
                 <h3 class="text-center" >Registro de Personas</h3>
                 <?php
                 include("../crud/model/connection.php");
                 include("../crud/controller/registro_personas.php");
                 ?>
                         <div class="form form-group">
-                        <label for="documentoVAL" class="form-label mb-1">Tipo de documento</label>
+                        <label for="documentoVAL" class="form-label mb-1">Tipo Documento</label>
                         <select class="form-select gn  mb-1" id="documentoVAL" required name="tipo_documento" aria-label="Default select example" placeholder="Tipo de roles">
                             <option class="form mb-1" list="listaRoles" value="" selected disabled>Seleccione</option>
                             <option class="form mb-1" list="listaRoles" value="4">CC</option>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form form-group">
                         <label for="validationCustomUsername" class="form-label mb-1">Correo</label>
-                        <div class="input-group has-validation">
+                        <div class="has-validation">
                             <input type="text" class="form-control label input mb-1" id="validationCustomUsername" required placeholder="Ingrese Su Correo" name="correo">
                             <div class="valid-feedback">
                             Correcto
@@ -114,6 +114,7 @@
                         <div class="invalid-feedback">
                             campo requerido
                         </div>
+                    </div>
                     </div>
                     <div class="form form-group">
                         <label for="NombreVALIDATION" class="form-label mb-1">Nombre</label>
@@ -148,8 +149,10 @@
                             Seleccione un rol
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <button id="th" type="submit" class="btn text-light btn-dark mt-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                    <div class="row">
+                    <div class="col-auto ml-auto mr-auto">
+                        <button id="th" type="submit" class="btn text-light btn-dark mt-2 p-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                    </div>
                     </div>
             </form>
             </div>
