@@ -48,21 +48,24 @@ if (!isset($_SESSION['documento'])) {
     }
     ?>
     <div class="container-fluid mt-5">
-        <div class="row mt-5">
-            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4  mt-5">
-                <form class="form p-3 rounded border shadow" method="POST">
+        <div class="row">
+            <div class="col-12 p-7 mt-5 col-sm-10 col-md-6 col-xl-3 p-4 mt-5">
+                <form class="form p-4 rounded border shadow" method="POST">
                     <h3 class="text-center">Buscar usuario</h3>
                     <?php
                     include("../crud/model/connection.php");
                     include("../crud-celador/registro_documento.php");
                     ?>
+                    <div class="row mt-3">
+                    <div class="col-9">  
                     <div class="form form-group">
-                        <label  class=" mb-1">Documento</label>
-                        <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="documento" id="document">
+                        <input type="text" class="form-control label input mb-1" placeholder="Ingrese # documento" name="documento" id="document">
                     </div>
-
-                    <div class="col-auto">
-                        <button type="button" class="btn text-light btn-dark mt-2 buscar-doc">Buscar</button>
+                    </div>
+                      
+                    <div class="col-3">
+                        <button type="button" class="btn text-light btn-dark buscar-doc">Buscar</button>
+                    </div>
                     </div>
                 </form>
             </div>

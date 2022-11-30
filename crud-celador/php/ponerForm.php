@@ -15,9 +15,9 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
 ?>
 
 <div class="row mb-5">
-    <div class="col-12 col-sm-12 col-md-12 col-xl-12 p-4">
-    <form class="form p-3 rounded border shadow ml-auto mr-auto " method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
-        <h3 class="text-center">Registro De Objetos</h3>
+    <div class="col-10 col-sm-10 col-md-6 col-xl-4 p-5 ml-auto mr-auto">
+    <form class="form p-5 rounded border shadow" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
+        <h3 class="text-center text-dark">Registro De Objetos</h3>
                 
                 <div class=" form-group">
                     <label class="form-label mb-1">Documento</label>
@@ -44,8 +44,10 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
             <label class="form-label mb-1">Observaciones</label>
             <input type="text" class="form-control label input  mb-1" placeholder="Ingrese una observación" name="observacion">
         </div>
-        <div class="col-auto">
-            <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnIngresar">Ingresar Objeto</button>
+        <div class="row">
+        <div class="col-auto ml-auto mr-auto">
+            <button type="submit" id="th" class="btn text-white btn-light p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+        </div>
         </div>
     </div>
 
@@ -53,36 +55,38 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
     </form>
 <?php  }else{ ?>
 <div class="row mb-5">
-    <div class="col-12 col-sm-12 col-md-12 col-xl-12 p-4">
-    <form class="form p-3 rounded border shadow ml-auto mr-auto" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
+    <div class="col-10 col-sm-10 col-md-6 col-xl-4 p-5 ml-auto mr-auto">
+    <form class="form p-5 rounded border shadow" method="POST" action="../../../proyecto_sena/crud-celador/registro_objetos.php">
         <h3 class="text-center">Registro De Objetos</h3>
                 <div class="form form-group">
-                    <label class=" mb-1">Documento</label>
-                    <input type="text" class=" label input  mb-1" placeholder="Ingrese # documento" name="document">
+                    <label class="form-label mb-1">Documento</label>
+                    <input type="text" class="form-control label input  mb-1" placeholder="Ingrese # documento" name="document">
                 </div>
                 <div class="form form-group">
-                    <label class=" mb-1">Nombre</label>
-                    <input type="text" class=" label input  mb-1" placeholder="Ingrese Nombre" name="nombre">
+                    <label class="form-label mb-1">Nombre</label>
+                    <input type="text" class="form-control label input  mb-1" placeholder="Ingrese Nombre" name="nombre">
                 </div>
 
                 <div class="form form-group">
-                    <label class=" mb-1">Apellido</label>
-                    <input type="text" class=" label input  mb-1" placeholder="Ingrese apellido" name="apellido">
+                    <label class="form-label mb-1">Apellido</label>
+                    <input type="text" class="form-control label input  mb-1" placeholder="Ingrese apellido" name="apellido">
                 </div>
         <div class="form form-group">
-            <label class=" mb-1">Cargo</label>
-            <input type="text" class=" label input  mb-1" placeholder="Ingrese Su Cargo" name="cargo">
+            <label class="form-label mb-1">Cargo</label>
+            <input type="text" class="form-control label input  mb-1" placeholder="Ingrese Su Cargo" name="cargo">
         </div>
         <div class="form form-group">
-            <label class=" mb-1">Dispositivo</label>
-            <input type="text" class=" label input  mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
+            <label class="form-label mb-1">Dispositivo</label>
+            <input type="text" class="form-control label input  mb-1" placeholder="Serial Del Dispositivo" name="dispositivo">
         </div>
         <div class="form form-group">
-            <label class=" mb-1">Observaciones</label>
-            <input type="text" class=" label input  mb-1" placeholder="Ingrese una observación" name="observacion">
+            <label class="form-label mb-1">Observaciones</label>
+            <input type="text" class="form-control label input  mb-1" placeholder="Ingrese una observación" name="observacion">
         </div>
-        <div class="col-auto">
-            <button type="submit" id="th" class="btn text-white btn-light" value="ok" name="btnIngresar">Ingresar Objeto</button>
+        <div class="row">
+        <div class="col-auto ml-auto mr-auto">
+            <button type="submit" id="th" class="btn text-white btn-light p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+        </div>
         </div>
     </form>
     </div>

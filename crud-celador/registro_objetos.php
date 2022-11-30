@@ -19,11 +19,21 @@ if (!empty($_POST["btnIngresar"])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>';
         } else {
-            echo'<div class="alert alert-success">  Registro De Ingreso Fallido</div>';
+            echo'
+            <script>
+                alert("Registro de portatil fallido");
+                window.location = "../pages/registro_dispositivos.php";
+            </script>
+            ';
         }
         
     }else{
-        echo'<div class="alert alert-success"> Alguno De Los Campos Están Vacios</div>';
+        echo'
+            <script>
+                alert(" Alguno De Los Campos Están Vacios");
+                window.location = "../pages/registro_dispositivos.php";
+            </script>
+            ';
     }
 }
 ?>

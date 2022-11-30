@@ -8,9 +8,14 @@
 
         $sql=$con->query("UPDATE `objetos` SET `fecha_salida`='".$fecha_salida."', `h_salida`='".$h_salida."' WHERE id='".$id."'");
         if ($sql==1) {
-            echo 'fecha y hora cambiada correctamente';
+            echo 'Salida actualizada correctamente';
         }else{
-            echo'<div class="alert alert-danger"> Error Al Modificar El Registro</div>';
+            echo'
+            <script>
+                alert("Error");
+                window.location = "../pages/registro_dispositivos.php";
+            </script>
+            ';
         }
     
 ?>
