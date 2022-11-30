@@ -92,7 +92,7 @@ if (!isset($_SESSION['documento'])) {
                             <?php
                             include("../crud/model/connection.php");
                             ?>
-                            <table class="table table-striped text-center text-white" id="myTable">
+                            <table class="table rounded border table-hover text-center text-white" id="myTable">
                                 <thead>
                                     <tr>
                                         <th scope="col" id="th">Documento</th>

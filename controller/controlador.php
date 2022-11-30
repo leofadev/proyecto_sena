@@ -42,26 +42,27 @@ if(isset($_POST['btningresar']) && !empty($_POST["documento"]) && !empty($_POST[
           echo "error de registro";
           break;
       }
-    } else{  
-      echo'<script>
+    } else{ ?>  
+      <script>
         alert("contraseña incorrecta, por favor verifica los datos introducidos");
         window.location= "../index.php";
-      </script>';
-    }  
+      </script>
+   <?php }  
     
-  } else{
-    echo'<script>
+  } else{ ?>
+    <script>
     alert("El número de documento no es correcto, por favor verifica los datos introducidos");
     window.location= "../index.php";
-  </script>'; 
-  }
+  </script>
+ <?php  }
 
 }
-else{
-  echo'<script>
+else{ ?>
+ <script>
         alert("Algunos o ambos campos están vacíos!");
         window.location= "../index.php";
-      </script>';
-}
+      </script>
+ <?php
+ }
 
 ?>

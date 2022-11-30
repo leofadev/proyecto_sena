@@ -46,7 +46,7 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
         </div>
         <div class="row">
         <div class="col-auto ml-auto mr-auto">
-            <button type="submit" id="th" class="btn text-white btn-light p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+            <button type="submit" class="btn text-white btn-success mt-1 p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
         </div>
         </div>
     </div>
@@ -85,7 +85,7 @@ if($nombre != "" && $apellido != "" && $cargo != "" && $doc != ""){
         </div>
         <div class="row">
         <div class="col-auto ml-auto mr-auto">
-            <button type="submit" id="th" class="btn text-white btn-light p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
+            <button type="submit" class="btn text-white btn-success mt-1 p-2" value="ok" name="btnIngresar">Ingresar Objeto</button>
         </div>
         </div>
     </form>

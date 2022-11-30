@@ -157,7 +157,7 @@
                     </div>
                     <div class="row">
                     <div class="col-auto ml-auto mr-auto">
-                        <button id="th" type="submit" class="btn text-light btn-dark mt-2 p-2" value="ok" name="btnGuardar">Ingresar Registro</button>
+                        <button type="submit" class="btn text-light btn-success mt-2 p-2" value="ok" name="btnGuardar">Ingresar Registro</button>
                         <a href="#tabla" class="btn text-light btn-danger mt-2 p-2" value="ok" name="btnGuardar">Ver registros</a>
                     </div>
                     </div>
