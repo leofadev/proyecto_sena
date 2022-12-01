@@ -32,7 +32,7 @@ if (!isset($_SESSION['documento'])) {
     <link rel="stylesheet" href="../jquery/css/themes/bootstrap.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body class="nav">
@@ -62,11 +62,20 @@ if (!isset($_SESSION['documento'])) {
     <br><br><br><br><br><br>
     <section class="container mt-5">
         <div class="row mt-5">
-            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5">
-                <h1 id="td" class=" mb-3 ">Sede TIC</h1>
-                <h4 class="text-center text-black">Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
-                <p class="h5 mt-4 text-secondary">En esta sede del Sena nos enfocamos en el bienestar de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio ayudanos a progresar.</p>
+            <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-4 ml-auto mr-auto">
+                <h1 id="td" class="text-center mb-2">Sede TIC</h1>
+                <h4 class=" text-center text-black">Con t&uacute; ayuda mejoramos cada d&iacute;a m&aacute;s</h4>
+                <p class="h5 text-center mt-4 text-secondary">En esta sede del Sena nos enfocamos en el bienestar
+                     de nuestros empleados y aprendices Sena, t&uacute; tambi&eacute;n eres parte del cambio.
+                      Ayudanos a progresar.</p> 
+                      <div class="d-flex justify-content-center">
+                   
+                <a id="th" href="#tabla" class="btn text-white btn-light mt-2" href="#crud">Ver Registros</a>
+                 
+                </div>           
             </div>
+            
+            
             <div class="col-12 col-sm-6 col-md-6 col-xl-6 mt-5 ml-auto mr-auto">
                 <div class=" shadow p-3 mb-5 bg-white rounded mb-3" style="max-width: 540px;">
                     <div class="row g-0">
@@ -75,8 +84,9 @@ if (!isset($_SESSION['documento'])) {
                         </div>
                         <div class="col-md-8 mt-4 pl-5">
                             <div class="card-body mt-2">
-                                <h5 class="card-title">Administraci&oacute;n</h5>
+                                <h5 class="card-title pl-2">Administraci&oacute;n</h5>
                                 <a id="th" class="btn text-white btn-light" href="#crud">Registar Usuarios</a>
+                                
                             </div>
                         </div>
                     </div>

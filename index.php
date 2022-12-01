@@ -20,6 +20,10 @@ if(isset($_SESSION['documento'])){
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/plugins/sweetAlert/dist/sweetalert2.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
   </head>
     <body class=" nav bg-light d-flex justify-content-center align-items-center vh-100">
 
